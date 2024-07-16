@@ -233,6 +233,15 @@ svg {
   transform: translate(-50%, -50%);
 }
 
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @keyframes blink_cursor {
   50% {
     border-color: transparent;
@@ -243,6 +252,7 @@ svg {
   border-right: 5px solid;
   white-space: nowrap;
   overflow: hidden;
-  animation: blink_cursor 0.4s step-end infinite alternate;
+  width: 0;
+  animation: typing 1.5s steps(18) forwards, blink_cursor 1s step-end infinite;
 }
 </style>
