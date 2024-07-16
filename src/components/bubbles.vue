@@ -1,4 +1,7 @@
 <template>
+  <div class="text_container">
+    <h1>Software engineer &nbsp;</h1>
+  </div>
   <div class="gradient-bg">
     <!--https://medium.com/@parth_jansari/the-infamous-goo-filter-9caceb44ebb5-->
     <svg xmlns="http://www.w3.org/2000/svg">
@@ -215,5 +218,31 @@ svg {
   opacity: 1;
   top: -40%;
   left: -40%;
+}
+
+.text_container {
+  z-index: 1;
+
+  position: absolute;
+  color: white;
+
+  display: inline-block;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes blink_cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.text_container h1 {
+  border-right: 5px solid;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink_cursor 0.4s step-end infinite alternate;
 }
 </style>
