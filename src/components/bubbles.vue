@@ -15,6 +15,37 @@ export default {
 </script>
 
 <style scoped>
+@keyframes move_circle_vertical {
+  0% {
+    transform: translateY(50%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+@keyframes move_circle_horizontal {
+  0% {
+    transform: translateY(20%) translateX(50%);
+  }
+  50% {
+    transform: translateY(-20%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(20%) translateX(50%);
+  }
+}
+@keyframes rotate_circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .background {
   background: linear-gradient(40deg, #6c003e, #001152);
   position: absolute;
@@ -41,6 +72,7 @@ export default {
   top: calc(50% - 80% / 2);
   left: calc(50% - 80% / 2);
   transform-origin: center center;
+  animation: 30s linear infinite move_circle_horizontal reverse;
 }
 
 /*CHANGE COLOR*/
@@ -60,11 +92,12 @@ export default {
   top: calc(50% - 80% / 2 - 100px);
   left: calc(50% - 80% / 2 - 300px);
   transform-origin: center center;
+  animation: 25s linear infinite move_circle_vertical;
 }
 /*CHANGE COLOR*/
 .circle3 {
-  width: 80%;
-  height: 80%;
+  width: calc(80%);
+  height: calc(80%);
 
   background: radial-gradient(
       circle at center,
@@ -75,10 +108,12 @@ export default {
   mix-blend-mode: hard-light;
   position: absolute;
   opacity: 1;
-  top: calc(50% - 80% / 2 + 300px);
-  left: calc(50% - 80% / 2 - 500px);
-  transform-origin: center center;
+  top: calc(50% - 80% / 2);
+  left: calc(50% - 80% / 2 + 200px);
+  transform-origin: calc(50% - 400px);
+  animation: 30s linear infinite rotate_circle;
 }
+
 .circle4 {
   width: 80%;
   height: 80%;
@@ -92,9 +127,10 @@ export default {
   mix-blend-mode: hard-light;
   position: absolute;
   opacity: 1;
-  top: calc(50% - 80% / 2 + 300px);
+  top: calc(50% - 80% / 2 + 100px);
   left: calc(50% - 80% / 2 + 500px);
-  transform-origin: center center;
+  transform-origin: calc(50% + 400px);
+  animation: 20s ease infinite rotate_circle;
 }
 
 .circle5 {
@@ -110,8 +146,9 @@ export default {
   mix-blend-mode: hard-light;
   position: absolute;
   opacity: 1;
-  top: calc(50% - 80% / 2 - 200px);
+  top: calc(50% - 80% / 2 - 150px);
   left: calc(50% - 80% / 2 + 400px);
-  transform-origin: center center;
+  transform-origin: calc(50% - 800px) calc(50% + 200px);
+  animation: 25s ease-in infinite rotate_circle;
 }
 </style>
