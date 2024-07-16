@@ -5,12 +5,36 @@
     <div class="circle3"></div>
     <div class="circle4"></div>
     <div class="circle5"></div>
+    <div class="mouse_circle" id="mouse_circle"></div>
   </div>
 </template>
 
 <script>
 export default {
   name: "BubbelsPage",
+  mounted() {
+    var mouse_x = 0;
+    var mouse_y = 0;
+    var target_x = 0;
+    var target_y = 0;
+
+    const circle = document.getElementById("mouse_circle");
+
+    onmousemove = function (e) {
+      mouse_x = e.x;
+      mouse_y = e.y;
+    };
+
+    function move_circle() {
+      target_x += (mouse_x - target_x) / 50;
+      target_y += (mouse_y - target_y) / 50;
+      if (circle) {
+        circle.style.transform = `translate(${target_x}px, ${target_y}px)`;
+      }
+      requestAnimationFrame(move_circle);
+    }
+    move_circle();
+  },
 };
 </script>
 
@@ -150,5 +174,21 @@ export default {
   left: calc(50% - 80% / 2 + 400px);
   transform-origin: calc(50% - 800px) calc(50% + 200px);
   animation: 25s ease-in infinite rotate_circle;
+}
+.mouse_circle {
+  width: 80%;
+  height: 80%;
+
+  background: radial-gradient(
+      circle at center,
+      rgba(231, 198, 106, 0.8) 0%,
+      rgba(203, 223, 224, 0) 35%
+    )
+    no-repeat;
+  mix-blend-mode: hard-light;
+  position: absolute;
+  opacity: 1;
+  top: -40%;
+  left: -40%;
 }
 </style>
