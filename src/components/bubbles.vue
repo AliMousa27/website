@@ -1,11 +1,28 @@
 <template>
-  <div class="background">
-    <div class="circle1"></div>
-    <div class="circle2"></div>
-    <div class="circle3"></div>
-    <div class="circle4"></div>
-    <div class="circle5"></div>
-    <div class="mouse_circle" id="mouse_circle"></div>
+  <div class="gradient-bg">
+    <!--https://medium.com/@parth_jansari/the-infamous-goo-filter-9caceb44ebb5-->
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+            result="goo"
+          />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+    <div class="gradients-container">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+      <div class="circle5"></div>
+      <div class="mouse_circle" id="mouse_circle"></div>
+    </div>
   </div>
 </template>
 
@@ -70,14 +87,23 @@ export default {
     transform: rotate(360deg);
   }
 }
-.background {
-  background: linear-gradient(40deg, #6c003e, #001152);
+
+.gradient-bg {
+  width: 100vw;
+  height: 100vh;
   position: absolute;
+  overflow: hidden;
+  background: linear-gradient(40deg, rgb(108, 0, 162), rgb(0, 17, 82));
+  top: 0;
+  left: 0;
+}
+svg {
+  display: none;
+}
+.gradients-container {
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
-  overflow: hidden;
+  filter: url(#goo) blur(40px);
 }
 
 .circle1 {
@@ -86,8 +112,8 @@ export default {
 
   background: radial-gradient(
       circle at center,
-      rgba(0, 22, 222, 0.8) 0%,
-      rgba(0, 33, 5, 0) 35%
+      rgba(18, 113, 255, 0.8) 0%,
+      rgba(18, 113, 255, 0) 40%
     )
     no-repeat;
   mix-blend-mode: hard-light;
@@ -99,15 +125,14 @@ export default {
   animation: 30s linear infinite move_circle_horizontal reverse;
 }
 
-/*CHANGE COLOR*/
 .circle2 {
   width: 80%;
   height: 80%;
 
   background: radial-gradient(
       circle at center,
-      rgba(255, 255, 255, 0.8) 0%,
-      rgba(0, 33, 5, 0) 35%
+      rgba(221, 74, 255, 0.8) 0%,
+      rgba(221, 74, 255, 0) 50%
     )
     no-repeat;
   mix-blend-mode: hard-light;
@@ -118,15 +143,14 @@ export default {
   transform-origin: center center;
   animation: 25s linear infinite move_circle_vertical;
 }
-/*CHANGE COLOR*/
 .circle3 {
   width: calc(80%);
   height: calc(80%);
 
   background: radial-gradient(
       circle at center,
-      rgba(252, 10, 103, 0.8) 0%,
-      rgba(0, 33, 5, 0) 35%
+      rgba(100, 220, 255, 0.8) 0%,
+      rgba(100, 220, 255, 0) 40%
     )
     no-repeat;
   mix-blend-mode: hard-light;
@@ -135,7 +159,7 @@ export default {
   top: calc(50% - 80% / 2);
   left: calc(50% - 80% / 2 + 200px);
   transform-origin: calc(50% - 400px);
-  animation: 30s linear infinite rotate_circle;
+  animation: 20s linear infinite rotate_circle;
 }
 
 .circle4 {
@@ -144,8 +168,8 @@ export default {
 
   background: radial-gradient(
       circle at center,
-      rgba(224, 226, 88, 0.8) 0%,
-      rgba(107, 207, 77, 0) 35%
+      rgba(200, 50, 50, 0.8) 0%,
+      rgba(200, 50, 50, 0) 40%
     )
     no-repeat;
   mix-blend-mode: hard-light;
@@ -163,8 +187,8 @@ export default {
 
   background: radial-gradient(
       circle at center,
-      rgba(71, 255, 224, 0.8) 0%,
-      rgba(33, 239, 253, 0) 35%
+      rgba(180, 180, 50, 0.8) 0%,
+      rgba(180, 180, 50, 0) 40%
     )
     no-repeat;
   mix-blend-mode: hard-light;
@@ -173,16 +197,17 @@ export default {
   top: calc(50% - 80% / 2 - 150px);
   left: calc(50% - 80% / 2 + 400px);
   transform-origin: calc(50% - 800px) calc(50% + 200px);
-  animation: 25s ease-in infinite rotate_circle;
+  animation: 20s ease-in infinite rotate_circle;
 }
+
 .mouse_circle {
   width: 80%;
   height: 80%;
 
   background: radial-gradient(
       circle at center,
-      rgba(231, 198, 106, 0.8) 0%,
-      rgba(203, 223, 224, 0) 35%
+      rgba(140, 100, 255, 0.8) 0%,
+      rgba(140, 100, 255, 0) 40%
     )
     no-repeat;
   mix-blend-mode: hard-light;
