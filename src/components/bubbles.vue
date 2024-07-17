@@ -1,6 +1,15 @@
 <template>
   <div class="text_container">
-    <h1>Software engineer &nbsp;</h1>
+    <h1 class="static_header">
+      I'm Ali, a&nbsp;
+      <VueTyped
+        class="typer_writer"
+        :strings="['software engineer', 'developer', 'math enthusiast']"
+        :typeSpeed="100"
+        :backSpeed="100"
+        :loop="true"
+      ></VueTyped>
+    </h1>
   </div>
   <div class="gradient-bg">
     <!--https://medium.com/@parth_jansari/the-infamous-goo-filter-9caceb44ebb5-->
@@ -226,33 +235,21 @@ svg {
   position: absolute;
   color: white;
 
-  display: inline-block;
+  display: flex;
 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-@keyframes typing {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
+.static_header {
+  display: flex;
+  font-size: 40px;
+  font-family: serif;
 }
 
-@keyframes blink_cursor {
-  50% {
-    border-color: transparent;
-  }
-}
-
-.text_container h1 {
-  border-right: 5px solid;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing 1.5s steps(18) forwards, blink_cursor 1s step-end infinite;
+.typer_writer {
+  font-size: 40px;
+  font-family: serif;
 }
 </style>

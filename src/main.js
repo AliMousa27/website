@@ -1,4 +1,7 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import VueTyped from "vue3-typed-js";
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(VueTyped);
+app.mount("#app");
