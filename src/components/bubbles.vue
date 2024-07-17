@@ -1,7 +1,7 @@
 <template>
   <div class="text_container">
     <h1 class="static_header">
-      I'm Ali, a&nbsp;
+      Hello World! I'm Ali, a&nbsp;
       <VueTyped
         class="typer_writer"
         :strings="['software engineer', 'developer', 'math enthusiast']"
@@ -12,7 +12,12 @@
       ></VueTyped>
     </h1>
     <h2 class="paragraph" id="about_paragraph">
-      This is some text fdadf afaf af a faf a faf
+      I'm a 23-year-old software engineering student at Chalmers/Gothenburg
+      university hoping to continue on to aquire a masters in computer science
+      at Chalmers university residing in Sweden. I'm most passionate about
+      fullstack devolpment with a heavy focus on front end devolpment. I'm also
+      very profficent in python which I utilize to create various solutions to
+      problems, and learn numerous fileds such as AI and data science.
     </h2>
   </div>
   <div class="gradient-bg">
@@ -77,14 +82,15 @@ export default {
 
       words.forEach((word, index) => {
         const wordSpan = document.createElement("span");
-        wordSpan.innerText = word + " "; // Add a space after each word for readability
+        //space is to seperate the words
+        wordSpan.innerText = word + " ";
         //initally blur and hide the word
         wordSpan.style.opacity = 0;
         wordSpan.style.filter = "blur(4px)";
         // Apply the animation with a delay based on the word's position given by the index
-        wordSpan.style.animation = `fade-in 0.8s ${
+        wordSpan.style.animation = `fade-in 0.3s ${
           0.1 * (index + 1)
-        }s forwards cubic-bezier(0.11, 0, 0.5, 0)`;
+        }s forwards ease`;
         paragraph.appendChild(wordSpan);
       });
     },
