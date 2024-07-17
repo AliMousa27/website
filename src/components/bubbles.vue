@@ -7,9 +7,13 @@
         :strings="['software engineer', 'developer', 'math enthusiast']"
         :typeSpeed="100"
         :backSpeed="100"
+        :backDelay="1000"
         :loop="true"
       ></VueTyped>
     </h1>
+    <h2 class="paragraph" id="about_paragraph">
+      This is some text fdadf afaf af a faf a faf
+    </h2>
   </div>
   <div class="gradient-bg">
     <!--https://medium.com/@parth_jansari/the-infamous-goo-filter-9caceb44ebb5-->
@@ -42,6 +46,7 @@
 export default {
   name: "BubbelsPage",
   mounted() {
+    this.fade_text_word_by_word();
     var mouse_x = 0;
     var mouse_y = 0;
     var target_x = 0;
@@ -64,10 +69,30 @@ export default {
     }
     move_circle();
   },
+  methods: {
+    fade_text_word_by_word() {
+      const paragraph = document.getElementById("about_paragraph");
+      const words = paragraph.innerText.split(" ");
+      paragraph.innerText = "";
+
+      words.forEach((word, index) => {
+        const wordSpan = document.createElement("span");
+        wordSpan.innerText = word + " "; // Add a space after each word for readability
+        //initally blur and hide the word
+        wordSpan.style.opacity = 0;
+        wordSpan.style.filter = "blur(4px)";
+        // Apply the animation with a delay based on the word's position given by the index
+        wordSpan.style.animation = `fade-in 0.8s ${
+          0.1 * (index + 1)
+        }s forwards cubic-bezier(0.11, 0, 0.5, 0)`;
+        paragraph.appendChild(wordSpan);
+      });
+    },
+  },
 };
 </script>
 
-<style scoped>
+<style>
 @keyframes move_circle_vertical {
   0% {
     transform: translateY(50%);
@@ -235,21 +260,37 @@ svg {
   position: absolute;
   color: white;
 
-  display: flex;
-
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .static_header {
   display: flex;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
   font-size: 40px;
-  font-family: serif;
 }
 
 .typer_writer {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
   font-size: 40px;
-  font-family: serif;
+}
+
+.paragraph {
+  position: relative;
+  top: 100px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  width: 120%;
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 </style>
