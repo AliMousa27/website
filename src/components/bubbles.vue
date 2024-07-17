@@ -13,11 +13,11 @@
     </h1>
     <h2 class="paragraph" id="about_paragraph">
       I'm a 23-year-old software engineering student at Chalmers/Gothenburg
-      university hoping to continue on to aquire a masters in computer science
+      university hoping to continue on to acquire a masters in computer science
       at Chalmers university residing in Sweden. I'm most passionate about
-      fullstack devolpment with a heavy focus on front end devolpment. I'm also
-      very profficent in python which I utilize to create various solutions to
-      problems, and learn numerous fileds such as AI and data science.
+      fullstack development with a heavy focus on front end development. I'm
+      also very proficient in python which I utilize to create various solutions
+      to problems, and learn numerous fields such as AI and data science.
     </h2>
   </div>
   <div class="gradient-bg">
@@ -65,6 +65,7 @@ export default {
     };
 
     function move_circle() {
+      //move circles ever closer to the mouse at a pace controlled by the divisor
       target_x += (mouse_x - target_x) / 50;
       target_y += (mouse_y - target_y) / 50;
       if (circle) {
