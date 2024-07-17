@@ -99,7 +99,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @keyframes move_circle_vertical {
   0% {
     transform: translateY(50%);
@@ -293,7 +293,10 @@ svg {
   font-size: 30px;
   width: 120%;
 }
+</style>
 
+<style>
+/*Global style such that the inserted spans can use this*/
 @keyframes fade-in {
   100% {
     opacity: 1;
