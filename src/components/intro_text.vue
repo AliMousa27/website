@@ -54,7 +54,7 @@ export default {
 
 <style scoped>
 .text_container {
-  z-index: 1;
+  z-index: 2;
 
   position: absolute;
   color: white;

@@ -7,6 +7,9 @@
   </nav>
   <IntroText />
   <BubblesBackground />
+  <div class="btn_container">
+    <h3 class="discover_more">Click to discover</h3>
+  </div>
 </template>
 
 <script>
@@ -67,5 +70,54 @@ export default {
 
 .nav_item_contact {
   left: 94vw;
+}
+
+.btn_container {
+  z-index: 5;
+  position: absolute;
+  left: 80%;
+  top: 65%;
+}
+
+.discover_more {
+  cursor: pointer;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  mask-image: linear-gradient(
+    -75deg,
+    rgba(255, 255, 255, 0.6) 30%,
+    #ffffff 50%,
+    rgba(255, 255, 255, 0.6) 70%
+  );
+  mask-size: 200%;
+  animation: shine 2s infinite;
+}
+.discover_more::after {
+  content: "";
+  position: absolute;
+  top: 90%;
+  width: 0;
+  left: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.5s ease-in-out;
+}
+.discover_more:hover::after {
+  width: 100%;
+}
+@keyframes shine {
+  from {
+    mask-position: 150%;
+  }
+
+  to {
+    mask-position: -50%;
+  }
 }
 </style>
