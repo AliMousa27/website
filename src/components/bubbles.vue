@@ -1,4 +1,10 @@
 <template>
+  <nav class="navbar_container">
+    <a class="nav_item_font nav_item_name">Ali Mousa</a>
+    <a class="nav_item_font nav_item_about">About</a>
+    <a class="nav_item_font nav_item_blogs">Blogs</a>
+    <a class="nav_item_font nav_item_contact">Contact me</a>
+  </nav>
   <div class="text_container">
     <h1 class="static_header">
       Hello World! I'm Ali, a&nbsp;
@@ -137,7 +143,7 @@ export default {
   height: 100vh;
   position: absolute;
   overflow: hidden;
-  background: linear-gradient(40deg, rgb(108, 0, 162), rgb(0, 17, 82));
+  background: black;
   top: 0;
   left: 0;
 }
@@ -292,6 +298,53 @@ svg {
   font-weight: 400;
   font-size: 30px;
   width: 120%;
+}
+
+.navbar_container {
+  z-index: 1;
+  position: absolute;
+  width: 99vw;
+  height: 10%;
+  /*border: 5px solid white;*/
+}
+
+.nav_item_font {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+  margin-top: 5vh;
+  position: absolute;
+}
+.nav_item_font::after {
+  content: "";
+  position: absolute;
+  top: 3vh;
+  width: 0;
+  left: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.5s ease-in-out;
+}
+.nav_item_font:hover::after {
+  width: 100%;
+}
+.nav_item_font:hover {
+  cursor: pointer;
+}
+.nav_item_name {
+  left: 5vw;
+}
+.nav_item_about {
+  left: 82vw;
+}
+
+.nav_item_blogs {
+  left: 88vw;
+}
+
+.nav_item_contact {
+  left: 94vw;
 }
 </style>
 
