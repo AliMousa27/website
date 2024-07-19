@@ -7,8 +7,8 @@
   </nav>
   <IntroText />
   <BubblesBackground />
-  <div class="btn_container">
-    <h3 class="discover_more">Click to discover</h3>
+  <div id="div1">
+    <div id="divc"><div id="div2"></div></div>
   </div>
 </template>
 
@@ -111,6 +111,28 @@ export default {
 .discover_more:hover::after {
   width: 100%;
 }
+
+#div1 {
+  transform: translateY(99vh) translateX(-10px);
+  height: 1000px;
+  width: 100vw;
+  outline: red solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+#divc {
+  height: 100px;
+  width: 100px;
+}
+#div2 {
+  height: 100px;
+  width: 100px;
+  outline: blue solid medium;
+  z-index: 22;
+}
+
 @keyframes shine {
   from {
     mask-position: 150%;
