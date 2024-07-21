@@ -60,11 +60,16 @@ export default {
     },
     animateImage(img, index) {
       const text_container = img.parentElement.nextElementSibling;
+      const image_container = img.parentElement;
+      const project_container = img.closest(".project_container");
+
       if (index % 2 != 0) {
-        const project_container = img.closest(".project_container");
         project_container.classList.add("reverse");
         text_container.style.marginRight = "50px";
       }
+
+      image_container.style.transition = "transform 1s";
+      image_container.style.transform = "translateY(-100px)";
 
       text_container.style.transition = "opacity 1s, transform 1s";
       text_container.style.opacity = 1;
@@ -72,7 +77,6 @@ export default {
 
       img.style.transition = "opacity 1s, transform 1s";
       img.style.opacity = 1;
-      img.style.transform = "translateY(-100px)";
     },
   },
 };
@@ -99,9 +103,7 @@ export default {
   transform: scale(1);
   transition: transform 250ms ease-out;
 }
-.img_container:hover {
-  transform: scale(1.1);
-}
+
 .project_image {
   opacity: 0;
   border-radius: 20px;
