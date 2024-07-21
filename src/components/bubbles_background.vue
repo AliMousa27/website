@@ -54,6 +54,7 @@
             ></stop>
           </linearGradient>
         </defs>
+
         <g
           stroke-width="2"
           stroke="url(#oooscillate-grad)"
@@ -64,6 +65,7 @@
             d="M 0 572 Q 355.5 185 711 400 Q 1066.5 615 1422 572"
             opacity="0.86"
           ></path>
+
           <path
             d="M 0 550 Q 355.5 185 711 400 Q 1066.5 615 1422 550"
             opacity="0.43"

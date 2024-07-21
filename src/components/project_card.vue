@@ -9,7 +9,8 @@
       />
     </div>
     <div class="text_container">
-      <h1 class="project_title">this is just a project title</h1>
+      <!--<h1>this is just a project title</h1>-->
+      <Shine project_title="this is just a project title" />
       <p class="project_paragraph">
         Don't try to learn and remember everything.Its not required. If you are
         facing problems in css break it into simple concepts. Box model,
@@ -26,9 +27,12 @@
   </div>
 </template>
 <script>
+import Shine from "./shine.vue";
 export default {
   name: "ProjectCard",
-
+  components: {
+    Shine,
+  },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
     this.handleScroll();
