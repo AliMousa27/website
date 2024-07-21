@@ -23,6 +23,7 @@
       <div class="circle3"></div>
       <div class="circle4"></div>
       <div class="circle5"></div>
+      <div class="gap_circle"></div>
       <div class="mouse_circle" id="mouse_circle"></div>
     </div>
     <div class="curve">
@@ -263,6 +264,7 @@ export default {
 .circle3,
 .circle4,
 .circle5,
+.gap_circle,
 .mouse_circle {
   width: 80%;
   height: 80%;
@@ -319,6 +321,19 @@ export default {
   top: calc(50% - 80% / 2 + 100px);
   left: calc(50% - 80% / 2);
   transform-origin: calc(50% + 400px);
+  animation: 20s ease infinite rotate_circle;
+}
+
+.gap_circle {
+  background: radial-gradient(
+      circle at center,
+      rgba(255, 128, 244, 0.8) 0%,
+      rgba(82, 15, 76, 0) 40%
+    )
+    no-repeat;
+  top: calc(50% - 80% / 2 + 600px);
+  left: calc(50% - 80% / 2 + 200px);
+  transform-origin: calc(50% + 300px);
   animation: 20s ease infinite rotate_circle;
 }
 
