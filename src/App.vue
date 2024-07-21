@@ -15,5 +15,6 @@ export default {
 <style>
 html body {
   overflow-x: hidden;
+  background: black;
 }
 </style>
