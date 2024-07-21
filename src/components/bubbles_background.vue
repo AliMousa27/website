@@ -23,12 +23,24 @@
       <div class="circle5"></div>
       <div class="mouse_circle" id="mouse_circle"></div>
     </div>
+
+    <div id="projects_container">
+      <ul>
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard />
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+import ProjectCard from "./project_card.vue";
 export default {
   name: "BubbelsPage",
+  components: {
+    ProjectCard,
+  },
   mounted() {
     var mouse_x = 0;
     var mouse_y = 0;
@@ -43,11 +55,15 @@ export default {
     };
 
     function move_circle() {
-      //move circles ever closer to the mouse at a pace controlled by the divisor
-      target_x += (mouse_x - target_x) / 50;
-      target_y += (mouse_y - target_y) / 50;
-      if (circle) {
-        circle.style.transform = `translate(${target_x}px, ${target_y}px)`;
+      var adjusted = window.scrollY + window.innerHeight;
+
+      if (adjusted <= window.innerHeight + window.innerHeight / 3) {
+        //move circles ever closer to the mouse at a pace controlled by the divisor
+        target_x += (mouse_x - target_x) / 50;
+        target_y += (mouse_y - target_y) / 50;
+        if (circle) {
+          circle.style.transform = `translate(${target_x}px, ${target_y}px)`;
+        }
       }
       requestAnimationFrame(move_circle);
     }
@@ -93,7 +109,6 @@ export default {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  overflow: hidden;
   background: black;
   top: 0;
   left: 0;
@@ -105,6 +120,7 @@ svg {
   width: 100%;
   height: 100%;
   filter: url(#goo) blur(40px);
+  overflow: hidden;
 }
 
 .circle1 {
@@ -177,7 +193,7 @@ svg {
   position: absolute;
   opacity: 1;
   top: calc(50% - 80% / 2 + 100px);
-  left: calc(50% - 80% / 2 + 500px);
+  left: calc(50% - 80% / 2);
   transform-origin: calc(50% + 400px);
   animation: 20s ease infinite rotate_circle;
 }
@@ -195,9 +211,9 @@ svg {
   mix-blend-mode: hard-light;
   position: absolute;
   opacity: 1;
-  top: calc(50% - 80% / 2 - 150px);
+  top: calc(50% - 80% / 2 - 50px);
   left: calc(50% - 80% / 2 + 400px);
-  transform-origin: calc(50% - 800px) calc(50% + 200px);
+  transform-origin: calc(50% - 600px) calc(47%);
   animation: 20s ease-in infinite rotate_circle;
 }
 
@@ -216,5 +232,29 @@ svg {
   opacity: 1;
   top: -40%;
   left: -40%;
+}
+
+#projects_container {
+  height: fit-content;
+  width: 100vw;
+  z-index: -1;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+  align-content: center;
+}
+ul {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 300px;
+  width: 100%;
 }
 </style>

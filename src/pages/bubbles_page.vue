@@ -5,11 +5,10 @@
     <a class="nav_item_font nav_item_blogs">Blogs</a>
     <a class="nav_item_font nav_item_contact">Contact me</a>
   </nav>
+
   <IntroText />
-  <BubblesBackground />
-  <div id="div1">
-    <div id="divc"><div id="div2"></div></div>
-  </div>
+
+  <BubblesBackground> </BubblesBackground>
 </template>
 
 <script>
@@ -110,27 +109,6 @@ export default {
 }
 .discover_more:hover::after {
   width: 100%;
-}
-
-#div1 {
-  transform: translateY(99vh) translateX(-10px);
-  height: 1000px;
-  width: 100vw;
-  outline: red solid 1px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
-}
-#divc {
-  height: 100px;
-  width: 100px;
-}
-#div2 {
-  height: 100px;
-  width: 100px;
-  outline: blue solid medium;
-  z-index: 22;
 }
 
 @keyframes shine {
