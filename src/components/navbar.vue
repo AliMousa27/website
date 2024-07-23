@@ -35,6 +35,12 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 576px) {
+  .navbar a {
+    margin-left: 10px !important;
+  }
+}
+
 .navbar a {
   margin-left: 50px;
   text-decoration: none;

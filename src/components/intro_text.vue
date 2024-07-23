@@ -1,7 +1,7 @@
 <template>
   <div class="container" style="margin-top: 50px; z-index: 100 !important">
     <div class="row">
-      <div class="col border border-primary">
+      <div class="col">
         <h1 class="static_header">
           Hello World! I'm Ali, a&nbsp;
           <VueTyped
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="row" style="margin-top: 50px">
-      <div class="col border border-primary">
+      <div class="col">
         <h2 class="paragraph" id="about_paragraph">
           I'm a 23-year-old software engineering student at Chalmers/Gothenburg
           university hoping to continue on to acquire a masters in computer
@@ -45,9 +45,8 @@ export default {
 
       words.forEach((word, index) => {
         const wordSpan = document.createElement("span");
-        //space is to seperate the words
         wordSpan.innerText = word + " ";
-        //initally blur and hide the word
+        //initally hide the word
         wordSpan.style.opacity = 0;
         wordSpan.style.filter = "blur(4px)";
         // Apply the animation with a delay based on the word's position given by the index
@@ -65,8 +64,11 @@ export default {
 /* smaller than 800 */
 @media (max-width: 800px) {
   .static_header {
-    /*override the display flex to display block*/
+    /*override the display flex to display block to move typer wrtier below the static text*/
     display: inline-block !important;
+  }
+  .paragraph {
+    font-size: 20px !important;
   }
 }
 
