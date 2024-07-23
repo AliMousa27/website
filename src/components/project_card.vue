@@ -47,7 +47,7 @@ export default {
       const projects = document.querySelectorAll(".project_container");
       const screenWidth = window.innerWidth;
 
-      projects.forEach((project) => {
+      projects.forEach((project, index) => {
         const carouselContainer = project.querySelector(".carousel_container");
         const textContainer = project.querySelector(".text_container");
 
@@ -56,11 +56,17 @@ export default {
           textContainer.classList.remove("col-5");
           carouselContainer.classList.add("col-12");
           textContainer.classList.add("col-12");
+          project.classList.add("row");
+          project.classList.remove("d-flex", "flex-row-reverse");
         } else {
           carouselContainer.classList.remove("col-12");
           textContainer.classList.remove("col-12");
           carouselContainer.classList.add("col-7");
           textContainer.classList.add("col-5");
+          if (index % 2 === 0) {
+            project.classList.remove("row");
+            project.classList.add("d-flex", "flex-row-reverse");
+          }
         }
       });
     };
@@ -120,11 +126,5 @@ export default {
   color: white;
 
   transition: transform 250ms ease-out;
-}
-
-@media (max-width: 768px) {
-  .project_entry {
-    flex-direction: column !important;
-  }
 }
 </style>

@@ -21,7 +21,7 @@ export default {
   background-clip: text;
   animation: shine 5s infinite linear;
   text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 700;
 }
 
@@ -36,7 +36,7 @@ export default {
 
 @media (max-width: 768px) {
   .shine {
-    font-size: 20px;
+    font-size: 35px;
   }
 }
 </style>
