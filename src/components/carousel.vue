@@ -21,14 +21,11 @@
       </div>
     </div>
     <button
-      class="carousel-control-prev"
+      class="carousel-control-prev border border-light"
       type="button"
       :data-bs-target="'#' + this.id"
       data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
+    ></button>
     <button
       class="carousel-control-next"
       type="button"

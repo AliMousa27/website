@@ -291,7 +291,7 @@ export default {
 .projects_container {
   position: relative;
   top: -35vw;
-  z-index: -1;
+  z-index: 11;
   background: black;
   box-sizing: border-box;
 }
