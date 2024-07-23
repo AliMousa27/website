@@ -25,7 +25,7 @@
     </div>
 
     <PageCurve />
-    <!--
+
     <div class="container projects_container">
       <div class="row">
         <div
@@ -35,23 +35,17 @@
           <ProjectCard></ProjectCard>
         </div>
       </div>
-      <div class="row">
-        <div class="col border border-primary mb-3 p-3">Row 2</div>
-      </div>
-      <div class="row">
-        <div class="col border border-primary mb-3 p-3">Row 3</div>
-      </div>
-    </div>-->
+    </div>
   </div>
 </template>
 
 <script>
-//import ProjectCard from "./project_card.vue";
+import ProjectCard from "./project_card.vue";
 import PageCurve from "./curve.vue";
 export default {
   name: "BubbelsPage",
   components: {
-    //ProjectCard,
+    ProjectCard,
     PageCurve,
   },
   mounted() {
@@ -299,11 +293,42 @@ export default {
 
 .projects_container {
   position: relative;
-  transform: translateY(calc(-25vw));
+  top: -35vw;
   z-index: -1;
   background: black;
 }
+@media (max-width: 1500px) {
+  .projects_container {
+    top: -45vw !important;
+  }
+}
 
+@media (max-width: 1200px) {
+  .projects_container {
+    top: -55vw !important;
+  }
+}
+
+/* Adjust top value for screens smaller than 992px */
+@media (max-width: 992px) {
+  .projects_container {
+    top: -80vw !important;
+  }
+}
+
+/* Adjust top value for screens smaller than 768px */
+@media (max-width: 800px) {
+  .projects_container {
+    top: -100vw !important;
+  }
+}
+
+/* Adjust top value for screens smaller than 576px */
+@media (max-width: 576px) {
+  .projects_container {
+    top: -50vw;
+  }
+}
 .projects_list {
   height: 100%;
   padding: 0;

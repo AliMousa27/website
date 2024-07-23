@@ -2,8 +2,8 @@
   <CarouselSlides ref="carouselSlides"></CarouselSlides>
 
   <div class="text_container">
-    <Shine project_title="this is just a project title" />
-    <!--<p class="project_paragraph">
+    <!--<Shine project_title="this is just a project title" />
+    <p class="project_paragraph">
         Don't try to learn and remember everything.Its not required. If you are
         facing problems in css break it into simple concepts. Box model,
         inline-block elements, difference between padding and margin and their
@@ -18,17 +18,17 @@
   </div>
 </template>
 <script>
-import Shine from "./shine.vue";
+//import Shine from "./shine.vue";
 import CarouselSlides from "./carousel.vue";
 export default {
   name: "ProjectCard",
   components: {
-    Shine,
+    //Shine,
     CarouselSlides,
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-    this.handleScroll();
+    //window.addEventListener("scroll", this.handleScroll);
+    //this.handleScroll();
   },
   methods: {
     handleScroll() {
@@ -77,6 +77,7 @@ export default {
   left: 15vw;
   overflow: visible;
   position: relative;
+  opacity: 1;
 }
 
 .reverse {
@@ -91,7 +92,7 @@ export default {
   color: white;
   width: 50%;
   height: fit-content;
-  opacity: 0;
+  opacity: 1;
   transition: transform 250ms ease-out;
 }
 </style>

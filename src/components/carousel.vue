@@ -1,7 +1,7 @@
 <template>
   <div
     :id="this.id"
-    class="carousel slide img_container"
+    class="carousel slide img_container border border-danger"
     data-bs-ride="carousel"
   >
     <div class="carousel-inner">
@@ -47,13 +47,11 @@ export default {
 
   data() {
     return {
-      id:
-        "carouselExampleControls" + Math.random().toString(36).substring(2, 24),
+      id: "carouselControls" + Math.random().toString(36).substring(2, 24),
     };
   },
 };
 </script>
-
 <style scoped>
 .img_container {
   width: fit-content;
@@ -61,16 +59,29 @@ export default {
   position: relative;
   transform: scale(1);
   transition: transform 250ms ease-out;
-  opacity: 0;
+  opacity: 1;
 }
 
-.carousel-inner {
-  width: 500px;
-  height: 400px;
-}
 img {
   height: auto;
-  width: calc(100vw - 100px);
+  width: 100%;
   object-fit: cover;
+}
+@media only screen and (max-width: 576px) {
+  .carousel-inner {
+    width: 100% !important;
+    height: auto;
+  }
+  img {
+    width: 100% !important;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .carousel-inner {
+    width: 40vw !important;
+    height: auto;
+  }
 }
 </style>
