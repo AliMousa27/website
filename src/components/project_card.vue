@@ -1,10 +1,22 @@
 <template>
   <div class="row project_container">
-    <div class="col-7 border border-primary carousel_container">
+    <div class="col-7 carousel_container">
       <CarouselSlides ref="carouselSlides"></CarouselSlides>
     </div>
-    <div class="col-5 border border-danger text_container">
+    <div class="col-5 text_container">
       <Shine project_title="this is just a project title" />
+      <p class="project_paragraph">
+        Don't try to learn and remember everything.Its not required. If you are
+        facing problems in css break it into simple concepts. Box model,
+        inline-block elements, difference between padding and margin and their
+        behaviour, border attributes, font attributes and so on. Easiest way is
+        to use chrome - developer tools or firebug. Inspect element and you will
+        see its css at bottom right of panel. You can tinker with the element
+        style there and readily see changes on the page. Also develop a keen
+        observarion about the style of different sites. Once you start looking
+        that way you won't need to memorize anything. Instead you will be able
+        to grasp how various pieces of style fit in together.
+      </p>
     </div>
   </div>
 
@@ -39,7 +51,7 @@ export default {
         const carouselContainer = project.querySelector(".carousel_container");
         const textContainer = project.querySelector(".text_container");
 
-        if (screenWidth < 768 && carouselContainer && textContainer) {
+        if (screenWidth < 768) {
           carouselContainer.classList.remove("col-7");
           textContainer.classList.remove("col-5");
           carouselContainer.classList.add("col-12");

@@ -10,7 +10,7 @@
       </div>
       <div class="carousel-item">
         <img
-          src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+          src="https://i.pinimg.com/originals/91/9c/57/919c5719579d855d1fa9e1c128a80d64.jpg"
           class="d-block w-100"
           alt="..."
         />
