@@ -28,10 +28,7 @@
 
     <div class="container projects_container">
       <div class="row">
-        <div
-          class="col border border-primary mb-3 p-3"
-          style="display: flex; flex-direction: row"
-        >
+        <div class="col project_entry border border-primary mb-3 p-3">
           <ProjectCard></ProjectCard>
         </div>
       </div>
@@ -296,6 +293,7 @@ export default {
   top: -35vw;
   z-index: -1;
   background: black;
+  box-sizing: border-box;
 }
 @media (max-width: 1500px) {
   .projects_container {
@@ -338,6 +336,19 @@ export default {
   flex-direction: column;
   justify-content: center;
   gap: 300px;
+  width: 98%;
+}
+.project_entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .project_entry {
+    flex-direction: row;
+  }
 }
 </style>

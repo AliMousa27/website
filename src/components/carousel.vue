@@ -1,7 +1,7 @@
 <template>
   <div
     :id="this.id"
-    class="carousel slide img_container border border-danger"
+    class="carousel slide border border-danger"
     data-bs-ride="carousel"
   >
     <div class="carousel-inner">
@@ -61,27 +61,32 @@ export default {
   transition: transform 250ms ease-out;
   opacity: 1;
 }
+.carousel-inner {
+  width: 40vw;
+  height: auto;
+}
 
 img {
   height: auto;
-  width: 100%;
+  width: 90%;
   object-fit: cover;
-}
-@media only screen and (max-width: 576px) {
-  .carousel-inner {
-    width: 100% !important;
-    height: auto;
-  }
-  img {
-    width: 100% !important;
-    object-fit: cover;
-  }
 }
 
 @media only screen and (max-width: 1200px) {
   .carousel-inner {
-    width: 40vw !important;
+    width: 40vw;
     height: auto;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .carousel {
+    width: 98% !important;
+    height: 100% !important;
+  }
+  .carousel-inner {
+    width: 98% !important;
+    height: 100% !important;
   }
 }
 </style>
