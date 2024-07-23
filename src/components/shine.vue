@@ -21,7 +21,7 @@ export default {
   background-clip: text;
   animation: shine 5s infinite linear;
   text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
-  /*text-align: center;*/
+  text-align: center;
 }
 
 @keyframes shine {

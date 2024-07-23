@@ -1,12 +1,10 @@
 <template>
   <div class="row project_container">
-    <div class="col-7 border border-primary">
+    <div class="col-7 border border-primary carousel_container">
       <CarouselSlides ref="carouselSlides"></CarouselSlides>
     </div>
-    <div class="col-5 border border-danger">
-      <div class="text_container border border-warning">
-        <Shine project_title="this is just a project title" />
-      </div>
+    <div class="col-5 border border-danger text_container">
+      <Shine project_title="this is just a project title" />
     </div>
   </div>
 
@@ -33,18 +31,42 @@ export default {
     CarouselSlides,
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-    this.handleScroll();
-  },
-  methods: {
-    handleScroll() {
+    const adjustClasses = () => {
+      const projects = document.querySelectorAll(".project_container");
+      const screenWidth = window.innerWidth;
+
+      projects.forEach((project) => {
+        const carouselContainer = project.querySelector(".carousel_container");
+        const textContainer = project.querySelector(".text_container");
+
+        if (screenWidth < 768 && carouselContainer && textContainer) {
+          carouselContainer.classList.remove("col-7");
+          textContainer.classList.remove("col-5");
+          carouselContainer.classList.add("col-12");
+          textContainer.classList.add("col-12");
+        } else {
+          carouselContainer.classList.remove("col-12");
+          textContainer.classList.remove("col-12");
+          carouselContainer.classList.add("col-7");
+          textContainer.classList.add("col-5");
+        }
+      });
+    };
+    const handleScroll = () => {
       const projects = document.querySelectorAll(".project_container");
       projects.forEach((project) => {
         if (this.isInViewport(project)) {
           this.animateProject(project);
         }
       });
-    },
+    };
+
+    adjustClasses();
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", adjustClasses);
+  },
+  methods: {
     isInViewport(el) {
       const rect = el.getBoundingClientRect();
       return (
@@ -54,19 +76,10 @@ export default {
         rect.left + rect.width / 4 > 0
       );
     },
+
     animateProject(project) {
-      console.log(project);
       project.style.transition = "opacity 1s, transform 1s";
-
       project.style.opacity = 1;
-      /*const text_container = image.nextElementSibling;
-      text_container.style.transition = "opacity 1s, transform 1s";
-      text_container.style.opacity = 1;
-      text_container.style.transform = "translateY(-100px)";
-
-      image.style.transition = "opacity 1s, transform 1s";
-      image.style.opacity = 1;
-      image.style.transform = "translateY(-100px)";*/
     },
   },
   computed: {
