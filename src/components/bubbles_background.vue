@@ -25,12 +25,22 @@
     </div>
 
     <PageCurve />
-    <!--<div class="projects_container">
-      <ul class="projects_list">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-      </ul>
+    <!--
+    <div class="container projects_container">
+      <div class="row">
+        <div
+          class="col border border-primary mb-3 p-3"
+          style="display: flex; flex-direction: row"
+        >
+          <ProjectCard></ProjectCard>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col border border-primary mb-3 p-3">Row 2</div>
+      </div>
+      <div class="row">
+        <div class="col border border-primary mb-3 p-3">Row 3</div>
+      </div>
     </div>-->
   </div>
 </template>
@@ -75,6 +85,23 @@ export default {
 };
 </script>
 <style scoped>
+@media (max-width: 800px) {
+  .circle2 {
+    left: calc(50% - 80% / 1.1) !important;
+  }
+  .circle3 {
+    left: calc(50% - 80% / 6) !important;
+    transform-origin: 1% !important;
+  }
+  .circle4 {
+    left: calc(50% - 80% / 6) !important;
+    transform-origin: 1% !important;
+  }
+  .gap_circle {
+    transform: translate(30%, -10%) !important;
+  }
+}
+
 @media (max-width: 1000px) {
   .circle2 {
     left: calc(50% - 80% / 1.1) !important;
@@ -88,7 +115,9 @@ export default {
     transform-origin: 1% !important;
   }
   .gap_circle {
-    left: calc(50% - 80% / 1.1) !important;
+    transform-origin: calc(25%-500px) !important;
+    top: calc(50% - 60% + 350px) !important;
+    left: calc(50% - 80% + 35vw) !important;
   }
 }
 
@@ -103,9 +132,16 @@ export default {
   }
 
   .gap_circle {
-    transform-origin: calc(50% + 200px) !important;
-    top: calc(50% - 80% /+ 700px) !important;
+    transform-origin: calc(20%) !important;
+    top: calc(50% - 80% /- 100px) !important;
     left: calc(50% - 80% + 35vw) !important;
+  }
+}
+@media (max-width: 1500px) {
+  .gap_circle {
+    transform-origin: calc(50% + 200px) !important;
+    top: 50% !important;
+    left: calc(50% - 80% + 30vw) !important;
   }
 }
 
@@ -233,7 +269,7 @@ export default {
   top: calc(50% - 80% / 2 + 600px);
   left: calc(50% - 80% / 2 + 200px);
   transform-origin: calc(50% + 300px);
-  animation: 40s ease infinite rotate_circle;
+  animation: 30s ease infinite rotate_circle;
 }
 
 .circle5 {
@@ -261,17 +297,10 @@ export default {
 }
 
 .projects_container {
-  transform: translateY(-40%);
-  height: fit-content;
-  width: 100vw;
+  position: relative;
+  transform: translateY(calc(-25vw));
   z-index: -1;
   background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  min-height: 100vh;
-  align-content: center;
 }
 
 .projects_list {

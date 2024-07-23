@@ -1,10 +1,9 @@
 <template>
-  <div class="project_container">
-    <CarouselSlides ref="carouselSlides"></CarouselSlides>
+  <CarouselSlides ref="carouselSlides"></CarouselSlides>
 
-    <div class="text_container">
-      <Shine project_title="this is just a project title" />
-      <p class="project_paragraph">
+  <div class="text_container">
+    <Shine project_title="this is just a project title" />
+    <!--<p class="project_paragraph">
         Don't try to learn and remember everything.Its not required. If you are
         facing problems in css break it into simple concepts. Box model,
         inline-block elements, difference between padding and margin and their
@@ -15,8 +14,7 @@
         observarion about the style of different sites. Once you start looking
         that way you won't need to memorize anything. Instead you will be able
         to grasp how various pieces of style fit in together.
-      </p>
-    </div>
+      </p>-->
   </div>
 </template>
 <script>
@@ -52,7 +50,6 @@ export default {
     },
     animateImage(image) {
       const text_container = image.nextElementSibling;
-
       text_container.style.transition = "opacity 1s, transform 1s";
       text_container.style.opacity = 1;
       text_container.style.transform = "translateY(-100px)";

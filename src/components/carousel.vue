@@ -4,18 +4,18 @@
     class="carousel slide img_container"
     data-bs-ride="carousel"
   >
-    <div class="carousel-inner" style="width: 500px">
+    <div class="carousel-inner">
       <div class="carousel-item active">
         <img
-          src="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-          class="d-block w-100 img-fluid"
+          src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+          class="d-block w-100"
           alt="..."
         />
       </div>
       <div class="carousel-item">
         <img
           src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-          class="d-block w-100 img-fluid"
+          class="d-block w-100"
           alt="..."
         />
       </div>
@@ -63,9 +63,14 @@ export default {
   transition: transform 250ms ease-out;
   opacity: 0;
 }
-img {
-  width: 300px;
+
+.carousel-inner {
+  width: 500px;
   height: 400px;
+}
+img {
+  height: auto;
+  width: calc(100vw - 100px);
   object-fit: cover;
 }
 </style>
