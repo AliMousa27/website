@@ -40,15 +40,6 @@ export default {
           this.animateImage(image);
         }
       });
-      /*const images = document.querySelectorAll(".project_image");
-      images.forEach((image, index) => {
-        if (this.isInViewport(image)) {
-          this.animateImage(image, index);
-        }
-      });
-      if ([...images].every((image) => image.style.opacity == 1)) {
-        window.removeEventListener("scroll", this.handleScroll);
-      }*/
     },
     isInViewport(el) {
       const rect = el.getBoundingClientRect();
@@ -61,6 +52,7 @@ export default {
     },
     animateImage(image) {
       const text_container = image.nextElementSibling;
+
       text_container.style.transition = "opacity 1s, transform 1s";
       text_container.style.opacity = 1;
       text_container.style.transform = "translateY(-100px)";
@@ -68,25 +60,6 @@ export default {
       image.style.transition = "opacity 1s, transform 1s";
       image.style.opacity = 1;
       image.style.transform = "translateY(-100px)";
-
-      /*const text_container = img.parentElement.nextElementSibling;
-      const image_container = img.parentElement;
-      const project_container = img.closest(".project_container");
-
-      if (index % 2 != 0) {
-        project_container.classList.add("reverse");
-        text_container.style.marginRight = "50px";
-      }
-
-      image_container.style.transition = "transform 1s";
-      image_container.style.transform = "translateY(-100px)";
-
-      text_container.style.transition = "opacity 1s, transform 1s";
-      text_container.style.opacity = 1;
-      text_container.style.transform = "translateY(-100px)";
-
-      img.style.transition = "opacity 1s, transform 1s";
-      img.style.opacity = 1;*/
     },
   },
   computed: {
