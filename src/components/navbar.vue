@@ -1,7 +1,7 @@
 <template>
   <nav
     class="navbar navbar-expand-lg navbar-dark"
-    style="background-color: transparent"
+    style="background-color: transparent; margin-top: 50px"
   >
     <a href="#">Ali</a>
     <button

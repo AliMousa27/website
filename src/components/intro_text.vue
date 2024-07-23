@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style="margin-top: 50px; z-index: 100 !important">
+  <div class="container" style="margin-top: 27vh; z-index: 100 !important">
     <div class="row">
       <div class="col">
         <h1 class="static_header">
@@ -69,6 +69,9 @@ export default {
   }
   .paragraph {
     font-size: 20px !important;
+  }
+  .container {
+    margin-top: 10vh !important;
   }
 }
 
