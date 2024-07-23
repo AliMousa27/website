@@ -1,12 +1,12 @@
 <template>
-  <div class="container" style="margin-top: 50px">
+  <div class="container" style="margin-top: 50px; z-index: 100 !important">
     <div class="row">
       <div class="col border border-primary">
         <h1 class="static_header">
           Hello World! I'm Ali, a&nbsp;
           <VueTyped
             class="typer_writer"
-            :strings="['software engineer']"
+            :strings="['software engineer', 'developer', 'math enthusiast']"
             :typeSpeed="100"
             :backSpeed="100"
             :backDelay="1000"
@@ -72,7 +72,6 @@ export default {
 
 .text_container {
   z-index: 2;
-  background: white;
 }
 
 .static_header {

@@ -14,16 +14,19 @@
         </filter>
       </defs>
     </svg>
-
     <div class="gradients-container">
       <div class="circle1"></div>
       <div class="circle2"></div>
       <div class="circle3"></div>
       <div class="circle4"></div>
+    </div>
+    <!--
       <div class="circle5"></div>
       <div class="gap_circle"></div>
       <div class="mouse_circle" id="mouse_circle"></div>
-    </div>
+    </div>-->
+
+    <!--
     <PageCurve />
     <div class="projects_container">
       <ul class="projects_list">
@@ -31,18 +34,18 @@
         <ProjectCard />
         <ProjectCard />
       </ul>
-    </div>
+    </div>-->
   </div>
 </template>
 
 <script>
-import ProjectCard from "./project_card.vue";
-import PageCurve from "./curve.vue";
+//import ProjectCard from "./project_card.vue";
+//import PageCurve from "./curve.vue";
 export default {
   name: "BubbelsPage",
   components: {
-    ProjectCard,
-    PageCurve,
+    //ProjectCard,
+    //PageCurve,
   },
   mounted() {
     var mouse_x = 0;
@@ -75,6 +78,27 @@ export default {
 };
 </script>
 <style scoped>
+@media (max-width: 1000px) {
+  .circle2 {
+    left: calc(50% - 80% / 1.1) !important;
+  }
+  .circle3 {
+    left: calc(50% - 80% / 6) !important;
+    transform-origin: 1% !important;
+  }
+  .circle4 {
+    left: calc(50% - 80% / 6) !important;
+    transform-origin: 1% !important;
+  }
+}
+
+@media (max-width: 1150px) {
+  .circle4 {
+    left: calc(50% - 80% / 3) !important;
+    transform-origin: 1% !important;
+  }
+}
+
 @keyframes move_circle_vertical {
   0% {
     transform: translateY(50%);
@@ -114,6 +138,7 @@ export default {
   background: black;
   top: 0;
   left: 0;
+  z-index: -11;
 }
 
 .gradients-container {
@@ -147,7 +172,7 @@ export default {
   top: calc(50% - 80% / 2);
   left: calc(50% - 80% / 2);
   transform-origin: center center;
-  animation: 30s linear infinite move_circle_horizontal reverse;
+  animation: 2s linear infinite move_circle_horizontal reverse;
 }
 
 .circle2 {
@@ -159,7 +184,7 @@ export default {
     no-repeat;
   top: calc(50% - 80% / 2 - 100px);
   left: calc(50% - 80% / 2 - 300px);
-  animation: 25s linear infinite move_circle_vertical;
+  animation: 2s linear infinite move_circle_vertical;
 }
 
 .circle3 {
@@ -172,7 +197,7 @@ export default {
   top: calc(50% - 80% / 2);
   left: calc(50% - 80% / 2 + 200px);
   transform-origin: calc(50% - 400px);
-  animation: 20s linear infinite rotate_circle;
+  animation: 2s linear infinite rotate_circle;
 }
 
 .circle4 {
@@ -185,7 +210,7 @@ export default {
   top: calc(50% - 80% / 2 + 100px);
   left: calc(50% - 80% / 2);
   transform-origin: calc(50% + 400px);
-  animation: 20s ease infinite rotate_circle;
+  animation: 2s ease infinite rotate_circle;
 }
 
 .gap_circle {
