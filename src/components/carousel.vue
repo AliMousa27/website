@@ -1,9 +1,5 @@
 <template>
-  <div
-    :id="this.id"
-    class="carousel slide border border-danger"
-    data-bs-ride="carousel"
-  >
+  <div :id="this.id" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img
@@ -21,11 +17,14 @@
       </div>
     </div>
     <button
-      class="carousel-control-prev border border-light"
+      class="carousel-control-prev"
       type="button"
       :data-bs-target="'#' + this.id"
       data-bs-slide="prev"
-    ></button>
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden"></span>
+    </button>
     <button
       class="carousel-control-next"
       type="button"
@@ -59,7 +58,7 @@ export default {
   opacity: 1;
 }
 .carousel-inner {
-  width: 40vw;
+  width: 100%;
   height: auto;
 }
 
@@ -71,18 +70,18 @@ img {
 
 @media only screen and (max-width: 1200px) {
   .carousel-inner {
-    width: 40vw;
+    width: 100%;
     height: auto;
   }
 }
 
 @media only screen and (max-width: 900px) {
   .carousel {
-    width: 98% !important;
+    width: 100% !important;
     height: 100% !important;
   }
   .carousel-inner {
-    width: 98% !important;
+    width: 100% !important;
     height: 100% !important;
   }
 }

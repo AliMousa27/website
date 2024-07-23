@@ -1,9 +1,16 @@
 <template>
-  <CarouselSlides ref="carouselSlides"></CarouselSlides>
+  <div class="row project_container">
+    <div class="col-7 border border-primary">
+      <CarouselSlides ref="carouselSlides"></CarouselSlides>
+    </div>
+    <div class="col-5 border border-danger">
+      <div class="text_container border border-warning">
+        <Shine project_title="this is just a project title" />
+      </div>
+    </div>
+  </div>
 
-  <div class="text_container">
-    <!--<Shine project_title="this is just a project title" />
-    <p class="project_paragraph">
+  <!--<p class="project_paragraph">
         Don't try to learn and remember everything.Its not required. If you are
         facing problems in css break it into simple concepts. Box model,
         inline-block elements, difference between padding and margin and their
@@ -15,27 +22,26 @@
         that way you won't need to memorize anything. Instead you will be able
         to grasp how various pieces of style fit in together.
       </p>-->
-  </div>
 </template>
 <script>
-//import Shine from "./shine.vue";
+import Shine from "./shine.vue";
 import CarouselSlides from "./carousel.vue";
 export default {
   name: "ProjectCard",
   components: {
-    //Shine,
+    Shine,
     CarouselSlides,
   },
   mounted() {
-    //window.addEventListener("scroll", this.handleScroll);
-    //this.handleScroll();
+    window.addEventListener("scroll", this.handleScroll);
+    this.handleScroll();
   },
   methods: {
     handleScroll() {
-      const images = document.querySelectorAll(".img_container");
-      images.forEach((image) => {
-        if (this.isInViewport(image)) {
-          this.animateImage(image);
+      const projects = document.querySelectorAll(".project_container");
+      projects.forEach((project) => {
+        if (this.isInViewport(project)) {
+          this.animateProject(project);
         }
       });
     },
@@ -48,15 +54,19 @@ export default {
         rect.left + rect.width / 4 > 0
       );
     },
-    animateImage(image) {
-      const text_container = image.nextElementSibling;
+    animateProject(project) {
+      console.log(project);
+      project.style.transition = "opacity 1s, transform 1s";
+
+      project.style.opacity = 1;
+      /*const text_container = image.nextElementSibling;
       text_container.style.transition = "opacity 1s, transform 1s";
       text_container.style.opacity = 1;
       text_container.style.transform = "translateY(-100px)";
 
       image.style.transition = "opacity 1s, transform 1s";
       image.style.opacity = 1;
-      image.style.transform = "translateY(-100px)";
+      image.style.transform = "translateY(-100px)";*/
     },
   },
   computed: {
@@ -71,13 +81,7 @@ export default {
 
 <style scoped>
 .project_container {
-  display: flex;
-  flex-direction: row;
-  width: 70%;
-  left: 15vw;
-  overflow: visible;
-  position: relative;
-  opacity: 1;
+  opacity: 0;
 }
 
 .reverse {
@@ -85,14 +89,17 @@ export default {
 }
 
 .text_container {
-  margin-left: 50px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 20px;
   color: white;
-  width: 50%;
-  height: fit-content;
-  opacity: 1;
+
   transition: transform 250ms ease-out;
+}
+
+@media (max-width: 768px) {
+  .project_entry {
+    flex-direction: column !important;
+  }
 }
 </style>

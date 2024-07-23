@@ -12,15 +12,6 @@ export default {
 </script>
 
 <style scoped>
-html {
-  background-color: #333;
-  text-align: center;
-}
-
-body {
-  padding-top: 3em;
-}
-
 .shine {
   background: #ffffff
     linear-gradient(to right, #ffffff, #ffffff 50%, rgb(0, 0, 0) 100%) 0 0
@@ -30,6 +21,7 @@ body {
   background-clip: text;
   animation: shine 5s infinite linear;
   text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+  /*text-align: center;*/
 }
 
 @keyframes shine {
@@ -38,6 +30,12 @@ body {
   }
   100% {
     background-position: 1000px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shine {
+    font-size: 20px;
   }
 }
 </style>

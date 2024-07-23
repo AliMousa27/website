@@ -168,16 +168,18 @@ export default {
     transform: translateY(-65vw) !important;
   }
 }
+
 @media (max-width: 786px) {
   .curve {
-    transform: translateY(-68vw) !important;
+    transform: translateY(-800px) !important;
   }
 }
-@media (max-width: 786px) {
+@media (max-width: 576px) {
   .curve {
-    transform: translateY(-100vw) !important;
+    transform: translateY(-140vw) !important;
   }
 }
+
 .curve {
   scale: scale(0.6);
   transform: translateY(-20vw);

@@ -27,11 +27,7 @@
     <PageCurve />
 
     <div class="container projects_container">
-      <div class="row">
-        <div class="col project_entry border border-primary mb-3 p-3">
-          <ProjectCard></ProjectCard>
-        </div>
-      </div>
+      <ProjectCard /><ProjectCard />
     </div>
   </div>
 </template>
@@ -39,6 +35,7 @@
 <script>
 import ProjectCard from "./project_card.vue";
 import PageCurve from "./curve.vue";
+
 export default {
   name: "BubbelsPage",
   components: {
@@ -292,18 +289,23 @@ export default {
   position: relative;
   top: -35vw;
   z-index: 11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(10vw + 20px);
   background: black;
   box-sizing: border-box;
 }
-@media (max-width: 1500px) {
+@media (min-width: 1500px) {
   .projects_container {
-    top: -45vw !important;
+    top: -35vw !important;
   }
 }
 
 @media (max-width: 1200px) {
   .projects_container {
-    top: -55vw !important;
+    top: -53vw !important;
   }
 }
 
@@ -315,40 +317,32 @@ export default {
 }
 
 /* Adjust top value for screens smaller than 768px */
-@media (max-width: 800px) {
+@media (max-width: 813px) {
+  .projects_container {
+    top: -130vw !important;
+  }
+}
+@media (min-width: 786px) and (max-width: 812px) {
+  .projects_container {
+    top: -75vw !important;
+  }
+}
+/* Adjust top value for screens smaller than 576px */
+@media (max-width: 786px) {
   .projects_container {
     top: -100vw !important;
   }
 }
 
-/* Adjust top value for screens smaller than 576px */
-@media (max-width: 576px) {
+@media (max-width: 650px) {
   .projects_container {
-    top: -50vw;
+    top: -130vw !important;
   }
 }
-.projects_list {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  gap: 300px;
-  width: 98%;
-}
-.project_entry {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
 
-@media (min-width: 1200px) {
-  .project_entry {
-    flex-direction: row;
+@media (max-width: 567px) {
+  .projects_container {
+    top: -120vw !important;
   }
 }
 </style>
