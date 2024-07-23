@@ -1,6 +1,26 @@
 <template>
-  <div class="text_container">
-    <h1 class="static_header">
+  <div class="container">
+    <div class="row">
+      <div class="col border border-primary">
+        <h1 class="static_header">
+          Hello World! I'm Ali, a&nbsp;
+          <VueTyped
+            class="typer_writer"
+            :strings="['software engineer']"
+            :typeSpeed="100"
+            :backSpeed="100"
+            :backDelay="1000"
+            :loop="true"
+          ></VueTyped>
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col border border-primary">columns</div>
+    </div>
+  </div>
+  <!-- content here --->
+  <!--<h1 class="static_header">
       Hello World! I'm Ali, a&nbsp;
       <VueTyped
         class="typer_writer"
@@ -18,15 +38,14 @@
       fullstack development with a heavy focus on front end development. I'm
       also very proficient in python which I utilize to create various solutions
       to problems, and learn numerous fields such as AI and data science.
-    </h2>
-  </div>
+    </h2>-->
 </template>
 
 <script>
 export default {
   name: "IntroText",
   mounted() {
-    this.fade_text_word_by_word();
+    //this.fade_text_word_by_word();
   },
   methods: {
     fade_text_word_by_word() {
@@ -53,28 +72,57 @@ export default {
 </script>
 
 <style scoped>
+/* smaller than 576 */
+@media (max-width: 576px) {
+  .static_header,
+  .typer_writer {
+    font-size: calc(100vw / 20);
+  }
+}
+/* bigger than 576 */
+@media (min-width: 576px) {
+  .static_header,
+  .typer_writer {
+    font-size: calc(100vw / 26);
+  }
+}
+
+@media (min-width: 768px) {
+  .static_header,
+  .typer_writer {
+    font-size: calc(100vw / 24);
+  }
+}
+
+@media (min-width: 1200px) {
+  .static_header,
+  .typer_writer {
+    font-size: calc(100vw / 30);
+  }
+}
+
+@media (min-width: 1400px) {
+  .static_header,
+  .typer_writer {
+    font-size: calc(100vw / 40);
+  }
+}
+
 .text_container {
   z-index: 2;
-
-  position: absolute;
-  color: white;
-
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background: white;
 }
 
 .static_header {
   display: flex;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  color: white;
 }
 
 .typer_writer {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  font-size: 40px;
 }
 
 .paragraph {
