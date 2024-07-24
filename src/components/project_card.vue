@@ -1,5 +1,5 @@
 <template>
-  <div class="row project_container">
+  <div class="row project_container d-flex align-items-center">
     <div class="col-7 carousel_container">
       <CarouselSlides ref="carouselSlides"></CarouselSlides>
     </div>
@@ -17,30 +17,27 @@
         that way you won't need to memorize anything. Instead you will be able
         to grasp how various pieces of style fit in together.
       </p>
+      <div class="row">
+        <div
+          class="col-lg-12 text-center"
+          style="display: flex; justify-content: center"
+        >
+          <InfiniteScrollTags></InfiniteScrollTags>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!--<p class="project_paragraph">
-        Don't try to learn and remember everything.Its not required. If you are
-        facing problems in css break it into simple concepts. Box model,
-        inline-block elements, difference between padding and margin and their
-        behaviour, border attributes, font attributes and so on. Easiest way is
-        to use chrome - developer tools or firebug. Inspect element and you will
-        see its css at bottom right of panel. You can tinker with the element
-        style there and readily see changes on the page. Also develop a keen
-        observarion about the style of different sites. Once you start looking
-        that way you won't need to memorize anything. Instead you will be able
-        to grasp how various pieces of style fit in together.
-      </p>-->
 </template>
 <script>
 import Shine from "./shine.vue";
 import CarouselSlides from "./carousel.vue";
+import InfiniteScrollTags from "./infinte_tag.vue";
 export default {
   name: "ProjectCard",
   components: {
     Shine,
     CarouselSlides,
+    InfiniteScrollTags,
   },
   mounted() {
     const adjustClasses = () => {
@@ -51,7 +48,7 @@ export default {
         const carouselContainer = project.querySelector(".carousel_container");
         const textContainer = project.querySelector(".text_container");
 
-        if (screenWidth < 768) {
+        if (screenWidth < 1400) {
           carouselContainer.classList.remove("col-7");
           textContainer.classList.remove("col-5");
           carouselContainer.classList.add("col-12");
@@ -66,6 +63,7 @@ export default {
           if (index % 2 === 0) {
             project.classList.remove("row");
             project.classList.add("d-flex", "flex-row-reverse");
+            textContainer.style.marginRight = "50px";
           }
         }
       });
@@ -122,7 +120,7 @@ export default {
 .text_container {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
 
   transition: transform 250ms ease-out;

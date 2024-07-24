@@ -293,7 +293,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: calc(10vw + 20px);
+  gap: 200px;
   background: black;
   box-sizing: border-box;
 }

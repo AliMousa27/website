@@ -79,9 +79,19 @@ export default {
 
 .tag-list li {
   padding: 1rem;
-  background: hsl(215, 25%, 27%);
+  background: transparent;
+  border: silver 1px solid;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem -0.25rem hsl(218, 33%, 9%);
   color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .scroller {
+    max-width: 95vw;
+  }
 }
 </style>
