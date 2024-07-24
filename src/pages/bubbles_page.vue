@@ -18,3 +18,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+html body {
+  overflow: hidden !important;
+  background: black;
+}
+</style>

@@ -26,14 +26,23 @@
           create various solutions to problems, and learn numerous fields such
           as AI and data science.
         </h2>
+        <br />
+        <ShineText
+          project_title="Welcome to my portfolio!"
+          :some_boolean="true"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import ShineText from "./shine.vue";
 export default {
   name: "IntroText",
+  components: {
+    ShineText,
+  },
   mounted() {
     this.fade_text_word_by_word();
   },

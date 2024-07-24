@@ -125,4 +125,10 @@ export default {
 
   transition: transform 250ms ease-out;
 }
+
+@media (max-width: 576px) {
+  .text_container {
+    font-size: 14px !important;
+  }
+}
 </style>
