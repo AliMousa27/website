@@ -19,7 +19,7 @@ export default {
   background-size: 150px;
   color: rgba(255, 255, 255, 0.3);
   background-clip: text;
-  animation: shine 5s infinite linear;
+  animation: shine 2s infinite linear;
   text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
   font-size: 45px;
   font-weight: 700;
@@ -27,10 +27,10 @@ export default {
 
 @keyframes shine {
   0% {
-    background-position: -1000px;
+    background-position: -100%;
   }
   100% {
-    background-position: 1000px;
+    background-position: 100%;
   }
 }
 
