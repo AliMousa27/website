@@ -129,6 +129,8 @@ export default {
 }
 
 .arrow {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
   position: relative;
   bottom: -38px;
   left: -50px;

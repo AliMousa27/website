@@ -33,6 +33,8 @@ export default {
         });
       });
       setTimeout(() => {
+        const arrow = document.querySelector(".arrow");
+        arrow.style.opacity = 1;
         const new_text = shineText.nextSibling;
         new_text.classList.add("new-text");
       }, 8000);
