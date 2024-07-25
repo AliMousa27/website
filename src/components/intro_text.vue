@@ -27,10 +27,14 @@
           as AI and data science.
         </h2>
         <br />
-        <ShineText
-          project_title="Welcome to my portfolio!"
-          :some_boolean="true"
-        />
+        <div style="width: fit-content">
+          <div class="arrow bounce"></div>
+          <ShineText
+            project_title="Contact me"
+            :is_contact_shine="true"
+          ></ShineText>
+          <div class="contact_line" />
+        </div>
       </div>
     </div>
   </div>
@@ -105,6 +109,53 @@ export default {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 30px;
+}
+
+.contact_line {
+  width: 0%;
+  left: 0%;
+  height: 2px;
+  background-color: white;
+  animation: move_line 1s 7s forwards;
+}
+
+@keyframes move_line {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.arrow {
+  position: relative;
+  bottom: -38px;
+  left: -50px;
+  width: 40px;
+  height: 40px;
+  background-image: url("https://www.freeiconspng.com/thumbs/white-arrow-png/white-arrow-transparent-png-22.png");
+  background-size: contain;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-30px);
+  }
+  60% {
+    transform: translateX(-15px);
+  }
 }
 </style>
 

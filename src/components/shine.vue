@@ -1,5 +1,12 @@
 <template>
-  <h1 class="shine" ref="shineText">{{ project_title }}</h1>
+  <div class="shine-container">
+    <div class="shine-wrapper">
+      <h1 class="shine" ref="shineText">
+        {{ project_title }}
+      </h1>
+      <h1 v-if="is_contact_shine" class="shine shine-top">Copy email</h1>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -7,22 +14,28 @@ export default {
   name: "ShineText",
   props: {
     project_title: String,
-    some_boolean: Boolean,
+    is_contact_shine: Boolean,
   },
   mounted() {
     const shineText = this.$refs.shineText;
 
-    if (this.some_boolean) {
+    if (this.is_contact_shine) {
+      shineText.classList.add("old-text");
       shineText.style.opacity = "0";
       shineText.style.fontFamily = "Roboto, sans-serif";
       shineText.style.fontWeight = "900";
       shineText.style.fontSize = "30px";
+
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           shineText.style.animation =
             "shine_text 2s infinite linear, increase_opacity 1s 1s forwards";
         });
       });
+      setTimeout(() => {
+        const new_text = shineText.nextSibling;
+        new_text.classList.add("new-text");
+      }, 1000);
     } else {
       shineText.style.opacity = "1";
     }
@@ -31,18 +44,68 @@ export default {
 </script>
 
 <style>
+.shine-container {
+  position: relative;
+  display: inline-block;
+}
+
+.shine-wrapper {
+  position: relative;
+}
+
 .shine {
-  background: #ffffff
-    linear-gradient(to right, #ffffff, #ffffff 50%, rgb(0, 0, 0) 100%) 0 0
-    no-repeat;
-  background-size: 150px;
-  color: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #ffffff 50%,
+    rgb(0, 0, 0) 100%
+  );
+  background-size: 200% 100%;
   background-clip: text;
-  animation: shine_text 2s infinite linear;
+  color: rgba(255, 255, 255, 0.3);
   text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
   font-size: 45px;
   font-weight: 700;
   opacity: 0;
+  animation: shine_text 5s infinite linear;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.shine-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.new-text {
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  font-family: "Roboto, sans-serif" !important;
+  font-weight: 900 !important;
+  font-size: 30px !important;
+}
+
+.shine-container:hover .old-text {
+  opacity: 0 !important;
+}
+
+.shine-container:hover .new-text {
+  opacity: 1;
+  cursor: pointer;
+}
+
+@keyframes shine_text {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 @keyframes increase_opacity {
@@ -51,15 +114,6 @@ export default {
   }
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes shine_text {
-  0% {
-    background-position: -100%;
-  }
-  100% {
-    background-position: 110%;
   }
 }
 
