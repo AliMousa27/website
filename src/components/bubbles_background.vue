@@ -32,18 +32,30 @@
     </div>
 
     <div class="projects_container"><ProjectCard /><ProjectCard /></div>
+
+    <div class="border" style="height: 23vw">
+      <PageCurve></PageCurve>
+    </div>
+    <div
+      class="row justify-content-center border border-primary"
+      id="socials_row"
+    >
+      <SocialsIcon></SocialsIcon>
+    </div>
   </div>
 </template>
 
 <script>
 import ProjectCard from "./project_card.vue";
 import PageCurve from "./curve.vue";
+import SocialsIcon from "./socials_icon.vue";
 
 export default {
   name: "BubbelsPage",
   components: {
     ProjectCard,
     PageCurve,
+    SocialsIcon,
   },
   mounted() {
     var mouse_x = 0;
@@ -310,5 +322,9 @@ export default {
   gap: 200px;
   background: black;
   box-sizing: border-box;
+}
+
+#socials_row {
+  scale: 2;
 }
 </style>
