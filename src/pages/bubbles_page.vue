@@ -19,9 +19,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 html body {
-  overflow: hidden !important;
-  background: black;
+  overflow-x: hidden !important;
+  background: black !important;
 }
 </style>
