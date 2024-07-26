@@ -31,9 +31,7 @@
       <PageCurve></PageCurve>
     </div>
 
-    <div class="container projects_container">
-      <ProjectCard /><ProjectCard />
-    </div>
+    <div class="projects_container"><ProjectCard /><ProjectCard /></div>
   </div>
 </template>
 

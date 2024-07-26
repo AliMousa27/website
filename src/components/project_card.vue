@@ -1,28 +1,25 @@
 <template>
-  <div class="row project_container d-flex align-items-center">
-    <div class="col-7 carousel_container">
-      <CarouselSlides ref="carouselSlides"></CarouselSlides>
-    </div>
-    <div class="col-5 text_container">
-      <Shine project_title="this is just a project title" />
-      <p class="project_paragraph">
-        Don't try to learn and remember everything.Its not required. If you are
-        facing problems in css break it into simple concepts. Box model,
-        inline-block elements, difference between padding and margin and their
-        behaviour, border attributes, font attributes and so on. Easiest way is
-        to use chrome - developer tools or firebug. Inspect element and you will
-        see its css at bottom right of panel. You can tinker with the element
-        style there and readily see changes on the page. Also develop a keen
-        observarion about the style of different sites. Once you start looking
-        that way you won't need to memorize anything. Instead you will be able
-        to grasp how various pieces of style fit in together.
-      </p>
-      <div class="row">
-        <div
-          class="col-lg-12 text-center"
-          style="display: flex; justify-content: center"
-        >
-          <InfiniteScrollTags></InfiniteScrollTags>
+  <div class="container-fluid" style="width: 80vw">
+    <div class="row project_container d-flex align-items-center">
+      <div class="col-7 carousel_container">
+        <CarouselSlides ref="carouselSlides"></CarouselSlides>
+      </div>
+      <div class="col-5 text_container">
+        <Shine project_title="this is just a project title" />
+        <p class="project_paragraph">
+          Don't try to learn and remember everything.Its not required. If you
+          are facing problems in css break it into simple concepts. Box model,
+          inline-block elements, difference between padding and margin and their
+          to use chrome - developer tools or firebug. Inspect element and you
+          will see its css at bottom right of panel.
+        </p>
+        <div class="row">
+          <div
+            class="col-lg-12 text-center"
+            style="display: flex; justify-content: center"
+          >
+            <InfiniteScrollTags></InfiniteScrollTags>
+          </div>
         </div>
       </div>
     </div>
@@ -120,7 +117,7 @@ export default {
 .text_container {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 25px;
   color: white;
 
   transition: transform 250ms ease-out;
