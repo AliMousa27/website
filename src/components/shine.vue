@@ -29,7 +29,7 @@ export default {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           shineText.style.animation =
-            "shine_text 2s infinite linear, increase_opacity 1s 7s forwards";
+            "shine_text 2s infinite linear, increase_opacity 1s 1s forwards";
         });
       });
       setTimeout(() => {
@@ -37,7 +37,7 @@ export default {
         arrow.style.opacity = 1;
         const new_text = shineText.nextSibling;
         new_text.classList.add("new-text");
-      }, 8000);
+      }, 1000);
     } else {
       shineText.style.opacity = "1";
     }
@@ -122,6 +122,12 @@ export default {
 @media (max-width: 768px) {
   .shine {
     font-size: 35px;
+  }
+  .old-text {
+    font-size: 22px !important;
+  }
+  .new-text {
+    font-size: 22px !important;
   }
 }
 </style>
