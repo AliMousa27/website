@@ -33,13 +33,10 @@
 
     <div class="projects_container"><ProjectCard /><ProjectCard /></div>
 
-    <div class="border" style="height: 23vw">
+    <div style="height: 23vw">
       <PageCurve></PageCurve>
     </div>
-    <div
-      class="row justify-content-center border border-primary"
-      id="socials_row"
-    >
+    <div class="row justify-content-center" id="socials_row">
       <SocialsIcon></SocialsIcon>
     </div>
   </div>
@@ -326,5 +323,29 @@ export default {
 
 #socials_row {
   scale: 2;
+}
+
+@media (max-width: 576px) {
+  #socials_row {
+    transform: scale(0.5) !important;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 860px) {
+  #socials_row {
+    transform: scale(0.75) !important;
+  }
+}
+
+@media (min-width: 861px) and (max-width: 1200px) {
+  #socials_row {
+    transform: scale(1) !important;
+  }
+}
+
+@media (min-width: 1501px) {
+  #socials_row {
+    transform: scale(1.2) !important;
+  }
 }
 </style>
