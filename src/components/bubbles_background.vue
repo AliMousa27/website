@@ -23,7 +23,11 @@
       <div class="mouse_circle" id="mouse_circle"></div>
       <div class="gap_circle"></div>
     </div>
-    <div class="container-fluid" style="width: 100vw; padding: 0">
+    <div
+      class="container-fluid"
+      id="first_divider"
+      style="width: 100vw; padding: 0"
+    >
       <PageCurve></PageCurve>
     </div>
 
@@ -74,9 +78,9 @@ export default {
 };
 </script>
 <style scoped>
-@media (max-width: 400px) {
-  .gradients-container {
-    margin-bottom: 25vw !important;
+@media (max-width: 576px) {
+  #first_divider {
+    transform: translateY(-50%) !important;
   }
 }
 @media (min-width: 800px) and (max-width: 1200px) {
