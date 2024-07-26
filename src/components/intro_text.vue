@@ -27,22 +27,13 @@
           as AI and data science.
         </h2>
         <br />
-
-        <!--<div style="width: fit-content">
-          <div class="arrow bounce border"></div>
-          <ShineText
-            project_title="Contact me"
-            :is_contact_shine="true"
-          ></ShineText>
-          <div class="contact_line" />
-        </div>-->
       </div>
     </div>
     <div class="row">
-      <div class="col-1 border">
+      <div class="col-1" id="shine_col">
         <div class="arrow bounce align-right"></div>
       </div>
-      <div class="col-11 shine-col border border-primary">
+      <div class="col-11 shine-col">
         <ShineText
           project_title="Contact me"
           :is_contact_shine="true"
@@ -86,6 +77,12 @@ export default {
 </script>
 
 <style scoped>
+@media (min-width: 1000px) {
+  #shine_col {
+    width: fit-content !important;
+  }
+}
+
 /* smaller than 800 */
 @media (max-width: 800px) {
   .static_header {
@@ -152,10 +149,9 @@ export default {
 }
 
 .arrow {
-  opacity: 1;
+  opacity: 0;
   transition: opacity 1s ease-in-out;
-  /* bottom: -38px;
-  left: -50px;*/
+
   width: 40px;
   height: 40px;
   background-image: url("https://www.freeiconspng.com/thumbs/white-arrow-png/white-arrow-transparent-png-22.png");

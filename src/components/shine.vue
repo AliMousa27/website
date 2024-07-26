@@ -29,7 +29,7 @@ export default {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           shineText.style.animation =
-            "shine_text 2s infinite linear, increase_opacity 1s 1s forwards";
+            "shine_text 2s infinite linear, increase_opacity 1s 7s forwards";
         });
       });
       setTimeout(() => {
@@ -37,7 +37,7 @@ export default {
         arrow.style.opacity = 1;
         const new_text = shineText.nextSibling;
         new_text.classList.add("new-text");
-      }, 1000);
+      }, 8000);
     } else {
       shineText.style.opacity = "1";
     }
