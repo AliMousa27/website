@@ -23,8 +23,9 @@
       <div class="mouse_circle" id="mouse_circle"></div>
       <div class="gap_circle"></div>
     </div>
-
-    <PageCurve />
+    <div class="container-fluid" style="width: 100vw; padding: 0">
+      <PageCurve></PageCurve>
+    </div>
 
     <div class="container projects_container">
       <ProjectCard /><ProjectCard />
@@ -73,6 +74,17 @@ export default {
 };
 </script>
 <style scoped>
+@media (max-width: 400px) {
+  .gradients-container {
+    margin-bottom: 25vw !important;
+  }
+}
+@media (min-width: 800px) and (max-width: 1200px) {
+  .gradients-container {
+    margin-bottom: 20vw !important;
+  }
+}
+
 @media (max-width: 800px) {
   .circle2 {
     left: calc(50% - 80% / 1.1) !important;
@@ -177,7 +189,7 @@ export default {
 }
 
 .gradients-container {
-  margin-bottom: 300px;
+  margin-bottom: 5vw;
   width: 100%;
   height: 100%;
   filter: url(#goo) blur(40px);
@@ -287,7 +299,7 @@ export default {
 
 .projects_container {
   position: relative;
-  top: -35vw;
+  top: -30vw;
   z-index: 11;
   display: flex;
   flex-direction: column;
@@ -296,53 +308,5 @@ export default {
   gap: 200px;
   background: black;
   box-sizing: border-box;
-}
-@media (min-width: 1500px) {
-  .projects_container {
-    top: -35vw !important;
-  }
-}
-
-@media (max-width: 1200px) {
-  .projects_container {
-    top: -53vw !important;
-  }
-}
-
-/* Adjust top value for screens smaller than 992px */
-@media (max-width: 992px) {
-  .projects_container {
-    top: -80vw !important;
-  }
-}
-
-/* Adjust top value for screens smaller than 768px */
-@media (max-width: 813px) {
-  .projects_container {
-    top: -130vw !important;
-  }
-}
-@media (min-width: 786px) and (max-width: 812px) {
-  .projects_container {
-    top: -75vw !important;
-  }
-}
-/* Adjust top value for screens smaller than 576px */
-@media (max-width: 786px) {
-  .projects_container {
-    top: -100vw !important;
-  }
-}
-
-@media (max-width: 650px) {
-  .projects_container {
-    top: -130vw !important;
-  }
-}
-
-@media (max-width: 567px) {
-  .projects_container {
-    top: -120vw !important;
-  }
 }
 </style>

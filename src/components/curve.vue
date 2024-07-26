@@ -135,6 +135,9 @@
           d="M 0 44 Q 355.5 185 711 400 Q 1066.5 615 1422 44"
           opacity="0.28"
         ></path>
+        <animateMotion dur="5s" repeatCount="indefinite">
+          <mpath xlink:href="#motionpath" />
+        </animateMotion>
       </g>
     </svg>
   </div>
@@ -147,7 +150,7 @@ export default {
 </script>
 
 <style scoped>
-/* smaller than 1000 */
+/* smaller than 1000 
 @media (max-width: 1400px) {
   .curve {
     transform: translateY(-28vw) !important;
@@ -178,7 +181,7 @@ export default {
   .curve {
     transform: translateY(-140vw) !important;
   }
-}
+}*/
 
 .curve {
   scale: scale(0.6);
