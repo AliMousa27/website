@@ -39,6 +39,17 @@
     <div class="row justify-content-center" id="socials_row">
       <SocialsIcon></SocialsIcon>
     </div>
+    <hr style="border-top: 1px solid white; width: 100vw; margin-top: 100px" />
+    <h5
+      style="
+        color: white;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 20px;
+      "
+    >
+      © Copyrights 2024 . Ali Mousa
+    </h5>
   </div>
 </template>
 
@@ -328,6 +339,9 @@ export default {
 @media (max-width: 576px) {
   #socials_row {
     transform: scale(0.5) !important;
+  }
+  h5 {
+    font-size: 15px !important;
   }
 }
 
