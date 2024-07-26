@@ -39,7 +39,7 @@
     <div class="row justify-content-center" id="socials_row">
       <SocialsIcon></SocialsIcon>
     </div>
-    <hr style="border-top: 1px solid white; width: 100vw; margin-top: 100px" />
+    <hr style="border-top: 1px solid white; width: 100vw; margin-top: 150px" />
     <h5
       style="
         color: white;
