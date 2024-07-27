@@ -43,6 +43,7 @@ export default {
 
 <style>
 .shine-container {
+  z-index: 111 !important;
   position: relative;
   display: inline-block;
 }

@@ -43,12 +43,12 @@
 </template>
 
 <script>
-import BubblesBackground from "../components/bubbles_background.vue";
-import IntroText from "../components/intro_text.vue";
-import NavBar from "../components/navbar.vue";
-import ProjectCard from "../components/project_card.vue";
-import PageCurve from "../components/curve.vue";
-import SocialsIcon from "../components/socials_icon.vue";
+import BubblesBackground from "../components/intro_page_components/bubbles_background.vue";
+import IntroText from "../components/intro_page_components/intro_text.vue";
+import NavBar from "../components/intro_page_components/navbar.vue";
+import ProjectCard from "../components/intro_page_components/project_card.vue";
+import PageCurve from "../components/intro_page_components/curve.vue";
+import SocialsIcon from "../components/intro_page_components/socials_icon.vue";
 export default {
   name: "BubbelsPage",
   components: {
