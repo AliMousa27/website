@@ -17,7 +17,7 @@
     </div>
     <div class="row" style="margin-top: 50px">
       <div class="col">
-        <h2 class="paragraph" id="about_paragraph">
+        <h2 class="paragraph">
           I'm a 23-year-old software engineering student at Chalmers/Gothenburg
           university hoping to continue on to acquire a masters in computer
           science at Chalmers university residing in Sweden. I'm most passionate
@@ -31,7 +31,7 @@
     </div>
     <div class="row">
       <div class="col-1" id="shine_col">
-        <div class="arrow bounce align-right"></div>
+        <div class="arrow bounce" style="margin-left: auto"></div>
       </div>
       <div class="col-11 shine-col">
         <ShineText
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     fade_text_word_by_word() {
-      const paragraph = document.getElementById("about_paragraph");
+      const paragraph = document.querySelector(".paragraph");
       const words = paragraph.innerText.split(" ");
       paragraph.innerText = "";
 
@@ -86,7 +86,6 @@ export default {
 /* smaller than 800 */
 @media (max-width: 800px) {
   .static_header {
-    /*override the display flex to display block to move typer wrtier below the static text*/
     display: inline-block !important;
   }
   .paragraph {
@@ -105,12 +104,6 @@ export default {
 .shine-col {
   padding-top: 5px;
 }
-.align-right {
-  margin-left: auto;
-}
-.text_container {
-  z-index: 2;
-}
 
 .static_header {
   display: flex;
@@ -120,7 +113,6 @@ export default {
 }
 
 .typer_writer {
-  font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
 
@@ -129,23 +121,6 @@ export default {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 30px;
-}
-
-.contact_line {
-  width: 0%;
-  left: 0%;
-  height: 2px;
-  background-color: white;
-  animation: move_line 1s 7s forwards;
-}
-
-@keyframes move_line {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
 }
 
 .arrow {

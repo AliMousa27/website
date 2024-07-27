@@ -23,48 +23,13 @@
       <div class="mouse_circle" id="mouse_circle"></div>
       <div class="gap_circle"></div>
     </div>
-    <div
-      class="container-fluid"
-      id="first_divider"
-      style="width: 100vw; padding: 0"
-    >
-      <PageCurve></PageCurve>
-    </div>
-
-    <div class="projects_container"><ProjectCard /><ProjectCard /></div>
-
-    <div style="height: 23vw">
-      <PageCurve></PageCurve>
-    </div>
-    <div class="row justify-content-center" id="socials_row">
-      <SocialsIcon></SocialsIcon>
-    </div>
-    <hr style="border-top: 1px solid white; width: 100vw; margin-top: 150px" />
-    <h5
-      style="
-        color: white;
-        text-align: center;
-        margin-top: 50px;
-        font-size: 20px;
-      "
-    >
-      © Copyrights 2024 . Ali Mousa
-    </h5>
   </div>
 </template>
 
 <script>
-import ProjectCard from "./project_card.vue";
-import PageCurve from "./curve.vue";
-import SocialsIcon from "./socials_icon.vue";
-
 export default {
   name: "BubbelsPage",
-  components: {
-    ProjectCard,
-    PageCurve,
-    SocialsIcon,
-  },
+
   mounted() {
     var mouse_x = 0;
     var mouse_y = 0;
@@ -96,11 +61,6 @@ export default {
 };
 </script>
 <style scoped>
-@media (max-width: 576px) {
-  #first_divider {
-    transform: translateY(-50%) !important;
-  }
-}
 @media (min-width: 800px) and (max-width: 1200px) {
   .gradients-container {
     margin-bottom: 20vw !important;
@@ -315,51 +275,7 @@ export default {
       rgba(140, 100, 255, 0) 40%
     )
     no-repeat;
-  top: -40%;
+  top: -33%;
   left: -40%;
-}
-
-.projects_container {
-  position: relative;
-  top: -30vw;
-  z-index: 11;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 200px;
-  background: black;
-  box-sizing: border-box;
-}
-
-#socials_row {
-  scale: 2;
-}
-
-@media (max-width: 576px) {
-  #socials_row {
-    transform: scale(0.5) !important;
-  }
-  h5 {
-    font-size: 15px !important;
-  }
-}
-
-@media (min-width: 577px) and (max-width: 860px) {
-  #socials_row {
-    transform: scale(0.75) !important;
-  }
-}
-
-@media (min-width: 861px) and (max-width: 1200px) {
-  #socials_row {
-    transform: scale(1) !important;
-  }
-}
-
-@media (min-width: 1501px) {
-  #socials_row {
-    transform: scale(1.2) !important;
-  }
 }
 </style>

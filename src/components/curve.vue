@@ -150,42 +150,9 @@ export default {
 </script>
 
 <style scoped>
-/* smaller than 1000 
-@media (max-width: 1400px) {
-  .curve {
-    transform: translateY(-28vw) !important;
-  }
-}
-@media (max-width: 1600px) {
-  .curve {
-    transform: translateY(-28vw) !important;
-  }
-}
-@media (max-width: 1200px) {
-  .curve {
-    transform: translateY(-40vw) !important;
-  }
-}
-@media (max-width: 1000px) {
-  .curve {
-    transform: translateY(-65vw) !important;
-  }
-}
-
-@media (max-width: 786px) {
-  .curve {
-    transform: translateY(-800px) !important;
-  }
-}
-@media (max-width: 576px) {
-  .curve {
-    transform: translateY(-140vw) !important;
-  }
-}*/
-
 .curve {
   scale: scale(0.6);
-  transform: translateY(-20vw);
+  transform: translateY(25vw);
   position: relative;
   width: 100%;
 }

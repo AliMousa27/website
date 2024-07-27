@@ -6,7 +6,7 @@
       </div>
       <div class="col-5 text_container">
         <Shine project_title="this is just a project title" />
-        <p class="project_paragraph">
+        <p>
           Don't try to learn and remember everything.Its not required. If you
           are facing problems in css break it into simple concepts. Box model,
           inline-block elements, difference between padding and margin and their
@@ -45,25 +45,54 @@ export default {
         const carouselContainer = project.querySelector(".carousel_container");
         const textContainer = project.querySelector(".text_container");
 
-        if (screenWidth < 1400) {
-          carouselContainer.classList.remove("col-7");
-          textContainer.classList.remove("col-5");
-          carouselContainer.classList.add("col-12");
-          textContainer.classList.add("col-12");
-          project.classList.add("row");
-          project.classList.remove("d-flex", "flex-row-reverse");
+        const isSmallScreen = screenWidth < 1400;
+        const isEvenIndex = index % 2 === 0;
+
+        if (isSmallScreen) {
+          setSmallScreenClasses(carouselContainer, textContainer, project);
         } else {
-          carouselContainer.classList.remove("col-12");
-          textContainer.classList.remove("col-12");
-          carouselContainer.classList.add("col-7");
-          textContainer.classList.add("col-5");
-          if (index % 2 === 0) {
-            project.classList.remove("row");
-            project.classList.add("d-flex", "flex-row-reverse");
-            textContainer.style.marginRight = "50px";
-          }
+          setLargeScreenClasses(
+            carouselContainer,
+            textContainer,
+            project,
+            isEvenIndex
+          );
         }
       });
+    };
+
+    const setSmallScreenClasses = (
+      carouselContainer,
+      textContainer,
+      project
+    ) => {
+      carouselContainer.classList.remove("col-7");
+      textContainer.classList.remove("col-5");
+      carouselContainer.classList.add("col-12");
+      textContainer.classList.add("col-12");
+      project.classList.add("row");
+      project.classList.remove("d-flex", "flex-row-reverse");
+    };
+
+    const setLargeScreenClasses = (
+      carouselContainer,
+      textContainer,
+      project,
+      isEvenIndex
+    ) => {
+      carouselContainer.classList.remove("col-12");
+      textContainer.classList.remove("col-12");
+      carouselContainer.classList.add("col-7");
+      textContainer.classList.add("col-5");
+
+      if (isEvenIndex) {
+        project.classList.remove("row");
+        project.classList.add("d-flex", "flex-row-reverse");
+        textContainer.style.marginRight = "50px";
+      } else {
+        project.classList.remove("d-flex", "flex-row-reverse");
+        textContainer.style.marginRight = "";
+      }
     };
     const handleScroll = () => {
       const projects = document.querySelectorAll(".project_container");
@@ -115,11 +144,9 @@ export default {
 }
 
 .text_container {
-  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 25px;
   color: white;
-
   transition: transform 250ms ease-out;
 }
 

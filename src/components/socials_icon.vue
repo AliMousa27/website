@@ -138,6 +138,8 @@ li:hover::after {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: fit-content;
+  overflow: clip !important;
 }
 .socials_list .icon-content {
   margin: 0 10px;
@@ -170,8 +172,8 @@ li:hover::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 10vw;
+  height: 10vw;
   border-radius: 50%;
   color: #a5a5a5;
   background-color: #313030;
@@ -183,8 +185,8 @@ li:hover::after {
 .socials_list .icon-content a svg {
   position: relative;
   z-index: 1;
-  width: 30px;
-  height: 30px;
+  width: 5vw;
+  height: 5vw;
 }
 .socials_list .icon-content a:hover {
   color: white;
@@ -225,5 +227,23 @@ li:hover::after {
 .socials_list .icon-content a[data-social="instagram"] ~ .tooltip {
   background: #833ab4;
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+}
+
+@media (max-width: 576px) {
+  .socials_list .icon-content a {
+    width: 10vw;
+    height: 10vw;
+  }
+}
+
+@media (min-width: 1501px) {
+  .socials_list .icon-content a {
+    width: 5vw;
+    height: 5vw;
+  }
+  .socials_list .icon-content a svg {
+    width: 3vw;
+    height: 3vw;
+  }
 }
 </style>

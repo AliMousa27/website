@@ -1,11 +1,9 @@
 <template>
   <div class="shine-container">
-    <div class="shine-wrapper">
-      <h1 class="shine" ref="shineText">
-        {{ project_title }}
-      </h1>
-      <h1 v-if="is_contact_shine" class="shine shine-top">Copy email</h1>
-    </div>
+    <h1 class="shine" ref="shineText">
+      {{ project_title }}
+    </h1>
+    <h1 v-if="is_contact_shine" class="shine shine-top">Copy email</h1>
   </div>
 </template>
 
@@ -27,10 +25,8 @@ export default {
       shineText.style.fontSize = "30px";
 
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          shineText.style.animation =
-            "shine_text 2s infinite linear, increase_opacity 1s 7s forwards";
-        });
+        shineText.style.animation =
+          "shine_text 2s infinite linear, increase_opacity 1s 7s forwards";
       });
       setTimeout(() => {
         const arrow = document.querySelector(".arrow");
@@ -49,10 +45,6 @@ export default {
 .shine-container {
   position: relative;
   display: inline-block;
-}
-
-.shine-wrapper {
-  position: relative;
 }
 
 .shine {

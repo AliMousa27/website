@@ -17,6 +17,7 @@ export default {
 
     function addAnimation() {
       scrollers.forEach((scroller) => {
+        if (scroller.getAttribute("data-animated")) return;
         scroller.setAttribute("data-animated", true);
 
         const scrollerInner = scroller.querySelector(".scroller__inner");
@@ -37,6 +38,7 @@ export default {
 <style scoped>
 .scroller {
   max-width: 600px;
+  overflow-x: hidden;
 }
 
 .scroller__inner {
@@ -61,8 +63,7 @@ export default {
 .scroller[data-animated="true"] .scroller__inner {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 40s)
-    var(--_animation-direction, forwards) linear infinite;
+  animation: scroll 30s forwards linear infinite;
 }
 
 @keyframes scroll {
