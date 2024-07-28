@@ -1,6 +1,6 @@
 <template>
-  <div v-if="use_cards" class="move_down container-fluid">
-    <div class="row border justify-content-center">
+  <div v-if="use_cards" class="move_down">
+    <div class="row justify-content-center">
       <div class="col-12 text-center">
         <img src="https://place-hold.it/300x500" class="img-fluid" id="first" />
         <img
