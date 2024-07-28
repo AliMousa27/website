@@ -1,6 +1,6 @@
 <template>
   <div :id="this.id" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+    <div class="carousel-inner carousel-image">
       <div
         v-for="(image, index) in images"
         :key="index"
@@ -83,5 +83,11 @@ img {
     width: 100% !important;
     height: 100% !important;
   }
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%; /* Set a fixed height */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
 }
 </style>

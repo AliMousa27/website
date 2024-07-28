@@ -1,17 +1,17 @@
 <template>
-  <!--<BubblesPage />-->
-  <AboutMePage />
+  <BubbelsPage />
+  <!--<AboutMePage />-->
 </template>
 
 <script>
-import AboutMePage from "./pages/about_me.vue";
+//import AboutMePage from "./pages/about_me.vue";
 
-//import BubbelsPage from "./pages/bubbles_page.vue";
+import BubbelsPage from "./pages/bubbles_page.vue";
 export default {
   name: "App",
   components: {
-    AboutMePage,
-    //BubbelsPage,
+    //AboutMePage,
+    BubbelsPage,
   },
   mounted() {
     const all_el = document.querySelectorAll("*");

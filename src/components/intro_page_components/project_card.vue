@@ -1,8 +1,8 @@
 <template>
-  <div class="container-fluid" style="width: 80vw">
+  <div class="" style="width: 80vw">
     <div class="row project_container d-flex align-items-center">
       <div class="col-7 carousel_container">
-        <CarouselSlides ref="carouselSlides"></CarouselSlides>
+        <CarouselSlides ref="carouselSlides" :images="images"></CarouselSlides>
       </div>
       <div class="col-5 text_container">
         <Shine project_title="this is just a project title" />
@@ -129,6 +129,12 @@ export default {
       return this.$refs.carouselSlides
         ? this.$refs.carouselSlides.id
         : undefined;
+    },
+  },
+  props: {
+    images: {
+      type: Array,
+      required: true,
     },
   },
 };

@@ -13,7 +13,8 @@
     <PageCurve></PageCurve>
   </div>
   <div class="projects_container">
-    <ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard /><ProjectCard />
+    <ProjectCard :images="website_images" />
+    <ProjectCard :images="snake_images" />
   </div>
 
   <div style="height: 23vw; transform: translateY(-30vw)">
@@ -46,6 +47,23 @@ export default {
         console.log(el);
       }
     });
+  },
+  data() {
+    return {
+      test_images: [
+        "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+        "https://i.pinimg.com/originals/91/9c/57/919c5719579d855d1fa9e1c128a80d64.jpg",
+      ],
+      snake_images: [
+        require("@/assets/snake_menu.png"),
+        require("@/assets/snake_grid.png"),
+        require("@/assets/snake_skins.png"),
+      ],
+      website_images: [
+        require("@/assets/about_me.png"),
+        require("@/assets/bubbles.png"),
+      ],
+    };
   },
 };
 </script>
