@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import ShineText from "./shine.vue";
+import ShineText from "../shared_components/shine.vue";
 export default {
   name: "IntroText",
   components: {

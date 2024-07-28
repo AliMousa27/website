@@ -84,7 +84,7 @@
 
 <script>
 import BIRDS from "vanta/dist/vanta.birds.min";
-import ShineText from "../components/intro_page_components/shine.vue";
+import ShineText from "../components/shared_components/shine.vue";
 import HeroPictures from "../components/about_me_components/hero_pictures.vue";
 import { onBeforeUnmount } from "vue";
 export default {

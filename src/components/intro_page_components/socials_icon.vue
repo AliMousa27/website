@@ -116,12 +116,10 @@ export default {
   name: "SocialsIcon",
 };
 </script>
-
 <style scoped>
 ul {
   list-style: none;
 }
-
 li::after {
   content: "";
   display: block;
@@ -129,11 +127,9 @@ li::after {
   transition: height 0.3s ease-in-out;
   pointer-events: none;
 }
-
 li:hover::after {
   height: 10px;
 }
-
 .socials_list {
   display: flex;
   justify-content: center;
@@ -156,9 +152,6 @@ li:hover::after {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  font-size: 14px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
   transition: all 0.3s ease;
 }
 .socials_list .icon-content:hover .tooltip {
@@ -172,8 +165,11 @@ li:hover::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10vw;
-  height: 10vw;
+  width: 10vw; /* Adjusted for better responsiveness */
+  height: 10vw; /* Adjusted for better responsiveness */
+  max-height: 80px;
+  max-width: 80px;
+
   border-radius: 50%;
   color: #a5a5a5;
   background-color: #313030;
@@ -181,15 +177,15 @@ li:hover::after {
 }
 .socials_list .icon-content a:hover {
   box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+  color: white;
 }
 .socials_list .icon-content a svg {
   position: relative;
   z-index: 1;
-  width: 5vw;
-  height: 5vw;
-}
-.socials_list .icon-content a:hover {
-  color: white;
+  width: 6vw; /* Adjusted for better responsiveness */
+  height: 6vw; /* Adjusted for better responsiveness */
+  max-height: 50px;
+  max-width: 50px;
 }
 .socials_list .icon-content a .filled {
   position: absolute;
@@ -212,38 +208,17 @@ li:hover::after {
 .socials_list .icon-content a[data-social="github"] ~ .tooltip {
   background-color: #30444c;
 }
-
 .socials_list .icon-content a[data-social="linkedin"] .filled,
 .socials_list .icon-content a[data-social="linkedin"] ~ .tooltip {
   background-color: #0a66c2;
 }
-
 .socials_list .icon-content a[data-social="discord"] .filled,
 .socials_list .icon-content a[data-social="discord"] ~ .tooltip {
   background-color: #5865f2;
 }
-
 .socials_list .icon-content a[data-social="instagram"] .filled,
 .socials_list .icon-content a[data-social="instagram"] ~ .tooltip {
   background: #833ab4;
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
-}
-
-@media (max-width: 576px) {
-  .socials_list .icon-content a {
-    width: 10vw;
-    height: 10vw;
-  }
-}
-
-@media (min-width: 1501px) {
-  .socials_list .icon-content a {
-    width: 5vw;
-    height: 5vw;
-  }
-  .socials_list .icon-content a svg {
-    width: 3vw;
-    height: 3vw;
-  }
 }
 </style>

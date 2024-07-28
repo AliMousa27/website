@@ -26,8 +26,8 @@
   </div>
 </template>
 <script>
-import Shine from "./shine.vue";
-import CarouselSlides from "./carousel.vue";
+import Shine from "../shared_components/shine.vue";
+import CarouselSlides from "../shared_components/carousel.vue";
 import InfiniteScrollTags from "./infinte_tag.vue";
 export default {
   name: "ProjectCard",

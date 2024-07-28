@@ -35,7 +35,7 @@ onUnmounted(() => {
 </script>
 
 <script>
-import CarouselSlides from "../intro_page_components/carousel.vue";
+import CarouselSlides from "../shared_components/carousel.vue";
 
 export default {
   name: "HeroPictures",

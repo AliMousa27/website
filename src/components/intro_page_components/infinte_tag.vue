@@ -43,6 +43,7 @@ export default {
 
 .scroller__inner {
   padding-block: 1rem;
+  overflow-x: hidden;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -74,7 +75,6 @@ export default {
 
 .tag-list {
   margin: 0;
-  padding-inline: 0;
   list-style: none;
 }
 
