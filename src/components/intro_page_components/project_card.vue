@@ -14,20 +14,14 @@
         ></video>
       </div>
       <div class="col-5 text_container">
-        <Shine project_title="this is just a project title" />
-        <p>
-          Don't try to learn and remember everything.Its not required. If you
-          are facing problems in css break it into simple concepts. Box model,
-          inline-block elements, difference between padding and margin and their
-          to use chrome - developer tools or firebug. Inspect element and you
-          will see its css at bottom right of panel.
-        </p>
+        <Shine :project_title="project_title" />
+        <p>{{ project_description }}</p>
         <div class="row">
           <div
             class="col-lg-12 text-center"
             style="display: flex; justify-content: center"
           >
-            <InfiniteScrollTags></InfiniteScrollTags>
+            <InfiniteScrollTags :tags="tags"></InfiniteScrollTags>
           </div>
         </div>
       </div>
@@ -161,6 +155,20 @@ export default {
       type: String,
       default: "",
       required: false,
+    },
+    project_title: {
+      type: String,
+      default: "",
+      required: true,
+    },
+    project_description: {
+      type: String,
+      default: "",
+      required: true,
+    },
+    tags: {
+      type: Array,
+      required: true,
     },
   },
 };

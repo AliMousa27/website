@@ -1,10 +1,7 @@
 <template>
   <div class="scroller" data-speed="fast">
     <ul class="tag-list scroller__inner">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>HTML</li>
-      <li>CSS</li>
+      <li v-for="tag in tags" :key="tag">{{ tag }}</li>
     </ul>
   </div>
 </template>
@@ -31,6 +28,12 @@ export default {
       });
     }
     addAnimation();
+  },
+  props: {
+    tags: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>
