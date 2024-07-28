@@ -18,6 +18,8 @@
     <ProjectCard :images="let_bro_cook_images" />
     <ProjectCard :is_image="false" :video_src="shorts_vid" />
     <ProjectCard :is_image="false" :video_src="wioplay_vid" />
+    <ProjectCard :images="data_science_book_image" />
+    <ProjectCard :images="toothtrek_images" />
   </div>
 
   <div style="height: 23vw; transform: translateY(-30vw)">
@@ -70,7 +72,11 @@ export default {
         require("@/assets/let_bro_cook_signup.png"),
         require("@/assets/let_bro_cook_home.png"),
       ],
-      toothtrek_images: [require("@/assets/temp.png")],
+      data_science_book_image: [require("@/assets/data_science_book.jpg")],
+      toothtrek_images: [
+        require("@/assets/temp.png"),
+        require("@/assets/temp2.png"),
+      ],
       shorts_vid: require("@/assets/shorts.mp4"),
       wioplay_vid: require("@/assets/wioplay_vid.mp4"),
     };
