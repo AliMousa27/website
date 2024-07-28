@@ -1,19 +1,12 @@
 <template>
   <div :id="this.id" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img
-          src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="https://i.pinimg.com/originals/91/9c/57/919c5719579d855d1fa9e1c128a80d64.jpg"
-          class="d-block w-100"
-          alt="..."
-        />
+      <div
+        v-for="(image, index) in images"
+        :key="index"
+        :class="['carousel-item', { active: index === 0 }]"
+      >
+        <img :src="image" class="d-block w-100" alt="..." />
       </div>
     </div>
     <button
@@ -45,6 +38,12 @@ export default {
     return {
       id: "carouselControls" + Math.random().toString(36).substring(2, 24),
     };
+  },
+  props: {
+    images: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>

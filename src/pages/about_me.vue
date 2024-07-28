@@ -48,7 +48,11 @@
               program taught me the fundamentals of writing clean code, testing,
               various architectural styles and their applications, distributed
               systems development, web developments and so much more and I'm
-              eternally grateful for the knowledge I gained.
+              eternally grateful for the knowledge I gained. Finally, I was also
+              a teacher assistant for many courses but the one i was most
+              passioante about was Discrete mathematics where I taught students
+              the fundamentals of graph theory, set theory, combinatorics and so
+              much more.
             </p>
           </div>
           <div class="col-md-4">

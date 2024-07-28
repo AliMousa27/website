@@ -11,7 +11,13 @@
     </div>
   </div>
   <div v-else>
-    <CarouselSlides />
+    <CarouselSlides
+      :images="[
+        require('@/assets/me.jpg'),
+        require('@/assets/cat.jpg'),
+        require('@/assets/view.jpg'),
+      ]"
+    />
   </div>
 </template>
 
