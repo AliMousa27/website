@@ -9,70 +9,106 @@
         <div class="row align-items-start">
           <div class="col"><HeroPictures /></div>
         </div>
-        <div class="row align-items-center" style="margin-top: 23vw">
+        <div
+          class="row align-items-center"
+          style="margin-top: 23vw"
+          id="first_row"
+        >
           <div class="col">
             <ShineText :is_contact_shine="false" project_title="About Me" />
             <p>
-              no purse as fully me or point. Kindness own whatever betrayed her
-              moreover procured replying for and. Proposal indulged no do do
-              sociable he throwing settling. Covered ten nor comfort offices
-              carried. Age she way earnestly the fulfilled extremely. Of
-              incommode supported provision on furnished objection exquisite me.
-              Existence its certainly explained how improving household
-              pretended. Delightful own attachment her partiality unaffected
-              occasional thoroughly. Adieus it no wonder spirit houses. Picture
-              removal detract earnest is by. Esteems met joy attempt way clothes
-              yet demesne tedious. Replying an marianne do it an entrance
-              advanced. Two dare say play when hold. Required bringing me
-              material stanhill jointure is as he. Mutual indeed yet her living
-              result matter him bed whence.
+              As you already know by now my name is Ali, I'm 23 years old and I
+              live in Gothenburg, Sweden Gothenburg. I grew up all over the
+              world, from Dubai, Iraq, Denmark to Sweden, and therefore
+              consequently, I speak nearly 4 languages fluently; English,
+              Danish, Arabic and I possess full working proficiency in Swedish.
+              I study software engineering at the university of Gothenburg and
+              I'm passionate about all things related to programming and I'm
+              particularly fascinated and fond of mathematics and the area of
+              applied mathematics. In my spare time, I enjoy exploring the
+              world, trying out new foods, play the guitar (admittedly i'm not
+              that good) and refine my craft in programming.
             </p>
           </div>
         </div>
-        <div class="row align-items-end">
-          <div class="col section_wrapper">
+        <div class="row align-items-start section_wrapper">
+          <div class="col-md-8">
             <ShineText
               :is_contact_shine="false"
-              project_title="some other section"
+              project_title="Higher Education"
             />
             <p>
-              no purse as fully me or point. Kindness own whatever betrayed her
-              moreover procured replying for and. Proposal indulged no do do
-              sociable he throwing settling. Covered ten nor comfort offices
-              carried. Age she way earnestly the fulfilled extremely. Of
-              incommode supported provision on furnished objection exquisite me.
-              Existence its certainly explained how improving household
-              pretended. Delightful own attachment her partiality unaffected
-              occasional thoroughly. Adieus it no wonder spirit houses. Picture
-              removal detract earnest is by. Esteems met joy attempt way clothes
-              yet demesne tedious. Replying an marianne do it an entrance
-              advanced. Two dare say play when hold. Required bringing me
-              material stanhill jointure is as he. Mutual indeed yet her living
-              result matter him bed whence.
+              As mentioned, I study software engineering in the university of
+              Gothenburg. I am entering my third and final years of the bachelor
+              curriculum and im beyond excited to further my horizons and
+              prospects by hopefully uptaking a master degree in the near
+              future. My time has been invaluable in this university. I met some
+              truly amazing people that have taught me more than I could have
+              ever hoped to learn, teachers and acquaintances alike. This
+              program taught me the fundamentals of writing clean code, testing,
+              various architectural styles and their applications, distributed
+              systems development, web developments and so much more and I'm
+              eternally grateful for the knowledge I gained.
             </p>
           </div>
+          <div class="col-md-4">
+            <img
+              :src="require('@/assets/uni.jpg')"
+              class="img-fluid"
+              style="max-width: 400px"
+              id="uni_image"
+            />
+          </div>
         </div>
-        <div class="row align-items-end">
-          <div class="col section_wrapper">
+        <div class="row align-items-start section_wrapper">
+          <div class="col-md-6">
             <ShineText
               :is_contact_shine="false"
-              project_title="some other section"
+              project_title="Extracurriculare hackathons"
             />
             <p>
-              no purse as fully me or point. Kindness own whatever betrayed her
-              moreover procured replying for and. Proposal indulged no do do
-              sociable he throwing settling. Covered ten nor comfort offices
-              carried. Age she way earnestly the fulfilled extremely. Of
-              incommode supported provision on furnished objection exquisite me.
-              Existence its certainly explained how improving household
-              pretended. Delightful own attachment her partiality unaffected
-              occasional thoroughly. Adieus it no wonder spirit houses. Picture
-              removal detract earnest is by. Esteems met joy attempt way clothes
-              yet demesne tedious. Replying an marianne do it an entrance
-              advanced. Two dare say play when hold. Required bringing me
-              material stanhill jointure is as he. Mutual indeed yet her living
-              result matter him bed whence.
+              Thus far, I have participated in 2 hackathons as a means to gain
+              insight into the industry while I'm still in university. The most
+              recent hackathon that I participated in was hosted by system
+              weaver where the theme was generative AI. My team and I created a
+              ChatGPT wrapper application that maps organizational functional
+              requirements to user stories in the click of 2 buttons. We
+              finished in 3rd place but it was extremely insightful to see how
+              system weaver handles client data for industry giants such as
+              Volvo
             </p>
+          </div>
+          <div class="col-md-6">
+            <img
+              :src="require('@/assets/hackathon.png')"
+              class="img-fluid"
+              style="max-width: 600px"
+              id="uni_image"
+            />
+          </div>
+        </div>
+        <div class="row align-items-center section_wrapper">
+          <div class="col">
+            <ShineText :is_contact_shine="false" project_title="About Me" />
+            <p>
+              As you already know by now my name is Ali, I'm 23 years old and I
+              live in Gothenburg, Sweden Gothenburg. I grew up all over the
+              world, from Dubai, Iraq, Denmark to Sweden, and therefore
+              consequently, I speak nearly 4 languages fluently; English,
+              Danish, Arabic and I possess full working proficiency in Swedish.
+              I study software engineering at the university of Gothenburg and
+              I'm passionate about all things related to programming and I'm
+              particularly fascinated and fond of mathematics and the area of
+              applied mathematics. In my spare time, I enjoy exploring the
+              world, trying out new foods, play the guitar (admittedly i'm not
+              that good) and refine my craft in programming.
+            </p>
+            <img
+              :src="require('@/assets/highschool.jpg')"
+              class="img-fluid"
+              style="max-width: 50%"
+              id="uni_image"
+            />
           </div>
         </div>
       </div>
@@ -158,11 +194,15 @@ export default {
 </script>
 
 <style scoped>
+.row {
+  margin-top: 100px;
+}
+
 .scrollable-content {
   height: 100%;
   overflow-y: scroll;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 p {
@@ -172,9 +212,25 @@ p {
   font-size: 25px;
 }
 
+img {
+  border-radius: 20px;
+}
+
 @media (max-width: 786px) {
   p {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  #uni_image {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1800px) {
+  #first_row {
+    margin-top: 45vw !important;
   }
 }
 

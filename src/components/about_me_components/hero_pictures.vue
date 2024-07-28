@@ -1,15 +1,13 @@
 <template>
-  <div v-if="use_cards" class="move_down">
-    <div class="row justify-content-center">
-      <div class="col-12 text-center">
-        <img :src="require('@/assets/me.jpg')" class="img-fluid" id="first" />
-        <img
-          id="second"
-          :src="require('@/assets/view.jpg')"
-          class="img-fluid"
-        />
-        <img id="third" :src="require('@/assets/cat.jpg')" />
-      </div>
+  <div
+    v-if="use_cards"
+    class="row justify-content-center"
+    style="transform: translateY(0px)"
+  >
+    <div class="col-12 text-center">
+      <img :src="require('@/assets/me.jpg')" class="img-fluid" id="first" />
+      <img id="second" :src="require('@/assets/view.jpg')" class="img-fluid" />
+      <img id="third" :src="require('@/assets/cat.jpg')" />
     </div>
   </div>
   <div v-else>
@@ -46,10 +44,6 @@ export default {
 </script>
 
 <style scoped>
-.move_down {
-  transform: translateY(-500px);
-  animation: move_vertically 750ms ease forwards;
-}
 img {
   border-radius: 20px;
   position: absolute;
