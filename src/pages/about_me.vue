@@ -4,11 +4,14 @@
       class="container-fluid d-flex justify-content-center align-items-center vh-100 flex-column"
       style="flex-direction: column"
     >
-      <div class="border container scrollable-content text-center">
+      <div
+        class="border container scrollable-content text-center"
+        id="scrollable_div"
+      >
         <div class="row align-items-start">
           <div class="col"><HeroPictures /></div>
         </div>
-        <div class="row align-items-center" style="margin-top: 600px">
+        <div class="row align-items-center" style="margin-top: 30vw">
           <div class="col">
             <ShineText :is_contact_shine="false" project_title="About Me" />
             <p class="scrollable-paragraph">
@@ -29,7 +32,7 @@
           </div>
         </div>
         <div class="row align-items-end">
-          <div class="col">
+          <div class="col section_wrapper">
             <ShineText
               :is_contact_shine="false"
               project_title="some other section"
@@ -52,7 +55,7 @@
           </div>
         </div>
         <div class="row align-items-end">
-          <div class="col">
+          <div class="col section_wrapper">
             <ShineText
               :is_contact_shine="false"
               project_title="some other section"
@@ -83,7 +86,7 @@
 import BIRDS from "vanta/dist/vanta.birds.min";
 import ShineText from "../components/intro_page_components/shine.vue";
 import HeroPictures from "../components/about_me_components/hero_pictures.vue";
-import { onBeforeMount } from "vue";
+import { onBeforeUnmount } from "vue";
 export default {
   name: "AboutMePage",
   components: {
@@ -112,14 +115,39 @@ export default {
     });
 
     window.addEventListener("resize", this.updateVanta);
-    onBeforeMount(() => {
+
+    const handleScroll = () => {
+      const all_sections = document.querySelectorAll(".section_wrapper");
+
+      all_sections.forEach((section) => {
+        if (this.isInViewport(section)) {
+          section.style.opacity = 1;
+          section.style.transform = "translateY(0)";
+        }
+      });
+    };
+    const scrollable_div = document.getElementById("scrollable_div");
+    scrollable_div.addEventListener("scroll", handleScroll);
+
+    onBeforeUnmount(() => {
       window.removeEventListener("resize", this.updateVanta);
+      this.vantaEffect.destroy();
+      scrollable_div.removeEventListener("scroll", handleScroll);
     });
   },
 
   methods: {
     updateVanta() {
       this.vantaEffect.resize();
+    },
+    isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top + rect.height / 10 < window.innerHeight &&
+        rect.left + rect.width / 10 < window.innerWidth &&
+        rect.top + rect.height / 10 > 0 &&
+        rect.left + rect.width / 10 > 0
+      );
     },
   },
 };
@@ -138,5 +166,17 @@ p {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 25px;
+}
+
+@media (max-width: 786px) {
+  p {
+    font-size: 20px;
+  }
+}
+
+.section_wrapper {
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 </style>
