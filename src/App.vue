@@ -1,16 +1,13 @@
 <template>
-  <!--<BubbelsPage />-->
-  <HeroPictures></HeroPictures>
+  <AboutMePage />
 </template>
 
 <script>
-//import BubbelsPage from "./pages/bubbles_page.vue";
-import HeroPictures from "./components/about_me_components/hero_pictures.vue";
+import AboutMePage from "./pages/about_me.vue";
 export default {
   name: "App",
   components: {
-    //BubbelsPage,
-    HeroPictures,
+    AboutMePage,
   },
 };
 </script>
