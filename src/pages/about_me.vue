@@ -5,17 +5,14 @@
       class="container-fluid d-flex justify-content-center align-items-center vh-100 flex-column"
       style="flex-direction: column"
     >
-      <div
-        class="border container scrollable-content text-center"
-        id="scrollable_div"
-      >
+      <div class="container scrollable-content text-center" id="scrollable_div">
         <div class="row align-items-start">
           <div class="col"><HeroPictures /></div>
         </div>
-        <div class="row align-items-center" style="margin-top: 30vw">
+        <div class="row align-items-center" style="margin-top: 23vw">
           <div class="col">
             <ShineText :is_contact_shine="false" project_title="About Me" />
-            <p class="scrollable-paragraph">
+            <p>
               no purse as fully me or point. Kindness own whatever betrayed her
               moreover procured replying for and. Proposal indulged no do do
               sociable he throwing settling. Covered ten nor comfort offices
@@ -38,7 +35,7 @@
               :is_contact_shine="false"
               project_title="some other section"
             />
-            <p class="scrollable-paragraph">
+            <p>
               no purse as fully me or point. Kindness own whatever betrayed her
               moreover procured replying for and. Proposal indulged no do do
               sociable he throwing settling. Covered ten nor comfort offices
@@ -61,7 +58,7 @@
               :is_contact_shine="false"
               project_title="some other section"
             />
-            <p class="scrollable-paragraph">
+            <p>
               no purse as fully me or point. Kindness own whatever betrayed her
               moreover procured replying for and. Proposal indulged no do do
               sociable he throwing settling. Covered ten nor comfort offices

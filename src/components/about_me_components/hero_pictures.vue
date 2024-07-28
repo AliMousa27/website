@@ -2,13 +2,13 @@
   <div v-if="use_cards" class="move_down">
     <div class="row justify-content-center">
       <div class="col-12 text-center">
-        <img src="https://place-hold.it/300x500" class="img-fluid" id="first" />
+        <img :src="require('@/assets/me.jpg')" class="img-fluid" id="first" />
         <img
           id="second"
-          src="https://place-hold.it/300x500"
+          :src="require('@/assets/view.jpg')"
           class="img-fluid"
         />
-        <img id="third" src="https://place-hold.it/300x500" class="img-fluid" />
+        <img id="third" :src="require('@/assets/cat.jpg')" />
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@ export default {
 <style scoped>
 .move_down {
   transform: translateY(-500px);
-  animation: move_vertically 1s ease forwards;
+  animation: move_vertically 750ms ease forwards;
 }
 img {
   border-radius: 20px;
@@ -66,13 +66,13 @@ img {
 #second {
   z-index: -1;
   animation: move_right 1s ease forwards;
-  animation-delay: 1s;
+  animation-delay: 750ms;
 }
 
 #third {
   z-index: -2;
-  animation: move_left 1s ease forwards;
-  animation-delay: 1s;
+  animation: move_left 750ms ease forwards;
+  animation-delay: 500ms;
 }
 
 @keyframes move_vertically {
