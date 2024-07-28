@@ -1,5 +1,6 @@
 <template>
   <div ref="vantaRef">
+    <NavBar />
     <div
       class="container-fluid d-flex justify-content-center align-items-center vh-100 flex-column"
       style="flex-direction: column"
@@ -79,6 +80,7 @@
         </div>
       </div>
     </div>
+    <PageFooter />
   </div>
 </template>
 
@@ -86,12 +88,17 @@
 import BIRDS from "vanta/dist/vanta.birds.min";
 import ShineText from "../components/shared_components/shine.vue";
 import HeroPictures from "../components/about_me_components/hero_pictures.vue";
+import PageFooter from "../components/shared_components/footer.vue";
+import NavBar from "../components/shared_components/navbar.vue";
+
 import { onBeforeUnmount } from "vue";
 export default {
   name: "AboutMePage",
   components: {
     HeroPictures,
     ShineText,
+    NavBar,
+    PageFooter,
   },
   mounted() {
     const screen_height = window.innerHeight;

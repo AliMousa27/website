@@ -19,27 +19,7 @@
   <div style="height: 23vw; transform: translateY(-30vw)">
     <PageCurve></PageCurve>
   </div>
-  <div
-    class="d-flex justify-content-center align-items-center"
-    id="socials_row"
-  >
-    <SocialsIcon></SocialsIcon>
-  </div>
-
-  <hr
-    style="border-top: 1px solid white; width: 100vw; margin: 0; padding: 0"
-  />
-  <h5
-    style="
-      color: white;
-      text-align: center;
-      margin-top: 50px;
-      font-size: 20px;
-      padding-bottom: 50px;
-    "
-  >
-    © Copyrights 2024 . Ali Mousa
-  </h5>
+  <PageFooter></PageFooter>
 </template>
 
 <script>
@@ -48,7 +28,7 @@ import IntroText from "../components/intro_page_components/intro_text.vue";
 import NavBar from "../components/shared_components/navbar.vue";
 import ProjectCard from "../components/intro_page_components/project_card.vue";
 import PageCurve from "../components/intro_page_components/curve.vue";
-import SocialsIcon from "../components/intro_page_components/socials_icon.vue";
+import PageFooter from "../components/shared_components/footer.vue";
 export default {
   name: "BubbelsPage",
   components: {
@@ -57,7 +37,7 @@ export default {
     BubblesBackground,
     PageCurve,
     ProjectCard,
-    SocialsIcon,
+    PageFooter,
   },
   mounted() {
     const all = document.querySelectorAll("*");
@@ -105,10 +85,6 @@ export default {
   top: 0;
   left: 0;
   z-index: -11;
-}
-
-#socials_row {
-  margin-top: 20vw;
 }
 </style>
 <style>
