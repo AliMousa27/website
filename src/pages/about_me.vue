@@ -89,19 +89,12 @@
         </div>
         <div class="row align-items-center section_wrapper">
           <div class="col">
-            <ShineText :is_contact_shine="false" project_title="About Me" />
+            <ShineText :is_contact_shine="false" project_title="Highschool" />
             <p>
-              As you already know by now my name is Ali, I'm 23 years old and I
-              live in Gothenburg, Sweden Gothenburg. I grew up all over the
-              world, from Dubai, Iraq, Denmark to Sweden, and therefore
-              consequently, I speak nearly 4 languages fluently; English,
-              Danish, Arabic and I possess full working proficiency in Swedish.
-              I study software engineering at the university of Gothenburg and
-              I'm passionate about all things related to programming and I'm
-              particularly fascinated and fond of mathematics and the area of
-              applied mathematics. In my spare time, I enjoy exploring the
-              world, trying out new foods, play the guitar (admittedly i'm not
-              that good) and refine my craft in programming.
+              I graduated in 2021 with a International Baccuelrate diplma in
+              Hvitfeldtska gymnasiet where I took 6 subjects being: Math: AI HL,
+              chemistry HL biology HL, English literature SL, Swedish AB sl and
+              finally psychology. I graduated with a score of 39/45!
             </p>
             <img
               :src="require('@/assets/highschool.jpg')"
