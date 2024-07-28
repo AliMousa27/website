@@ -15,6 +15,8 @@
   <div class="projects_container">
     <ProjectCard :images="website_images" />
     <ProjectCard :images="snake_images" />
+    <ProjectCard :images="let_bro_cook_images" />
+    <ProjectCard :images="toothtrek_images" />
   </div>
 
   <div style="height: 23vw; transform: translateY(-30vw)">
@@ -63,6 +65,11 @@ export default {
         require("@/assets/about_me.png"),
         require("@/assets/bubbles.png"),
       ],
+      let_bro_cook_images: [
+        require("@/assets/let_bro_cook_signup.png"),
+        require("@/assets/let_bro_cook_home.png"),
+      ],
+      toothtrek_images: [require("@/assets/temp.png")],
     };
   },
 };
