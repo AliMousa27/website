@@ -1,8 +1,17 @@
 <template>
-  <div class="" style="width: 80vw">
-    <div class="row project_container d-flex align-items-center">
-      <div class="col-7 carousel_container">
+  <div style="width: 80vw">
+    <div
+      class="row project_container d-flex flex-row-reverse align-items-center"
+    >
+      <div v-if="is_image" class="col-7 carousel_container">
         <CarouselSlides ref="carouselSlides" :images="images"></CarouselSlides>
+      </div>
+      <div v-else class="col">
+        <video
+          :src="video_src"
+          style="max-height: 640px; min-height: 200px; width: 100%"
+          controls
+        ></video>
       </div>
       <div class="col-5 text_container">
         <Shine project_title="this is just a project title" />
@@ -25,10 +34,12 @@
     </div>
   </div>
 </template>
+
 <script>
 import Shine from "../shared_components/shine.vue";
 import CarouselSlides from "../shared_components/carousel.vue";
 import InfiniteScrollTags from "./infinte_tag.vue";
+
 export default {
   name: "ProjectCard",
   components: {
@@ -66,9 +77,12 @@ export default {
       textContainer,
       project
     ) => {
-      carouselContainer.classList.remove("col-7");
+      if (carouselContainer && this.is_image) {
+        carouselContainer.classList.remove("col-7");
+        carouselContainer.classList.add("col-12");
+      }
+
       textContainer.classList.remove("col-5");
-      carouselContainer.classList.add("col-12");
       textContainer.classList.add("col-12");
       project.classList.add("row");
       project.classList.remove("d-flex", "flex-row-reverse");
@@ -80,9 +94,12 @@ export default {
       project,
       isEvenIndex
     ) => {
-      carouselContainer.classList.remove("col-12");
+      if (carouselContainer && this.is_image) {
+        carouselContainer.classList.remove("col-12");
+        carouselContainer.classList.add("col-7");
+      }
+
       textContainer.classList.remove("col-12");
-      carouselContainer.classList.add("col-7");
       textContainer.classList.add("col-5");
 
       if (isEvenIndex) {
@@ -134,7 +151,16 @@ export default {
   props: {
     images: {
       type: Array,
-      required: true,
+      required: false,
+    },
+    is_image: {
+      type: Boolean,
+      default: true,
+    },
+    video_src: {
+      type: String,
+      default: "",
+      required: false,
     },
   },
 };
