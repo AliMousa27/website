@@ -48,17 +48,45 @@ export default {
     ProjectCard,
     PageFooter,
   },
-  mounted() {
-    const all = document.querySelectorAll("*");
-    all.forEach((el) => {
-      if (el.getBoundingClientRect().width > window.innerWidth) {
-        console.log(el);
-      }
-    });
-  },
+
   data() {
     return {
       projects: [
+        {
+          title: "Data Science From Scratch",
+          text: "Data Science from Scratch, by Joel Grus is a book that I read in the summer of 2023 to fully grasp the fundamentals and underlying principles of AI, data and how the two concepts relate. Admittedly the most fun chapters of the book were the ones where I had to implement math concepts and functions in python and then use them in later chapters to create meaningful mini applications such as a spam filter using bayes theorem, fully implementing a linear neural network from scratch and writing a modular back propagation algorithm, NLP, implementing SQL from scratch and much much more.",
+          tags: [
+            "AI",
+            "Data science",
+            "Applied math",
+            "NLP",
+            "Neural Networks",
+            "Machine learning",
+          ],
+          images: [require("@/assets/data_science_book.jpg")],
+          is_image: true,
+        },
+        {
+          title: "Let Bro Cook",
+          text: "Let bro cook was the very first website I ever made and it served as the basis and introduction to web development that serves as a recipe sharing website. It is safe to say that this website sparked extreme interest and curiosity in fullstack development. The UI is responsive, animated, fluid and clean. I utilized ExpressJS for the backend alongside mongodb for persistent storage. Users can log in, change password, create recipes, favorite recipes and many other functionalities that are typical and atypical to CRUD apps alike and get recommendation from an algorithm. Finally, to breathe life into the platform, I web scraped over 1000 recipes from the internet from scratch.",
+          tags: [
+            "Vue",
+            "Three.js",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Responsive design",
+            "Bootstrap",
+            "MongoDB",
+            "Web scraping",
+            "ExpresJS",
+          ],
+          images: [
+            require("@/assets/let_bro_cook_signup.png"),
+            require("@/assets/let_bro_cook_home.png"),
+          ],
+          is_image: true,
+        },
         {
           title: "Portfolio Website",
           text: "Yes the astute observer would notice that this project is the actual website your on right now! Its written in Vue and serves as my platform to communicate the world who I am and what I do. It uses three js, moving linear gradients, gaussian blurs and advanced animations to bring my bring my vision to life.",
@@ -75,6 +103,27 @@ export default {
             require("@/assets/about_me.png"),
             require("@/assets/bubbles.png"),
           ],
+          is_image: true,
+        },
+        {
+          title: "Shorts Automater",
+          text: "This is a lightweight project that utilizes python and pymovie to essentially make a quick buck and fully automate the process of creating trendy youtube shorts / instagram reels / tiktoks. The application uses a CLI to get a link and how many comments, opens a simulated selenium browser to grab screenshots of the comments. The program uses an AI to transcribe mp3 sound files into text with given timestamps to be subtitled at the exact correct time to retain the viewers’ attention span. You can see an example here.",
+          tags: ["Python", "AI", "Pymovie", "Selenium", "Algorithm"],
+          is_image: false,
+          video_src: require("@/assets/shorts.mp4"),
+        },
+        {
+          title: "Toothtrek",
+          text: "ToothTrek is a disturbed system that utilizes MQTT to streamline and make implementing the service oriented architecture style easier. The middleware layer that holds the service was written in spring boot while the front end was made with flutter. ToothTrek to simplify dental appointments. The application will enable easy booking for patients and dentists alike. Patients can find available time slots and dental offices, while dentists provide their schedules. The system consists of 4 main components, the website/app frontend, the express backend server, the dentist API, and the various services in the middleware layer. ",
+          tags: [
+            "Springboot",
+            "Java",
+            "Express",
+            "Flutter",
+            "Distributed system",
+            "MQTT",
+          ],
+          images: [require("@/assets/temp.png"), require("@/assets/temp2.png")],
           is_image: true,
         },
         {
@@ -100,62 +149,6 @@ export default {
             require("@/assets/snake_grid.png"),
             require("@/assets/snake_skins.png"),
           ],
-          is_image: true,
-        },
-        {
-          title: "Let Bro Cook",
-          text: "Let bro cook was the very first website I ever made and it served as the basis and introduction to web development that serves as a recipe sharing website. It is safe to say that this website sparked extreme interest and curiosity in fullstack development. The UI is responsive, animated, fluid and clean. I utilized ExpressJS for the backend alongside mongodb for persistent storage. Users can log in, change password, create recipes, favorite recipes and many other functionalities that are typical and atypical to CRUD apps alike and get recommendation from an algorithm. Finally, to breathe life into the platform, I web scraped over 1000 recipes from the internet from scratch.",
-          tags: [
-            "Vue",
-            "Three.js",
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Responsive design",
-            "Bootstrap",
-            "MongoDB",
-            "Web scraping",
-            "ExpresJS",
-          ],
-          images: [
-            require("@/assets/let_bro_cook_signup.png"),
-            require("@/assets/let_bro_cook_home.png"),
-          ],
-          is_image: true,
-        },
-        {
-          title: "Shorts Automater",
-          text: "This is a lightweight project that utilizes python and pymovie to essentially make a quick buck and fully automate the process of creating trendy youtube shorts / instagram reels / tiktoks. The application uses a CLI to get a link and how many comments, opens a simulated selenium browser to grab screenshots of the comments. The program uses an AI to transcribe mp3 sound files into text with given timestamps to be subtitled at the exact correct time to retain the viewers’ attention span. You can see an example here.",
-          tags: ["Python", "AI", "Pymovie", "Selenium", "Algorithm"],
-          is_image: false,
-          video_src: require("@/assets/shorts.mp4"),
-        },
-        {
-          title: "Data Science From Scratch",
-          text: "Data Science from Scratch, by Joel Grus is a book that I read in the summer of 2023 to fully grasp the fundamentals and underlying principles of AI, data and how the two concepts relate. Admittedly the most fun chapters of the book were the ones where I had to implement math concepts and functions in python and then use them in later chapters to create meaningful mini applications such as a spam filter using bayes theorem, fully implementing a linear neural network from scratch and writing a modular back propagation algorithm, NLP, implementing SQL from scratch and much much more.",
-          tags: [
-            "AI",
-            "Data science",
-            "Applied math",
-            "NLP",
-            "Neural Networks",
-            "Machine learning",
-          ],
-          images: [require("@/assets/data_science_book.jpg")],
-          is_image: true,
-        },
-        {
-          title: "Toothtrek",
-          text: "ToothTrek is a disturbed system that utilizes MQTT to streamline and make implementing the service oriented architecture style easier. The middleware layer that holds the service was written in spring boot while the front end was made with flutter. ToothTrek to simplify dental appointments. The application will enable easy booking for patients and dentists alike. Patients can find available time slots and dental offices, while dentists provide their schedules. The system consists of 4 main components, the website/app frontend, the express backend server, the dentist API, and the various services in the middleware layer. ",
-          tags: [
-            "Springboot",
-            "Java",
-            "Express",
-            "Flutter",
-            "Distributed system",
-            "MQTT",
-          ],
-          images: [require("@/assets/temp.png"), require("@/assets/temp2.png")],
           is_image: true,
         },
       ],
