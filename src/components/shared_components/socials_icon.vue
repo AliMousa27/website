@@ -2,7 +2,7 @@
   <ul class="socials_list">
     <li class="icon-content">
       <a
-        href="https://www.spotify.com/"
+        href="https://open.spotify.com/user/itapz"
         aria-label="Spotify"
         data-social="spotify"
       >
@@ -18,7 +18,7 @@
     </li>
     <li class="icon-content">
       <a
-        href="https://www.pinterest.com/"
+        href="https://github.com/AliMousa27"
         aria-label="Github"
         data-social="github"
       >
@@ -41,7 +41,7 @@
     </li>
     <li class="icon-content">
       <a
-        href="https://www.pinterest.com/"
+        href="https://www.linkedin.com/in/ali-mousa-59a440262/"
         aria-label="Linkedin"
         data-social="linkedin"
       >
@@ -64,7 +64,7 @@
     </li>
     <li class="icon-content">
       <a
-        href="https://www.pinterest.com/"
+        href="https://discord.com/channels/346400531964755969"
         aria-label="Discord"
         data-social="discord"
       >
@@ -87,7 +87,7 @@
     </li>
     <li class="icon-content">
       <a
-        href="https://www.pinterest.com/"
+        href="https://www.instagram.com/alial_musawi27"
         aria-label="Instagram"
         data-social="instagram"
       >
@@ -165,8 +165,8 @@ li:hover::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10vw; /* Adjusted for better responsiveness */
-  height: 10vw; /* Adjusted for better responsiveness */
+  width: 10vw;
+  height: 10vw;
   max-height: 80px;
   max-width: 80px;
 
@@ -182,8 +182,8 @@ li:hover::after {
 .socials_list .icon-content a svg {
   position: relative;
   z-index: 1;
-  width: 6vw; /* Adjusted for better responsiveness */
-  height: 6vw; /* Adjusted for better responsiveness */
+  width: 6vw;
+  height: 6vw;
   max-height: 50px;
   max-width: 50px;
 }
