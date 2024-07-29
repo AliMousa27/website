@@ -115,7 +115,7 @@ export default {
 
   .gap_circle {
     transform-origin: calc(20%) !important;
-    top: calc(50% - 80% /- 100px) !important;
+    top: calc(50% - 80%) !important;
     left: calc(50% - 80% + 35vw) !important;
   }
 }

@@ -1,17 +1,19 @@
 <template>
-  <BubbelsPage />
+  <!--<BubbelsPage />-->
   <!--<AboutMePage />-->
+  <BlogsPage />
 </template>
 
 <script>
 //import AboutMePage from "./pages/about_me.vue";
-
-import BubbelsPage from "./pages/bubbles_page.vue";
+//import BubbelsPage from "./pages/bubbles_page.vue";
+import BlogsPage from "./pages/blogs_page.vue";
 export default {
   name: "App",
   components: {
     //AboutMePage,
-    BubbelsPage,
+    //BubbelsPage,
+    BlogsPage,
   },
 };
 </script>
@@ -20,6 +22,6 @@ export default {
 html body {
   overflow-x: hidden;
   background: black;
-  width: 100vw !important;
+  width: 100vw;
 }
 </style>
