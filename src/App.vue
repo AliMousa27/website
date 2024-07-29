@@ -13,15 +13,6 @@ export default {
     //AboutMePage,
     BubbelsPage,
   },
-  mounted() {
-    const all_el = document.querySelectorAll("*");
-    const width = window.innerWidth;
-    all_el.forEach((el) => {
-      if (el.getBoundingClientRect().width > width) {
-        console.log(el);
-      }
-    });
-  },
 };
 </script>
 

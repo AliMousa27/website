@@ -37,6 +37,7 @@
         <ShineText
           project_title="Contact me"
           :is_contact_shine="true"
+          @click="copyToClipboard"
         ></ShineText>
       </div>
     </div>
@@ -71,6 +72,19 @@ export default {
         }s forwards ease`;
         paragraph.appendChild(wordSpan);
       });
+    },
+    copyToClipboard() {
+      const email = "ali0408mousa@gmail.com";
+      navigator.clipboard
+        .writeText(email)
+        .then(() => {
+          const shine = document.getElementById("contact_me");
+          shine.textContent = "Copied!";
+          setTimeout(() => {
+            shine.textContent = "Contact me";
+          }, 1000);
+        })
+        .catch((e) => alert(e.message));
     },
   },
 };

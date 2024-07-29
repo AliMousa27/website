@@ -3,7 +3,9 @@
     <h1 class="shine" ref="shineText">
       {{ project_title }}
     </h1>
-    <h1 v-if="is_contact_shine" class="shine shine-top">Copy email</h1>
+    <h1 v-if="is_contact_shine" class="shine shine-top" id="contact_me">
+      Copy email
+    </h1>
   </div>
 </template>
 
