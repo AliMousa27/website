@@ -2,9 +2,7 @@
   <NavBar></NavBar>
 
   <IntroText />
-  <div class="gradient-bg">
-    <BubblesBackground> </BubblesBackground>
-  </div>
+  <BubblesBackground> </BubblesBackground>
   <div
     class="container-fluid"
     id="first_divider"
@@ -181,17 +179,6 @@ export default {
   gap: 200px;
   background: black;
   box-sizing: border-box;
-}
-
-.gradient-bg {
-  overflow-x: clip;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  background: black;
-  top: 0;
-  left: 0;
-  z-index: -11;
 }
 </style>
 <style>
