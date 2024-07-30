@@ -3,7 +3,7 @@
     <div
       class="row row_content"
       v-on:click="expandCard($event)"
-      style="height: auto"
+      style="height: 200px"
       id="blog_card"
     >
       <div class="col">
@@ -68,14 +68,11 @@ export default {
         target.id === "blog_card"
           ? target
           : target.previousElementSibling.children[0];
-      console.log(card);
 
       if (card.is_expanded) {
-        card.style.minHeight = "1%";
-        card.style.maxHeight = "198px";
+        card.style.height = "198px";
       } else {
-        card.style.minHeight = "100%";
-        card.style.maxHeight = "3000px";
+        card.style.height = "fit-content";
       }
       card.is_expanded = !card.is_expanded;
     },
@@ -102,8 +99,6 @@ export default {
 .row_content {
   position: relative;
   word-wrap: break-word;
-  min-height: 1%;
-  max-height: 198px;
   transition: all 2s linear;
   padding-top: 30px;
   overflow: hidden;

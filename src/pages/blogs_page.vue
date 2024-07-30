@@ -1,6 +1,5 @@
 <template>
   <ul>
-    <BlogCard /><BlogCard /><BlogCard /><BlogCard /><BlogCard /><BlogCard />
     <BlogCard />
   </ul>
   <BubblesBackground />
@@ -32,6 +31,5 @@ ul {
   gap: 30px;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 100vh;
 }
 </style>
