@@ -47,9 +47,9 @@ export default {
   data() {
     return {
       images: [
-        require("@/assets/view.jpg"),
-        require("@/assets/cat.jpg"),
-        require("@/assets/me.jpg"),
+        require("@/assets/about_me/view.jpg"),
+        require("@/assets/about_me/cat.jpg"),
+        require("@/assets/about_me/me.jpg"),
       ],
     };
   },

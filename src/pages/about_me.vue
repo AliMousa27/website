@@ -56,7 +56,7 @@
           </div>
           <div class="col-md-4">
             <img
-              :src="require('@/assets/uni.jpg')"
+              :src="require('@/assets/about_me/uni.jpg')"
               class="img-fluid"
               style="max-width: 400px"
               id="uni_image"
@@ -83,7 +83,7 @@
           </div>
           <div class="col-md-6">
             <img
-              :src="require('@/assets/hackathon.png')"
+              :src="require('@/assets/about_me/hackathon.png')"
               class="img-fluid"
               style="max-width: 600px"
               id="uni_image"
@@ -100,7 +100,7 @@
               finally psychology. I graduated with a score of 39/45!
             </p>
             <img
-              :src="require('@/assets/highschool.jpg')"
+              :src="require('@/assets/about_me/highschool.jpg')"
               class="img-fluid"
               style="max-width: 50%"
               id="uni_image"
