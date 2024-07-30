@@ -1,17 +1,39 @@
 <template>
-  <div
-    class="container blog_card"
-    style="height: auto"
-    v-on:click="expandCard($event)"
-  >
-    <div class="row row_content">
+  <div class="container blog_card">
+    <div
+      class="row row_content"
+      v-on:click="expandCard($event)"
+      style="height: auto"
+      id="blog_card"
+    >
       <div class="col">
         <h2>Blog title maybe</h2>
-        <p></p>
+        <p>
+          Approximately 50 Wagner fighters in a convoy were killed in an
+          al-Qaida ambush, which was joined by rebels who were in pursuit, along
+          the border with Algeria, said Wassim Nasr, a Sahel specialist and
+          senior research fellow at the Soufan Center, a security think tank,
+          who said he counted bodies in a video of the aftermath. The
+          mercenaries had been fighting mostly Tuareg rebels alongside Mali's
+          army when their convoy was forced to retreat into jihadi territory and
+          ambushed south of the commune of Tinzaouaten, Nasr said. Approximately
+          50 Wagner fighters in a convoy were killed in an al-Qaida ambush,
+          which was joined by rebels who were in pursuit, along the border with
+          Algeria, said Wassim Nasr, a Sahel specialist and senior research
+          fellow at the Soufan Center, a security think tank, who said he
+          counted bodies in a video of the aftermath. The mercenaries had been
+          fighting mostly Tuareg rebels alongside Mali's army when their convoy
+          was forced to retreat into jihadi territory and ambushed south of the
+          commune of Tinzaouaten, Nasr said.
+        </p>
       </div>
     </div>
   </div>
-  <div></div>
+  <div
+    class="blog_card container"
+    style="height: auto; height: 55px; transform: translateY(-50px)"
+    v-on:click="expandCard($event)"
+  ></div>
 </template>
 
 <script>
@@ -26,14 +48,19 @@ export default {
 
   methods: {
     expandCard(e) {
-      console.log(e);
-      const card = e.currentTarget;
-      if (!card.is_expanded) {
+      const target = e.currentTarget;
+      const card =
+        target.id === "blog_card"
+          ? target
+          : target.previousElementSibling.children[0];
+      console.log(card);
+
+      if (card.is_expanded) {
+        card.style.minHeight = "1%";
+        card.style.maxHeight = "198px";
+      } else {
         card.style.minHeight = "100%";
         card.style.maxHeight = "3000px";
-      } else {
-        card.style.minHeight = "1%";
-        card.style.maxHeight = "205px";
       }
       card.is_expanded = !card.is_expanded;
     },
@@ -47,11 +74,8 @@ export default {
   border: #2c2c2c solid 2px;
   border-radius: 10px;
   transition: all 0.3s ease;
-
-  min-height: 1%;
-  max-height: 200px;
-
-  overflow: hidden;
+  border-bottom: none;
+  width: 100vw;
 }
 
 .blog_card:hover {
@@ -61,31 +85,28 @@ export default {
 }
 
 .row_content {
-  height: 80%;
+  position: relative;
   word-wrap: break-word;
-}
-
-.arrow {
-  opacity: 1;
-  width: 20px;
-  height: 20px;
-  background-image: url("https://www.freeiconspng.com/thumbs/white-arrow-png/white-down-arrow-png-2.png");
-  background-size: contain;
-  margin-top: 8px;
+  min-height: 1%;
+  max-height: 198px;
+  transition: all 1s ease-in;
+  padding-top: 30px;
+  overflow: hidden;
 }
 
 p,
 h2 {
-  color: white;
+  color: rgb(204, 196, 196);
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
 h2 {
   font-size: 30px;
+  color: #c1cccc;
 }
 
 p {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 @keyframes expand_to_fit {
@@ -99,9 +120,15 @@ p {
   }
 }
 
-@media (max-width: 1068px) {
-  .blog_card {
-    margin-right: 40px;
+@media (max-width: 786px) {
+  p {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .blod_card {
+    max-width: 100vh;
   }
 }
 </style>

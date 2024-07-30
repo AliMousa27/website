@@ -1,18 +1,9 @@
 <template>
   <NavBar />
-  <div class="container-fluid blogs_container">
-    <ul>
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-    </ul>
-  </div>
+  <ul class="border">
+    <BlogCard /><BlogCard /><BlogCard /><BlogCard /><BlogCard /><BlogCard />
+    <BlogCard />
+  </ul>
   <BubblesBackground />
   <PageFooter />
 </template>
@@ -38,11 +29,11 @@ export default {
 ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
-}
-
-.blogs_container {
+  justify-content: center;
+  padding: 0;
+  gap: 30px;
+  overflow-x: hidden;
+  overflow-y: scroll;
   height: 100vh;
-  overflow: scroll;
 }
 </style>

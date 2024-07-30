@@ -119,6 +119,8 @@ export default {
 <style scoped>
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 li::after {
   content: "";
@@ -132,8 +134,8 @@ li:hover::after {
 }
 .socials_list {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   width: fit-content;
   overflow: clip !important;
 }
