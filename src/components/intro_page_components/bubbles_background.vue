@@ -37,16 +37,21 @@ export default {
     var target_y = 0;
 
     const circle = document.getElementById("mouse_circle");
-
+    //function to keep track of the mouse
     onmousemove = function (e) {
       mouse_x = e.x;
       mouse_y = e.y;
     };
 
     function move_circle() {
-      var adjusted = window.scrollY + window.innerHeight;
+      //adjusted is to track how far the usedr sc
+      var scrollPositionWithViewportHeight =
+        window.scrollY + window.innerHeight;
 
-      if (adjusted <= window.innerHeight + window.innerHeight / 3) {
+      if (
+        scrollPositionWithViewportHeight <=
+        window.innerHeight + window.innerHeight / 3
+      ) {
         //move circles ever closer to the mouse at a pace controlled by the divisor
         target_x += (mouse_x - target_x) / 50;
         target_y += (mouse_y - target_y) / 50;
@@ -61,6 +66,7 @@ export default {
 };
 </script>
 <style scoped>
+/*the important part is to override previous styles*/
 @media (min-width: 800px) and (max-width: 1200px) {
   .gradients-container {
     margin-bottom: 20vw !important;
@@ -275,7 +281,7 @@ export default {
       rgba(140, 100, 255, 0) 40%
     )
     no-repeat;
-  top: -33%;
+  top: -53%;
   left: -40%;
 }
 </style>

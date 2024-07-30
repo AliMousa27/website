@@ -89,7 +89,7 @@ img {
 
 .carousel-item img {
   width: 100%;
-  height: 100%; /* Set a fixed height */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
+  height: 100%;
+  object-fit: cover;
 }
 </style>

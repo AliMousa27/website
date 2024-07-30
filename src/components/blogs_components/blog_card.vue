@@ -10,7 +10,7 @@
     </div>
   </div>
   <div
-    class="blog_card container"
+    class="blog_card_bottom container"
     style="height: auto; height: 55px; transform: translateY(-50px)"
     v-on:click="expandCard($event)"
   >
@@ -35,6 +35,7 @@
 export default {
   name: "BlogCard",
   mounted() {
+    //boolean to keep track of which card is expanded and which are collapsed
     const cards = document.querySelectorAll(".blog_card");
     cards.forEach((card) => {
       card.is_expanded = false;
@@ -44,6 +45,7 @@ export default {
   methods: {
     expandCard(e) {
       const target = e.currentTarget;
+      //if the user clicks the bottom part then its the element with an id, so i get the previous sibling that has class blog card and get the row which is child[0] to expand
       const card =
         target.id === "blog_card"
           ? target
@@ -61,7 +63,8 @@ export default {
 </script>
 
 <style scoped>
-.blog_card {
+.blog_card,
+.blog_card_bottom {
   background: #201c1c;
   border: #2c2c2c solid 2px;
   border-radius: 10px;
@@ -70,7 +73,8 @@ export default {
   width: 100vw;
 }
 
-.blog_card:hover {
+.blog_card:hover,
+.blog_card_bottom:hover {
   box-shadow: rgba(87, 87, 87, 0.35) 0px 5px 15px;
   background: #302c2c;
   cursor: pointer;
@@ -92,5 +96,11 @@ export default {
   height: 30px;
   background-image: url("https://www.freeiconspng.com/thumbs/white-arrow-png/white-down-arrow-png-2.png");
   background-size: contain;
+}
+
+h6 {
+  color: rgb(204, 196, 196);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 </style>

@@ -65,7 +65,7 @@ export default {
         },
         {
           title: "Let Bro Cook",
-          text: "Let bro cook was the very first website I ever made and it served as the basis and introduction to web development that serves as a recipe sharing website. It is safe to say that this website sparked extreme interest and curiosity in fullstack development. The UI is responsive, animated, fluid and clean. I utilized ExpressJS for the backend alongside mongodb for persistent storage. Users can log in, change password, create recipes, favorite recipes and many other functionalities that are typical and atypical to CRUD apps alike and get recommendation from an algorithm. Finally, to breathe life into the platform, I web scraped over 1000 recipes from the internet from scratch.",
+          text: "Let bro cook was the very first website I ever made and it served as the basis and introduction to web development that serves as a recipe sharing website. It is safe to say that this website sparked extreme interest and curiosity in fullstack development. The UI is responsive, animated, fluid and clean. I utilized ExpressJS for the backend alongside mongodb for persistent storage. Users can log in, change password, create recipes, favorite recipes and many other functionalities that are typical and atypical to CRUD apps alike and get recommendation from an algorithm. Finally, to breathe life into the platform, I web scraped over 1000 recipes from the internet from scratch, encoded them in base64 then let the website render it.",
           tags: [
             "Vue",
             "Three.js",
@@ -86,7 +86,7 @@ export default {
         },
         {
           title: "Portfolio Website",
-          text: "Yes the astute observer would notice that this project is the actual website your on right now! Its written in Vue and serves as my platform to communicate the world who I am and what I do. It uses three js, moving linear gradients, gaussian blurs and advanced animations to bring my bring my vision to life.",
+          text: "Yes the astute observer would notice that this project is the actual website your on right now! Its written in Vue and serves as my platform to communicate the world who I am and what I do. It uses three js, moving linear gradients, gaussian blurs and advanced animations to bring my bring my vision and creativity to life.",
           tags: [
             "Vue",
             "Three.js",
@@ -104,14 +104,21 @@ export default {
         },
         {
           title: "Shorts Automater",
-          text: "This is a lightweight project that utilizes python and pymovie to essentially make a quick buck and fully automate the process of creating trendy youtube shorts / instagram reels / tiktoks. The application uses a CLI to get a link and how many comments, opens a simulated selenium browser to grab screenshots of the comments. The program uses an AI to transcribe mp3 sound files into text with given timestamps to be subtitled at the exact correct time to retain the viewers’ attention span. You can see an example here.",
-          tags: ["Python", "AI", "Pymovie", "Selenium", "Algorithm"],
+          text: "This is a lightweight project that utilizes python and pymovie to essentially make a quick buck and fully automate the process of creating trendy youtube shorts / instagram reels / tiktoks. The application uses a CLI to get a link and how many comments, opens a simulated selenium browser to grab screenshots of the comments. The program uses an AI to transcribe mp3 sound files into text with given timestamps to be subtitled at the exact correct time and adds gameplay in the background to retain the viewers’ attention span. You can see an example here.",
+          tags: [
+            "Python",
+            "AI",
+            "Pymovie",
+            "Selenium",
+            "Algorithm",
+            "Web scraping",
+          ],
           is_image: false,
           video_src: require("@/assets/shorts/shorts.mp4"),
         },
         {
           title: "Toothtrek",
-          text: "ToothTrek is a disturbed system that utilizes MQTT to streamline and make implementing the service oriented architecture style easier. The middleware layer that holds the service was written in spring boot while the front end was made with flutter. ToothTrek to simplify dental appointments. The application will enable easy booking for patients and dentists alike. Patients can find available time slots and dental offices, while dentists provide their schedules. The system consists of 4 main components, the website/app frontend, the express backend server, the dentist API, and the various services in the middleware layer. ",
+          text: "ToothTrek is a disturbed system that utilizes MQTT to streamline and make implementing the service oriented architecture style easier. The middleware layer that holds the service was written in spring boot while the front end was made with flutter. ToothTrek to simplify dental appointments. The application will enable easy booking for patients and dentists alike. Patients can find available time slots and dental offices, while dentists provide their schedules. The system consists of 4 main components, the website/app frontend, the express backend server, the dentist API, and the various services in the middleware layer. Moreover, the application was rigorously tested with CI/CD, to streamline the devolpment process, stress tested using locust and simulated millions of requests that could be handled and visualized in grafana. ",
           tags: [
             "Springboot",
             "Java",
@@ -119,6 +126,8 @@ export default {
             "Flutter",
             "Distributed system",
             "MQTT",
+            "Testing",
+            "CI/CD",
           ],
           images: [require("@/assets/temp.png"), require("@/assets/temp2.png")],
           is_image: true,
@@ -129,6 +138,7 @@ export default {
           tags: [
             "Android",
             "Java",
+            "Arduino",
             "Algorithms",
             "MQTT",
             "Embedded system",
@@ -178,13 +188,5 @@ export default {
   gap: 200px;
   background: black;
   box-sizing: border-box;
-}
-</style>
-<style>
-html body {
-  overflow-x: hidden !important;
-  background: black !important;
-  font-family: "Roboto", sans-serif !important;
-  width: 100vw !important;
 }
 </style>

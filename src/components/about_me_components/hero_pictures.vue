@@ -21,12 +21,15 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-//reactive variable
+import CarouselSlides from "../shared_components/carousel.vue";
+
+//reactive variable to tell vue to switch to Carousel when the size is too small
 var use_cards = ref(window.innerWidth > 900);
 
 const updateUseCards = () => {
   use_cards.value = window.innerWidth > 900;
 };
+//add this functions only when the window is being resized when the component is mounted
 onMounted(() => {
   window.addEventListener("resize", updateUseCards);
 });
@@ -37,8 +40,6 @@ onUnmounted(() => {
 </script>
 
 <script>
-import CarouselSlides from "../shared_components/carousel.vue";
-
 export default {
   name: "HeroPictures",
   components: {
