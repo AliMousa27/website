@@ -22,8 +22,11 @@
   </h5>
 </template>
 
-<script>
+<script setup>
 import SocialsIcon from "./socials_icon.vue";
+</script>
+
+<script>
 export default {
   name: "PageFooter",
   components: {

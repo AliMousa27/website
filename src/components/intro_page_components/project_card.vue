@@ -29,11 +29,14 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Shine from "../shared_components/shine.vue";
 import CarouselSlides from "../shared_components/carousel.vue";
 import InfiniteScrollTags from "./infinte_tag.vue";
 import { isInViewport } from "@/utils";
+</script>
+
+<script>
 export default {
   name: "ProjectCard",
   components: {

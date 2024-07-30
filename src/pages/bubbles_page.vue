@@ -27,12 +27,15 @@
   <PageFooter></PageFooter>
 </template>
 
-<script>
+<script setup>
 import BubblesBackground from "../components/intro_page_components/bubbles_background.vue";
 import IntroText from "../components/intro_page_components/intro_text.vue";
 import ProjectCard from "../components/intro_page_components/project_card.vue";
 import PageCurve from "../components/intro_page_components/curve.vue";
 import PageFooter from "../components/shared_components/footer.vue";
+</script>
+
+<script>
 export default {
   name: "BubbelsPage",
   components: {

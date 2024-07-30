@@ -44,8 +44,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import ShineText from "../shared_components/shine.vue";
+</script>
+
+<script>
 export default {
   name: "IntroText",
   components: {
