@@ -114,7 +114,7 @@ export default {
             "Web scraping",
           ],
           is_image: false,
-          video_src: require("@/assets/shorts.mp4"),
+          video_src: "https://www.youtube.com/embed/jiFdyNovPXk",
         },
 
         {
@@ -130,7 +130,7 @@ export default {
             "Software architecture",
           ],
           is_image: false,
-          video_src: require("@/assets/wioplay_vid.mp4"),
+          video_src: "https://www.youtube.com/embed/E4AoKy7i2mA",
         },
         {
           title: "Snake",

@@ -7,11 +7,11 @@
         <CarouselSlides ref="carouselSlides" :images="images"></CarouselSlides>
       </div>
       <div v-else class="col">
-        <video
+        <iframe
           :src="video_src"
-          style="max-height: 640px; min-height: 200px; width: 100%"
+          style="height: 450px; width: 100%"
           controls
-        ></video>
+        ></iframe>
       </div>
       <div class="col-5 text_container">
         <Shine :project_title="project_title" />
