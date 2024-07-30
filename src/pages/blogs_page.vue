@@ -1,5 +1,4 @@
 <template>
-  <NavBar />
   <ul>
     <BlogCard /><BlogCard /><BlogCard /><BlogCard /><BlogCard /><BlogCard />
     <BlogCard />
@@ -11,7 +10,6 @@
 <script>
 import BlogCard from "../components/blogs_components/blog_card.vue";
 import BubblesBackground from "../components/intro_page_components/bubbles_background.vue";
-import NavBar from "../components/shared_components/navbar.vue";
 import PageFooter from "../components/shared_components/footer.vue";
 
 export default {
@@ -19,7 +17,7 @@ export default {
   components: {
     BlogCard,
     BubblesBackground,
-    NavBar,
+
     PageFooter,
   },
 };

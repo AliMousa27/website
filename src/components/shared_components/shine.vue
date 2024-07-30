@@ -17,27 +17,34 @@ export default {
     is_contact_shine: Boolean,
   },
   mounted() {
-    const shineText = this.$refs.shineText;
+    try {
+      const shineText = this.$refs.shineText;
+      if (this.is_contact_shine && shineText) {
+        shineText.classList.add("old-text");
+        shineText.style.opacity = "0";
+        shineText.style.fontFamily = "Roboto, sans-serif";
+        shineText.style.fontWeight = "900";
+        shineText.style.fontSize = "30px";
 
-    if (this.is_contact_shine) {
-      shineText.classList.add("old-text");
-      shineText.style.opacity = "0";
-      shineText.style.fontFamily = "Roboto, sans-serif";
-      shineText.style.fontWeight = "900";
-      shineText.style.fontSize = "30px";
-
-      requestAnimationFrame(() => {
-        shineText.style.animation =
-          "shine_text 2s infinite linear, increase_opacity 1s 7s forwards";
-      });
-      setTimeout(() => {
-        const arrow = document.querySelector(".arrow");
-        arrow.style.opacity = 1;
-        const new_text = shineText.nextSibling;
-        new_text.classList.add("new-text");
-      }, 8000);
-    } else {
-      shineText.style.opacity = "1";
+        requestAnimationFrame(() => {
+          shineText.style.animation =
+            "shine_text 2s infinite linear, increase_opacity 1s 7s forwards";
+        });
+        setTimeout(() => {
+          const arrow = document.querySelector(".arrow");
+          if (arrow) {
+            arrow.style.opacity = 1;
+          }
+          const new_text = shineText.nextSibling;
+          if (new_text) {
+            new_text.classList.add("new-text");
+          }
+        }, 8000);
+      } else if (shineText) {
+        shineText.style.opacity = "1";
+      }
+    } catch (e) {
+      console.log(e);
     }
   },
 };

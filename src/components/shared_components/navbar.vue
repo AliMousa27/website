@@ -3,7 +3,7 @@
     class="navbar navbar-expand-lg navbar-dark"
     style="background-color: transparent"
   >
-    <a href="#">Ali</a>
+    <RouterLink to="/">Ali</RouterLink>
     <button
       class="navbar-toggler"
       type="button"
@@ -18,10 +18,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto" id="nav_list" style="width: fit-content">
         <li class="nav-item active">
-          <a class="nav-link" href="#">About</a>
+          <RouterLink class="nav-link" to="/about">About</RouterLink>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Blogs</a>
+          <RouterLink class="nav-link" to="/blogs">Blogs</RouterLink>
         </li>
       </ul>
     </div>
