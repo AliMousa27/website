@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import BubblesBackground from "../components/intro_page_components/bubbles_background.vue";
+import BubblesBackground from "../components/shared_components/bubbles_background.vue";
 import IntroText from "../components/intro_page_components/intro_text.vue";
 import ProjectCard from "../components/intro_page_components/project_card.vue";
 import PageCurve from "../components/intro_page_components/curve.vue";
@@ -117,22 +117,7 @@ export default {
           video_src:
             "https://private-user-images.githubusercontent.com/114988369/308372139-1b6dfe56-20c5-4e7a-88fd-e78eaeb62ff8.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIzNTY4OTYsIm5iZiI6MTcyMjM1NjU5NiwicGF0aCI6Ii8xMTQ5ODgzNjkvMzA4MzcyMTM5LTFiNmRmZTU2LTIwYzUtNGU3YS04OGZkLWU3OGVhZWI2MmZmOC5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDczMFQxNjIzMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zNDcwYmEyODUzMDRiMjBhYzYwZjQzOTQxMmM5ZTJhODMwNzc3MWMzOWE1OGM1MDhiZTU4Y2I0Yzc5ZTdlNjg3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.qTDGhIvBxBL7p0QOH7Nfngwm7SaWhivA-L0ZKTMWbb4",
         },
-        {
-          title: "Toothtrek",
-          text: "ToothTrek is a disturbed system that utilizes MQTT to streamline and make implementing the service oriented architecture style easier. The middleware layer that holds the service was written in spring boot while the front end was made with flutter. ToothTrek to simplify dental appointments. The application will enable easy booking for patients and dentists alike. Patients can find available time slots and dental offices, while dentists provide their schedules. The system consists of 4 main components, the website/app frontend, the express backend server, the dentist API, and the various services in the middleware layer. Moreover, the application was rigorously tested with CI/CD, to streamline the devolpment process, stress tested using locust and simulated millions of requests that could be handled and visualized in grafana. ",
-          tags: [
-            "Springboot",
-            "Java",
-            "Express",
-            "Flutter",
-            "Distributed system",
-            "MQTT",
-            "Testing",
-            "CI/CD",
-          ],
-          images: [require("@/assets/temp.png"), require("@/assets/temp2.png")],
-          is_image: true,
-        },
+
         {
           title: "Wioplay",
           text: "Wioplay is a mini distributed system project where half the software lies on a Seeeduino terminal and the other half is on an android app. Wioplay allows users to stream music from a music library directly from their android phone into the terminal. Moreover the app functions as a means to your fitness goals as the user works out, they gain more 'calorie' currency to purchase more songs to stream. I created an algorithm to parse songs into individual notes that as the terminal can't play chords but rather only notes. The software uses MQTT for separation of concerns.",
