@@ -113,13 +113,16 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import BIRDS from "vanta/dist/vanta.birds.min";
 import ShineText from "../components/shared_components/shine.vue";
 import HeroPictures from "../components/about_me_components/hero_pictures.vue";
 import PageFooter from "../components/shared_components/footer.vue";
-
+import { isInViewport } from "@/utils";
 import { onBeforeUnmount } from "vue";
+</script>
+
+<script>
 export default {
   name: "AboutMePage",
   components: {
@@ -154,7 +157,7 @@ export default {
       const all_sections = document.querySelectorAll(".section_wrapper");
 
       all_sections.forEach((section) => {
-        if (this.isInViewport(section)) {
+        if (isInViewport(section, 10)) {
           section.style.opacity = 1;
           section.style.transform = "translateY(0)";
         }
@@ -173,15 +176,6 @@ export default {
   methods: {
     updateVanta() {
       this.vantaEffect.resize();
-    },
-    isInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top + rect.height / 10 < window.innerHeight &&
-        rect.left + rect.width / 10 < window.innerWidth &&
-        rect.top + rect.height / 10 > 0 &&
-        rect.left + rect.width / 10 > 0
-      );
     },
   },
 };

@@ -33,7 +33,7 @@
 import Shine from "../shared_components/shine.vue";
 import CarouselSlides from "../shared_components/carousel.vue";
 import InfiniteScrollTags from "./infinte_tag.vue";
-
+import { isInViewport } from "@/utils";
 export default {
   name: "ProjectCard",
   components: {
@@ -108,7 +108,7 @@ export default {
     const handleScroll = () => {
       const projects = document.querySelectorAll(".project_container");
       projects.forEach((project) => {
-        if (this.isInViewport(project)) {
+        if (isInViewport(project, 4)) {
           this.animateProject(project);
         }
       });
@@ -120,16 +120,6 @@ export default {
     window.addEventListener("resize", adjustClasses);
   },
   methods: {
-    isInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top + rect.height / 4 < window.innerHeight &&
-        rect.left + rect.width / 4 < window.innerWidth &&
-        rect.top + rect.height / 4 > 0 &&
-        rect.left + rect.width / 4 > 0
-      );
-    },
-
     animateProject(project) {
       project.style.transition = "opacity 1s, transform 1s";
       project.style.opacity = 1;
