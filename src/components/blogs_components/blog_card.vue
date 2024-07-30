@@ -84,45 +84,6 @@ export default {
   overflow: hidden;
 }
 
-p,
-h2,
-h6 {
-  color: rgb(204, 196, 196);
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-}
-h2 {
-  font-size: 30px;
-  color: #c1cccc;
-}
-
-p {
-  font-size: 22px;
-}
-
-@keyframes expand_to_fit {
-  from {
-    height: 205px;
-    max-height: 205px;
-  }
-  to {
-    height: fit-content;
-    max-height: fit-content;
-  }
-}
-
-@media (max-width: 786px) {
-  p {
-    font-size: 18px;
-  }
-  h2 {
-    font-size: 24px;
-  }
-  .blod_card {
-    max-width: 100vh;
-  }
-}
-
 .arrow {
   opacity: 1;
   transition: opacity 1s ease-in-out;
@@ -131,15 +92,5 @@ p {
   height: 30px;
   background-image: url("https://www.freeiconspng.com/thumbs/white-arrow-png/white-down-arrow-png-2.png");
   background-size: contain;
-}
-
-img {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  height: auto;
 }
 </style>
