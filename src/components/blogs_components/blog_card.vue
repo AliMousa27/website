@@ -6,27 +6,7 @@
       style="height: 200px"
       id="blog_card"
     >
-      <div class="col">
-        <h2>Blog title maybe</h2>
-        <p>
-          Approximately 50 Wagner fighters in a convoy were killed in an
-          al-Qaida ambush, which was joined by rebels who were in pursuit, along
-          the border with Algeria, said Wassim Nasr, a Sahel specialist and
-          senior research fellow at the Soufan Center, a security think tank,
-          who said he counted bodies in a video of the aftermath. The
-          mercenaries had been fighting mostly Tuareg rebels alongside Mali's
-          army when their convoy was forced to retreat into jihadi territory and
-          ambushed south of the commune of Tinzaouaten, Nasr said. Approximately
-          50 Wagner fighters in a convoy were killed in an al-Qaida ambush,
-          which was joined by rebels who were in pursuit, along the border with
-          Algeria, said Wassim Nasr, a Sahel specialist and senior research
-          fellow at the Soufan Center, a security think tank, who said he
-          counted bodies in a video of the aftermath. The mercenaries had been
-          fighting mostly Tuareg rebels alongside Mali's army when their convoy
-          was forced to retreat into jihadi territory and ambushed south of the
-          commune of Tinzaouaten, Nasr said.
-        </p>
-      </div>
+      <div class="col"><slot></slot></div>
     </div>
   </div>
   <div
@@ -151,5 +131,15 @@ p {
   height: 30px;
   background-image: url("https://www.freeiconspng.com/thumbs/white-arrow-png/white-down-arrow-png-2.png");
   background-size: contain;
+}
+
+img {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
 }
 </style>
