@@ -21,7 +21,7 @@
       <div class="circle4"></div>
       <div class="circle5"></div>
       <div class="mouse_circle" id="mouse_circle"></div>
-      <div class="gap_circle"></div>
+      <div v-if="add_gap_circle" class="gap_circle"></div>
     </div>
   </div>
 </template>
@@ -29,7 +29,12 @@
 <script>
 export default {
   name: "BubbelsPage",
-
+  props: {
+    add_gap_circle: {
+      type: Boolean,
+      default: true,
+    },
+  },
   mounted() {
     var mouse_x = 0;
     var mouse_y = 0;

@@ -3,7 +3,7 @@
     <div
       class="row row_content"
       v-on:click="expandCard($event)"
-      style="height: 200px"
+      style="height: auto"
       id="blog_card"
     >
       <div class="col"><slot></slot></div>
@@ -46,15 +46,25 @@ export default {
     expandCard(e) {
       const target = e.currentTarget;
       //if the user clicks the bottom part then its the element with an id, so i get the previous sibling that has class blog card and get the row which is child[0] to expand
-      const card =
-        target.id === "blog_card"
-          ? target
-          : target.previousElementSibling.children[0];
-
-      if (card.is_expanded) {
-        card.style.height = "198px";
+      var card = null;
+      var arrow = null;
+      if (target.id === "blog_card") {
+        card = target;
+        arrow = target.parentElement.nextSibling.querySelector(".arrow");
+        console.log(arrow);
       } else {
-        card.style.height = "fit-content";
+        card = target.previousElementSibling.children[0];
+        arrow = target.querySelector(".arrow");
+        console.log(arrow);
+      }
+      if (card.is_expanded) {
+        card.style.minHeight = "1%";
+        card.style.maxHeight = "198px";
+        arrow.style.transform = "rotate(0deg)";
+      } else {
+        card.style.minHeight = "100%";
+        card.style.maxHeight = card.scrollHeight + "px";
+        arrow.style.transform = "rotate(180deg)";
       }
       card.is_expanded = !card.is_expanded;
     },
@@ -83,14 +93,16 @@ export default {
 .row_content {
   position: relative;
   word-wrap: break-word;
-  transition: all 2s linear;
+  min-height: 1%;
+  max-height: 198px;
+  transition: all 1s;
   padding-top: 30px;
   overflow: hidden;
 }
 
 .arrow {
   opacity: 1;
-  transition: opacity 1s ease-in-out;
+  transition: all 1s ease-in-out;
   margin-top: 12px;
   width: 30px;
   height: 30px;

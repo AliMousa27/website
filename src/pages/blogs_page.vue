@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <div class="container scrollable-content text-center" id="scrollable_div">
     <BlogCard
       ><h2>Chess AI</h2>
       <p>
@@ -63,8 +63,9 @@
         networks and data parsing and cleaning was extremely fun actually
       </p></BlogCard
     >
-  </ul>
-  <BubblesBackground />
+
+    <BubblesBackground :add_gap_circle="false" />
+  </div>
   <PageFooter />
 </template>
 
@@ -132,5 +133,16 @@ img {
   margin-right: auto;
   max-width: 100%;
   height: auto;
+}
+
+.scrollable-content {
+  height: 100vh;
+  overflow-y: scroll !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
 }
 </style>
