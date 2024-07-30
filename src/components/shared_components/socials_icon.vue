@@ -121,28 +121,30 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: fit-content;
+  z-index: 1;
 }
-li::after {
-  content: "";
-  display: block;
-  height: 0px;
-  transition: height 0.3s ease-in-out;
-  pointer-events: none;
-}
-li:hover::after {
-  height: 10px;
-}
+
 .socials_list {
   display: flex;
   justify-content: start;
   align-items: start;
   width: fit-content;
-  overflow: clip !important;
 }
+
 .socials_list .icon-content {
   margin: 0 10px;
   position: relative;
+  transition: transform 0.3s ease-in-out;
 }
+
+.socials_list .icon-content:hover {
+  transform: translateY(-10px);
+}
+
 .socials_list .icon-content .tooltip {
   position: absolute;
   bottom: -30px;
@@ -156,11 +158,13 @@ li:hover::after {
   visibility: hidden;
   transition: all 0.3s ease;
 }
+
 .socials_list .icon-content:hover .tooltip {
   opacity: 1;
   visibility: visible;
   bottom: -40px;
 }
+
 .socials_list .icon-content a {
   position: relative;
   overflow: hidden;
@@ -171,16 +175,17 @@ li:hover::after {
   height: 10vw;
   max-height: 80px;
   max-width: 80px;
-
   border-radius: 50%;
   color: #a5a5a5;
   background-color: #313030;
   transition: all 0.3s ease-in-out;
 }
+
 .socials_list .icon-content a:hover {
   box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
   color: white;
 }
+
 .socials_list .icon-content a svg {
   position: relative;
   z-index: 1;
@@ -189,6 +194,7 @@ li:hover::after {
   max-height: 50px;
   max-width: 50px;
 }
+
 .socials_list .icon-content a .filled {
   position: absolute;
   top: auto;
@@ -199,25 +205,31 @@ li:hover::after {
   background-color: #000;
   transition: all 0.3s ease-in-out;
 }
+
 .socials_list .icon-content a:hover .filled {
   height: 100%;
 }
+
 .socials_list .icon-content a[data-social="spotify"] .filled,
 .socials_list .icon-content a[data-social="spotify"] ~ .tooltip {
   background-color: #1db954;
 }
+
 .socials_list .icon-content a[data-social="github"] .filled,
 .socials_list .icon-content a[data-social="github"] ~ .tooltip {
   background-color: #30444c;
 }
+
 .socials_list .icon-content a[data-social="linkedin"] .filled,
 .socials_list .icon-content a[data-social="linkedin"] ~ .tooltip {
   background-color: #0a66c2;
 }
+
 .socials_list .icon-content a[data-social="discord"] .filled,
 .socials_list .icon-content a[data-social="discord"] ~ .tooltip {
   background-color: #5865f2;
 }
+
 .socials_list .icon-content a[data-social="instagram"] .filled,
 .socials_list .icon-content a[data-social="instagram"] ~ .tooltip {
   background: #833ab4;

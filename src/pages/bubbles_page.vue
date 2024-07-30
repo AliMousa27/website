@@ -114,7 +114,8 @@ export default {
             "Web scraping",
           ],
           is_image: false,
-          video_src: require("@/assets/shorts/shorts.mp4"),
+          video_src:
+            "https://private-user-images.githubusercontent.com/114988369/308372139-1b6dfe56-20c5-4e7a-88fd-e78eaeb62ff8.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIzNTY4OTYsIm5iZiI6MTcyMjM1NjU5NiwicGF0aCI6Ii8xMTQ5ODgzNjkvMzA4MzcyMTM5LTFiNmRmZTU2LTIwYzUtNGU3YS04OGZkLWU3OGVhZWI2MmZmOC5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDczMFQxNjIzMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zNDcwYmEyODUzMDRiMjBhYzYwZjQzOTQxMmM5ZTJhODMwNzc3MWMzOWE1OGM1MDhiZTU4Y2I0Yzc5ZTdlNjg3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.qTDGhIvBxBL7p0QOH7Nfngwm7SaWhivA-L0ZKTMWbb4",
         },
         {
           title: "Toothtrek",
@@ -145,7 +146,8 @@ export default {
             "Software architecture",
           ],
           is_image: false,
-          video_src: require("@/assets/wioplay/wioplay_vid.mp4"),
+          video_src:
+            "https://github-production-user-asset-6210df.s3.amazonaws.com/114988369/353540705-916aabb5-fb41-43db-90ed-a95b7be0f317.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240730%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240730T163040Z&X-Amz-Expires=300&X-Amz-Signature=f94dddb165752a497f2bbcbd3d8f8cc231044b80931a034a43be5ba6f2df6f19&X-Amz-SignedHeaders=host&actor_id=114988369&key_id=0&repo_id=674714698",
         },
         {
           title: "Snake",
