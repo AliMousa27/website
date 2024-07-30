@@ -33,7 +33,22 @@
     class="blog_card container"
     style="height: auto; height: 55px; transform: translateY(-50px)"
     v-on:click="expandCard($event)"
-  ></div>
+  >
+    <div class="row">
+      <div class="d-flex justify-content-between">
+        <span
+          style="
+            background-image: url('https://i2.wp.com/www.freeiconspng.com/uploads/calendar-icon-png-14.png');
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+          "
+          ><h6 style="margin-left: 60px; margin-top: 10px">2024/07/30</h6></span
+        >
+        <div class="arrow"></div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -89,13 +104,14 @@ export default {
   word-wrap: break-word;
   min-height: 1%;
   max-height: 198px;
-  transition: all 1s ease-in;
+  transition: all 2s linear;
   padding-top: 30px;
   overflow: hidden;
 }
 
 p,
-h2 {
+h2,
+h6 {
   color: rgb(204, 196, 196);
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -130,5 +146,15 @@ p {
   .blod_card {
     max-width: 100vh;
   }
+}
+
+.arrow {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  margin-top: 12px;
+  width: 30px;
+  height: 30px;
+  background-image: url("https://www.freeiconspng.com/thumbs/white-arrow-png/white-down-arrow-png-2.png");
+  background-size: contain;
 }
 </style>

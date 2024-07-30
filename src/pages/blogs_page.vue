@@ -1,6 +1,6 @@
 <template>
   <NavBar />
-  <ul class="border">
+  <ul>
     <BlogCard /><BlogCard /><BlogCard /><BlogCard /><BlogCard /><BlogCard />
     <BlogCard />
   </ul>
