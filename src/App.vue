@@ -3,8 +3,12 @@
   <RouterView />
 </template>
 
-<script>
+<script setup>
+import { saveMode } from "./utils";
 import NavBar from "./components/shared_components/navbar.vue";
+saveMode("dark");
+</script>
+<script>
 export default {
   name: "App",
   components: {

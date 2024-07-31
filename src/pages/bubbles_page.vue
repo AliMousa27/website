@@ -36,8 +36,14 @@ import PageFooter from "../components/shared_components/footer.vue";
 </script>
 
 <script>
+import { changeBubblesTheme, loadMode } from "@/utils";
+
 export default {
   name: "BubbelsPage",
+  mounted() {
+    const switchToLight = loadMode() == "dark" ? false : true;
+    changeBubblesTheme(switchToLight);
+  },
   components: {
     IntroText,
     BubblesBackground,

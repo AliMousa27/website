@@ -25,7 +25,7 @@
         </li>
         <li>
           <button
-            @click="change"
+            @click="lol"
             style="width: 50px; height: 50px"
             id="mode"
           ></button>
@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import { changeBubblesTheme, saveMode, loadMode } from "@/utils";
+
 export default {
   name: "NavBar",
   mounted() {
@@ -43,61 +45,10 @@ export default {
     theme_btn.to_dark_mode = true;
   },
   methods: {
-    get_all_els_to_change() {
-      var list = [
-        document.querySelector(".gradient-bg"),
-        document.querySelector(".projects_container"),
-        document.querySelector("body"),
-      ];
-      const els_to_get = [
-        "h1",
-        "p",
-        "h2",
-        "h5",
-        "hr",
-        "li",
-        ".nav-link",
-        ".socials_list .icon-content a",
-        ".tag-list li",
-      ];
-      els_to_get.forEach((el) => {
-        list.push(...document.querySelectorAll(el));
-      });
-      return list;
-    },
-    change(event) {
-      const to_dark_mode = event.target.to_dark_mode;
-      const list = this.get_all_els_to_change();
-
-      for (let i = 0; i < list.length; i++) {
-        let el = list[i];
-        el.style.transition = "all 0.5s ease";
-        if (
-          el.classList.contains("gradient-bg") ||
-          el.classList.contains("projects_container") ||
-          el.tagName == "BODY"
-        ) {
-          let color = to_dark_mode ? "white" : "black";
-          el.style.backgroundColor = color;
-        } else if (el.id == "socials") {
-          let color = to_dark_mode ? "#e4e4e4" : "#313030";
-          el.style.backgroundColor = color;
-        } else if (el.tagName == "HR") {
-          let color = to_dark_mode ? "1px solid black" : "1px solid white";
-          el.style.borderTop = color;
-        } else if (el.matches(".tag-list li")) {
-          let box_shadow = to_dark_mode
-            ? "0 0.25rem 0.5rem -0.125rem hsl(218, 33%, 9%)"
-            : "0 0.5rem 1rem -0.25rem hsl(218, 33%, 9%)";
-          el.style.boxShadow = box_shadow;
-          let color = to_dark_mode ? "black" : "white";
-          el.style.color = color;
-        } else {
-          let color = to_dark_mode ? "black" : "white";
-          el.style.color = color;
-        }
-      }
-      event.target.to_dark_mode = !to_dark_mode;
+    lol() {
+      const switchToLight = loadMode() == "dark" ? true : false;
+      changeBubblesTheme(switchToLight);
+      saveMode(switchToLight ? "light" : "dark");
     },
   },
 };
