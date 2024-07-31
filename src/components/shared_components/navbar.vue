@@ -86,11 +86,12 @@ export default {
           let color = to_dark_mode ? "1px solid white" : "1px solid black";
           el.style.borderTop = color;
         } else if (el.matches(".tag-list li")) {
-          ("");
           let box_shadow = to_dark_mode
             ? "0 0.25rem 0.5rem -0.125rem hsl(218, 33%, 9%)"
             : "0 0.5rem 1rem -0.25rem hsl(218, 33%, 9%)";
           el.style.boxShadow = box_shadow;
+          let color = to_dark_mode ? "black" : "white";
+          el.style.color = color;
         } else {
           let color = to_dark_mode ? "black" : "white";
           el.style.color = color;
