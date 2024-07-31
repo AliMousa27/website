@@ -36,6 +36,8 @@ export default {
     },
   },
   mounted() {
+    const navbar = document.querySelector(".navbar");
+    navbar.style.backgroundColor = "transparent";
     var mouse_x = 0;
     var mouse_y = 0;
     var target_x = 0;

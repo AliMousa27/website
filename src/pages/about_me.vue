@@ -123,6 +123,7 @@ import { onBeforeUnmount } from "vue";
 </script>
 
 <script>
+import { changeAboutMeTheme, loadMode } from "@/utils";
 export default {
   name: "AboutMePage",
   components: {
@@ -171,6 +172,12 @@ export default {
       this.vantaEffect.destroy();
       scrollable_div.removeEventListener("scroll", handleScroll);
     });
+
+    const switchToLight = loadMode() == "dark" ? false : true;
+    this.vantaEffect.setOptions({
+      backgroundColor: switchToLight ? 0xffffff : 0x0,
+    });
+    changeAboutMeTheme(switchToLight, "0.5");
   },
 
   methods: {

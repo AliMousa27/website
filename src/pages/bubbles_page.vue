@@ -42,7 +42,7 @@ export default {
   name: "BubbelsPage",
   mounted() {
     const switchToLight = loadMode() == "dark" ? false : true;
-    changeBubblesTheme(switchToLight);
+    changeBubblesTheme(switchToLight, "0.0000000001");
   },
   components: {
     IntroText,

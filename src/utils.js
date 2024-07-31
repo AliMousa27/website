@@ -8,57 +8,58 @@ export function isInViewport(el, divisor) {
   );
 }
 
-//light_mode will be true means to switch colors to light mode
-export function changeBubblesTheme(light_mode) {
-  const list = get_all_els_to_change();
+function applyStyles(el, light_mode, transition_speed) {
+  el.style.transition = `all ${transition_speed}s ease`;
 
-  for (let i = 0; i < list.length; i++) {
-    let el = list[i];
-    el.style.transition = "all 0.5s ease";
-    if (
-      el.classList.contains("gradient-bg") ||
-      el.classList.contains("projects_container") ||
-      el.tagName == "BODY"
-    ) {
-      let color = light_mode ? "white" : "black";
-      el.style.backgroundColor = color;
-    } else if (el.id == "socials") {
-      let color = light_mode ? "#e4e4e4" : "#313030";
-      el.style.backgroundColor = color;
-    } else if (el.tagName == "HR") {
-      let color = light_mode ? "1px solid black" : "1px solid white";
-      el.style.borderTop = color;
-    } else if (el.matches(".tag-list li")) {
-      let box_shadow = light_mode
-        ? "0 0.25rem 0.5rem -0.125rem hsl(218, 33%, 9%)"
-        : "0 0.5rem 1rem -0.25rem hsl(218, 33%, 9%)";
-      el.style.boxShadow = box_shadow;
-      let color = light_mode ? "black" : "white";
-      el.style.color = color;
-    } else {
-      let color = light_mode ? "black" : "white";
-      el.style.color = color;
-    }
+  if (
+    el.classList.contains("gradient-bg") ||
+    el.classList.contains("projects_container") ||
+    el.tagName === "BODY"
+  ) {
+    el.style.backgroundColor = light_mode ? "white" : "black";
+  } else if (el.id === "socials") {
+    el.style.backgroundColor = light_mode ? "#e4e4e4" : "#313030";
+  } else if (el.tagName === "HR") {
+    el.style.borderTop = light_mode ? "1px solid black" : "1px solid white";
+  } else if (el.matches(".tag-list li")) {
+    el.style.boxShadow = light_mode
+      ? "0 0.25rem 0.5rem -0.125rem hsl(218, 33%, 9%)"
+      : "0 0.5rem 1rem -0.25rem hsl(218, 33%, 9%)";
+    el.style.color = light_mode ? "black" : "white";
+  } else {
+    el.style.color = light_mode ? "black" : "white";
   }
 }
 
-export function get_all_els_to_change() {
-  var list = [
-    document.querySelector(".gradient-bg"),
-    document.querySelector(".projects_container"),
-    document.querySelector("body"),
-  ];
-  const els_to_get = [
-    "h1",
-    "p",
-    "h2",
-    "h5",
-    "hr",
-    "li",
-    ".nav-link",
-    ".socials_list .icon-content a",
-    ".tag-list li",
-  ];
+export function changeBubblesTheme(light_mode, transition_speed) {
+  const list = get_all_els_to_change(
+    [
+      "h1",
+      "p",
+      "h2",
+      "h5",
+      "hr",
+      "li",
+      ".nav-link",
+      ".socials_list .icon-content a",
+      ".tag-list li",
+    ],
+    true
+  );
+
+  list.forEach((el) => applyStyles(el, light_mode, transition_speed));
+}
+
+export function get_all_els_to_change(els_to_get, getExtras) {
+  let list = [];
+  if (getExtras) {
+    list = [
+      document.querySelector(".gradient-bg"),
+      document.querySelector(".projects_container"),
+      document.querySelector("body"),
+    ];
+  }
+
   els_to_get.forEach((el) => {
     list.push(...document.querySelectorAll(el));
   });
@@ -71,4 +72,16 @@ export function saveMode(theme) {
 
 export function loadMode() {
   return localStorage.getItem("theme");
+}
+
+export function changeAboutMeTheme(light_mode, transition_speed) {
+  const navbar = document.querySelector(".navbar");
+  navbar.style.backgroundColor = light_mode ? "white" : "black";
+
+  const list = get_all_els_to_change(
+    ["h1", "p", "li", ".nav-link", "hr", "h5", ".socials_list .icon-content a"],
+    false
+  );
+
+  list.forEach((el) => applyStyles(el, light_mode, transition_speed));
 }

@@ -47,7 +47,7 @@ export default {
   methods: {
     lol() {
       const switchToLight = loadMode() == "dark" ? true : false;
-      changeBubblesTheme(switchToLight);
+      changeBubblesTheme(switchToLight, "0.5");
       saveMode(switchToLight ? "light" : "dark");
     },
   },
