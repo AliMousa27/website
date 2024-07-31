@@ -6,7 +6,7 @@
       style="height: auto"
       id="blog_card"
     >
-      <div class="col"><slot></slot></div>
+      <div class="col" style="padding-bottom: 50px"><slot></slot></div>
     </div>
   </div>
   <div
@@ -63,6 +63,7 @@ export default {
         arrow.style.transform = "rotate(0deg)";
       } else {
         card.style.minHeight = "100%";
+
         card.style.maxHeight = card.scrollHeight + "px";
         arrow.style.transform = "rotate(180deg)";
       }
