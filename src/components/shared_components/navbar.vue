@@ -83,7 +83,7 @@ export default {
           let color = to_dark_mode ? "#e4e4e4" : "#313030";
           el.style.backgroundColor = color;
         } else if (el.tagName == "HR") {
-          let color = to_dark_mode ? "1px solid white" : "1px solid black";
+          let color = to_dark_mode ? "1px solid black" : "1px solid white";
           el.style.borderTop = color;
         } else if (el.matches(".tag-list li")) {
           let box_shadow = to_dark_mode
