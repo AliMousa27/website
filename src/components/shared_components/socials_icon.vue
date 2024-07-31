@@ -5,6 +5,7 @@
         href="https://open.spotify.com/user/itapz"
         aria-label="Spotify"
         data-social="spotify"
+        id="socials"
       >
         <div class="filled"></div>
         <svg version="1.1" viewBox="0 0 100 100">
@@ -21,6 +22,7 @@
         href="https://github.com/AliMousa27"
         aria-label="Github"
         data-social="github"
+        id="socials"
       >
         <div class="filled"></div>
 
@@ -44,6 +46,7 @@
         href="https://www.linkedin.com/in/ali-mousa-59a440262/"
         aria-label="Linkedin"
         data-social="linkedin"
+        id="socials"
       >
         <div class="filled"></div>
 
@@ -67,6 +70,7 @@
         href="https://discord.com/channels/346400531964755969"
         aria-label="Discord"
         data-social="discord"
+        id="socials"
       >
         <div class="filled"></div>
 
@@ -90,6 +94,7 @@
         href="https://www.instagram.com/alial_musawi27"
         aria-label="Instagram"
         data-social="instagram"
+        id="socials"
       >
         <div class="filled"></div>
 
