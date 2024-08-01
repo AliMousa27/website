@@ -36,18 +36,40 @@
 </template>
 
 <script>
-import { changeBubblesTheme, saveMode, loadMode } from "@/utils";
-
+import {
+  changeBubblesTheme,
+  changeAboutMeTheme,
+  changeBlogsTheme,
+  saveMode,
+  loadMode,
+} from "@/utils";
+import { useRoute } from "vue-router";
+import { computed } from "vue";
 export default {
-  name: "NavBar",
-  mounted() {
-    const theme_btn = document.getElementById("mode");
-    theme_btn.to_dark_mode = true;
+  setup() {
+    const route = useRoute();
+
+    const path = computed(() => route.path);
+    return { path };
   },
+  name: "NavBar",
+
   methods: {
     lol() {
+      console.log(this.path);
       const switchToLight = loadMode() == "dark" ? true : false;
-      changeBubblesTheme(switchToLight, "0.5");
+      switch (this.path) {
+        case "/":
+          changeBubblesTheme(switchToLight, "0.5");
+          break;
+        case "/about":
+          changeAboutMeTheme(switchToLight, "0.5");
+          this.emitter.emit("change_theme", switchToLight);
+          break;
+        case "/blogs":
+          changeBlogsTheme(switchToLight, "0.5");
+          break;
+      }
       saveMode(switchToLight ? "light" : "dark");
     },
   },

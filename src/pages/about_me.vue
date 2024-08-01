@@ -124,6 +124,7 @@ import { onBeforeUnmount } from "vue";
 
 <script>
 import { changeAboutMeTheme, loadMode } from "@/utils";
+
 export default {
   name: "AboutMePage",
   components: {
@@ -153,6 +154,11 @@ export default {
       separation: 50.0,
       alignment: 20.0,
     });
+    this.emitter.on("change_theme", (switchToLight) => {
+      this.vantaEffect.setOptions({
+        backgroundColor: switchToLight ? 0xffffff : 0x0,
+      });
+    });
 
     window.addEventListener("resize", this.updateVanta);
 
@@ -175,7 +181,7 @@ export default {
       scrollable_div.removeEventListener("scroll", handleScroll);
     });
 
-    changeAboutMeTheme(switchToLight, "0.5");
+    changeAboutMeTheme(switchToLight, "0");
   },
 
   methods: {
