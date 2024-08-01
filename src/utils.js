@@ -26,6 +26,21 @@ function applyStyles(el, light_mode, transition_speed) {
       ? "0 0.25rem 0.5rem -0.125rem hsl(218, 33%, 9%)"
       : "0 0.5rem 1rem -0.25rem hsl(218, 33%, 9%)";
     el.style.color = light_mode ? "black" : "white";
+  } else if (
+    el.classList.contains("blog_card") ||
+    el.classList.contains("blog_card_bottom") ||
+    el.id === "blog_card"
+  ) {
+    console.log(el);
+
+    if (light_mode) {
+      el.classList.add("light_mode");
+      el.classList.remove("dark_mode");
+    } else {
+      el.classList.remove("light_mode");
+      el.classList.add("dark_mode");
+    }
+    el.style.border = light_mode ? "1px solid #bcbbbb" : "#2c2c2c solid 2px";
   } else {
     el.style.color = light_mode ? "black" : "white";
   }
@@ -44,20 +59,20 @@ export function changeBubblesTheme(light_mode, transition_speed) {
       ".socials_list .icon-content a",
       ".tag-list li",
     ],
-    true
+    [
+      document.querySelector(".gradient-bg"),
+      document.querySelector(".projects_container"),
+      document.querySelector("body"),
+    ]
   );
 
   list.forEach((el) => applyStyles(el, light_mode, transition_speed));
 }
 
-export function get_all_els_to_change(els_to_get, getExtras) {
+export function get_all_els_to_change(els_to_get, extra_els = null) {
   let list = [];
-  if (getExtras) {
-    list = [
-      document.querySelector(".gradient-bg"),
-      document.querySelector(".projects_container"),
-      document.querySelector("body"),
-    ];
+  if (extra_els) {
+    list = [...extra_els];
   }
 
   els_to_get.forEach((el) => {
@@ -81,6 +96,31 @@ export function changeAboutMeTheme(light_mode, transition_speed) {
   const list = get_all_els_to_change(
     ["h1", "p", "li", ".nav-link", "hr", "h5", ".socials_list .icon-content a"],
     false
+  );
+  list.forEach((el) => applyStyles(el, light_mode, transition_speed));
+}
+
+export function changeBlogsTheme(light_mode) {
+  const navbar = document.querySelector(".navbar");
+  navbar.style.backgroundColor = light_mode ? "white" : "black";
+}
+
+export function xd(light_mode, transition_speed) {
+  const list = get_all_els_to_change(
+    [
+      "h1",
+      "p",
+      "h2",
+      "h5",
+      "h6",
+      "hr",
+      "li",
+      ".nav-link",
+      ".socials_list .icon-content a",
+      ".blog_card_bottom",
+      ".blog_card",
+    ],
+    [document.querySelector(".gradient-bg"), document.querySelector("body")]
   );
 
   list.forEach((el) => applyStyles(el, light_mode, transition_speed));

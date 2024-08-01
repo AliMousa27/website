@@ -73,11 +73,16 @@
 import BlogCard from "../components/blogs_components/blog_card.vue";
 import BubblesBackground from "../components/shared_components/bubbles_background.vue";
 import PageFooter from "../components/shared_components/footer.vue";
+import { loadMode, xd } from "@/utils";
 </script>
 
 <script>
 export default {
   name: "BlogsPage",
+  mounted() {
+    const switchToLight = loadMode() == "dark" ? false : true;
+    xd(switchToLight, "0");
+  },
   components: {
     BlogCard,
     BubblesBackground,

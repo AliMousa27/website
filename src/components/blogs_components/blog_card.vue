@@ -76,19 +76,28 @@ export default {
 <style scoped>
 .blog_card,
 .blog_card_bottom {
-  background: #201c1c;
   border: #2c2c2c solid 2px;
   border-radius: 10px;
   transition: all 0.3s ease;
   border-bottom: none;
   width: 100vw;
+  box-shadow: rgba(87, 87, 87, 0.35) 0px 5px 15px;
+  cursor: pointer;
 }
 
-.blog_card:hover,
-.blog_card_bottom:hover {
-  box-shadow: rgba(87, 87, 87, 0.35) 0px 5px 15px;
+.dark_mode {
+  background: #201c1c;
+}
+.dark_mode:hover {
   background: #302c2c;
-  cursor: pointer;
+}
+
+.light_mode {
+  background: rgb(237, 234, 234);
+}
+.light_mode:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px !important;
+  background: rgb(228, 227, 227) !important;
 }
 
 .row_content {
