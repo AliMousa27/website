@@ -134,6 +134,8 @@ export default {
   mounted() {
     const screen_height = window.innerHeight;
     const screen_width = window.innerWidth;
+    const switchToLight = loadMode() == "dark" ? false : true;
+
     this.vantaEffect = BIRDS({
       el: this.$refs.vantaRef,
       mouseControls: true,
@@ -143,7 +145,7 @@ export default {
       minWidth: screen_width,
       scale: 1.0,
       scaleMobile: 1.0,
-      backgroundColor: 0x0,
+      backgroundColor: switchToLight ? 0xffffff : 0x0,
       color1: 0xfa6ce2,
       color2: 0x5b5be6,
       colorMode: "lerpGradient",
@@ -173,10 +175,6 @@ export default {
       scrollable_div.removeEventListener("scroll", handleScroll);
     });
 
-    const switchToLight = loadMode() == "dark" ? false : true;
-    this.vantaEffect.setOptions({
-      backgroundColor: switchToLight ? 0xffffff : 0x0,
-    });
     changeAboutMeTheme(switchToLight, "0.5");
   },
 

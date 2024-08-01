@@ -31,8 +31,6 @@ function applyStyles(el, light_mode, transition_speed) {
     el.classList.contains("blog_card_bottom") ||
     el.id === "blog_card"
   ) {
-    console.log(el);
-
     if (light_mode) {
       el.classList.add("light_mode");
       el.classList.remove("dark_mode");
@@ -100,12 +98,7 @@ export function changeAboutMeTheme(light_mode, transition_speed) {
   list.forEach((el) => applyStyles(el, light_mode, transition_speed));
 }
 
-export function changeBlogsTheme(light_mode) {
-  const navbar = document.querySelector(".navbar");
-  navbar.style.backgroundColor = light_mode ? "white" : "black";
-}
-
-export function xd(light_mode, transition_speed) {
+export function changeBlogsTheme(light_mode, transition_speed) {
   const list = get_all_els_to_change(
     [
       "h1",
