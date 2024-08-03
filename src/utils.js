@@ -39,6 +39,8 @@ function applyStyles(el, light_mode, transition_speed) {
       el.classList.add("dark_mode");
     }
     el.style.border = light_mode ? "1px solid #bcbbbb" : "#2c2c2c solid 2px";
+  } else if (el.classList.contains("arrow")) {
+    el.style.filter = light_mode ? "invert(1)" : "invert(0)";
   } else {
     el.style.color = light_mode ? "black" : "white";
   }
@@ -61,6 +63,7 @@ export function changeBubblesTheme(light_mode, transition_speed) {
       document.querySelector(".gradient-bg"),
       document.querySelector(".projects_container"),
       document.querySelector("body"),
+      document.querySelector(".arrow"),
     ]
   );
 
