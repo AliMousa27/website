@@ -41,6 +41,11 @@ function applyStyles(el, light_mode, transition_speed) {
     el.style.border = light_mode ? "1px solid #bcbbbb" : "#2c2c2c solid 2px";
   } else if (el.classList.contains("arrow")) {
     el.style.filter = light_mode ? "invert(1)" : "invert(0)";
+  } else if (el.classList.contains("shine")) {
+    el.style.color = light_mode
+      ? "rgb(0, 0, 0, 0.6)"
+      : "color: rgba(255, 255, 255, 0.3)";
+    el.style.backgroundColor = light_mode;
   } else {
     el.style.color = light_mode ? "black" : "white";
   }
@@ -58,6 +63,7 @@ export function changeBubblesTheme(light_mode, transition_speed) {
       ".nav-link",
       ".socials_list .icon-content a",
       ".tag-list li",
+      ".shine",
     ],
     [
       document.querySelector(".gradient-bg"),
