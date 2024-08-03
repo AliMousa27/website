@@ -120,7 +120,7 @@ export function changeAboutMeTheme(light_mode, transition_speed) {
       ".socials_list .icon-content a",
       ".shine",
     ],
-    false
+    [document.querySelector("body")]
   );
   list.forEach((el) => applyStyles(el, light_mode, transition_speed));
 }
