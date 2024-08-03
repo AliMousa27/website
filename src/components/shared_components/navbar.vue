@@ -24,11 +24,12 @@
           <RouterLink class="nav-link" to="/blogs">Blogs</RouterLink>
         </li>
         <li>
-          <button
-            @click="lol"
-            style="width: 50px; height: 50px"
-            id="mode"
-          ></button>
+          <div class="toggle-switch">
+            <label class="switch-label">
+              <input type="checkbox" class="checkbox" @click="lol" />
+              <span class="slider"></span>
+            </label>
+          </div>
         </li>
       </ul>
     </div>
@@ -136,5 +137,86 @@ a:hover:after {
 }
 .navbar-collapse {
   margin-right: 50px;
+}
+
+.toggle-switch {
+  scale: 0.8;
+  position: relative;
+  padding-left: 20px;
+  margin-top: 5px;
+  width: 100px;
+  height: 25px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+@media screen and (max-width: 1000px) {
+  .toggle-switch {
+    margin-top: 0;
+    padding-left: 90px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  a {
+    padding-left: 50px;
+  }
+  .toggle-switch {
+    padding-left: 100px;
+  }
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 12px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 </style>

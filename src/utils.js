@@ -44,8 +44,7 @@ function applyStyles(el, light_mode, transition_speed) {
   } else if (el.classList.contains("shine")) {
     el.style.color = light_mode
       ? "rgb(0, 0, 0, 0.6)"
-      : "color: rgba(255, 255, 255, 0.3)";
-    el.style.backgroundColor = light_mode;
+      : "rgba(255, 255, 255, 0.3)";
   } else if (el.classList.contains("nav-link")) {
     el.style.color = light_mode ? "black" : "white";
 
