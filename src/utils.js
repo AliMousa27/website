@@ -46,6 +46,16 @@ function applyStyles(el, light_mode, transition_speed) {
       ? "rgb(0, 0, 0, 0.6)"
       : "color: rgba(255, 255, 255, 0.3)";
     el.style.backgroundColor = light_mode;
+  } else if (el.classList.contains("nav-link")) {
+    el.style.color = light_mode ? "black" : "white";
+
+    if (light_mode) {
+      el.classList.add("light_mode");
+      el.classList.remove("dark_mode");
+    } else {
+      el.classList.add("dark_mode");
+      el.classList.remove("light_mode");
+    }
   } else {
     el.style.color = light_mode ? "black" : "white";
   }
@@ -101,7 +111,16 @@ export function changeAboutMeTheme(light_mode, transition_speed) {
   navbar.style.backgroundColor = light_mode ? "white" : "black";
 
   const list = get_all_els_to_change(
-    ["h1", "p", "li", ".nav-link", "hr", "h5", ".socials_list .icon-content a"],
+    [
+      "h1",
+      "p",
+      "li",
+      ".nav-link",
+      "hr",
+      "h5",
+      ".socials_list .icon-content a",
+      ".shine",
+    ],
     false
   );
   list.forEach((el) => applyStyles(el, light_mode, transition_speed));

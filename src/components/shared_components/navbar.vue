@@ -101,7 +101,7 @@ a {
   position: relative;
 }
 
-a:after {
+a.light_mode:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -109,10 +109,24 @@ a:after {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #fff;
+  background: #000000;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
+
+a.dark_mode:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #ffffff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
 a:hover:after {
   width: 100%;
   left: 0;
