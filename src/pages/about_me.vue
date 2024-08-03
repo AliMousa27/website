@@ -1,5 +1,5 @@
 <template>
-  <div ref="vantaRef">
+  <div ref="vantaRef" id="vanta">
     <div
       class="container-fluid d-flex justify-content-center align-items-center vh-100 flex-column"
       style="flex-direction: column"
@@ -224,6 +224,15 @@ img {
 @media (max-width: 576px) {
   #uni_image {
     max-width: 100% !important;
+  }
+  #vanta {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 1000px) {
+  #vanta {
+    margin-top: 10px;
   }
 }
 

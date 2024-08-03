@@ -129,7 +129,11 @@ p {
   .blod_card {
     max-width: 100vh;
   }
+  .scrollable-content {
+    margin-top: 50px;
+  }
 }
+
 img {
   margin-top: 30px;
   margin-bottom: 30px;
