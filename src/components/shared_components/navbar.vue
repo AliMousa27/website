@@ -3,7 +3,7 @@
     class="navbar navbar-expand-lg navbar-dark"
     style="background-color: transparent"
   >
-    <RouterLink class="nav-link" to="/">Ali</RouterLink>
+    <RouterLink id="ali_link" class="nav-link" to="/">Ali</RouterLink>
     <button
       class="navbar-toggler"
       type="button"
@@ -57,8 +57,19 @@ export default {
 
   methods: {
     lol() {
-      console.log(this.path);
+      const navbar_toggler = document.querySelector(".navbar-toggler");
+      const navbar_toggler_icon = document.querySelector(
+        ".navbar-toggler-icon"
+      );
       const switchToLight = loadMode() == "dark" ? true : false;
+      navbar_toggler.style.transition = "all 0.5s ease";
+      if (switchToLight) {
+        navbar_toggler.style.border = "1px solid black";
+        navbar_toggler_icon.style.filter = "invert(1)";
+      } else {
+        navbar_toggler.style.border = "1px solid white";
+        navbar_toggler_icon.style.filter = "invert(0)";
+      }
       switch (this.path) {
         case "/":
           changeBubblesTheme(switchToLight, "0.5");
@@ -81,12 +92,6 @@ export default {
 @media (max-width: 992px) {
   div ul li a {
     transform: translateX(40px);
-  }
-}
-
-@media (max-width: 576px) {
-  .navbar a {
-    margin-left: 10px !important;
   }
 }
 
@@ -165,6 +170,21 @@ a:hover:after {
   }
   .toggle-switch {
     padding-left: 100px;
+  }
+  .navbar a {
+    margin-left: 10px !important;
+  }
+  a:hover:after {
+    width: 60%;
+    left: 0;
+  }
+
+  a.dark_mode:after,
+  a.light_mode:after {
+    left: 40%;
+  }
+  #ali_link {
+    transform: translateX(-55px);
   }
 }
 
