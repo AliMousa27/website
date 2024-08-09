@@ -1,5 +1,5 @@
 <template>
-  <div ref="vantaRef" id="vanta">
+  <div ref="boidsRef" id="boids">
     <div
       class="container-fluid d-flex justify-content-center align-items-center vh-100 flex-column"
       style="flex-direction: column"
@@ -137,8 +137,8 @@ export default {
     const screen_width = window.innerWidth;
     const switchToLight = loadMode() == "dark" ? false : true;
 
-    this.vantaEffect = BIRDS({
-      el: this.$refs.vantaRef,
+    this.boidsEffect = BIRDS({
+      el: this.$refs.boidsRef,
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
@@ -155,12 +155,12 @@ export default {
       alignment: 20.0,
     });
     this.emitter.on("change_theme", (switchToLight) => {
-      this.vantaEffect.setOptions({
+      this.boidsEffect.setOptions({
         backgroundColor: switchToLight ? 0xffffff : 0x0,
       });
     });
 
-    window.addEventListener("resize", this.updateVanta);
+    window.addEventListener("resize", this.updateBoids);
 
     const handleScroll = () => {
       const all_sections = document.querySelectorAll(".section_wrapper");
@@ -176,8 +176,8 @@ export default {
     scrollable_div.addEventListener("scroll", handleScroll);
 
     onBeforeUnmount(() => {
-      window.removeEventListener("resize", this.updateVanta);
-      this.vantaEffect.destroy();
+      window.removeEventListener("resize", this.updateBoids);
+      this.boidsEffect.destroy();
       scrollable_div.removeEventListener("scroll", handleScroll);
     });
 
@@ -185,8 +185,8 @@ export default {
   },
 
   methods: {
-    updateVanta() {
-      this.vantaEffect.resize();
+    updateBoids() {
+      this.boidsEffect.resize();
     },
   },
 };
@@ -225,13 +225,13 @@ img {
   #uni_image {
     max-width: 100% !important;
   }
-  #vanta {
+  #boids {
     margin-top: 100px;
   }
 }
 
 @media (max-width: 1000px) {
-  #vanta {
+  #boids {
     margin-top: 10px;
   }
 }
