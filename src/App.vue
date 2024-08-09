@@ -7,6 +7,7 @@
 import { saveMode } from "./utils";
 import NavBar from "./components/shared_components/navbar.vue";
 saveMode("dark");
+document.title = "Ali Mousa";
 </script>
 <script>
 export default {
