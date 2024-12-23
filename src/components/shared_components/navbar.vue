@@ -3,7 +3,7 @@
     class="navbar navbar-expand-lg navbar-dark"
     style="background-color: transparent"
   >
-    <RouterLink id="ali_link" class="nav-link" to="/">Ali</RouterLink>
+    <RouterLink id="ali_link" class="nav_link" to="/">Ali</RouterLink>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,18 +15,31 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto" id="nav_list" style="width: fit-content">
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNav"
+      style="
+        justify-content: right;
+        justify-items: right;
+        align-items: right;
+        padding-right: 20px;
+      "
+    >
+      <ul class="navbar-nav" id="nav_list" style="width: fit-content">
         <li class="nav-item active">
-          <RouterLink class="nav-link" to="/about">About</RouterLink>
+          <RouterLink class="nav_link" to="/about">About</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" to="/blogs">Blogs</RouterLink>
+          <RouterLink class="nav_link" to="/blogs">Blogs</RouterLink>
         </li>
         <li>
           <div class="toggle-switch">
             <label class="switch-label">
-              <input type="checkbox" class="checkbox" @click="lol" />
+              <input
+                type="checkbox"
+                class="checkbox"
+                @click="change_navbar_theme"
+              />
               <span class="slider"></span>
             </label>
           </div>
@@ -56,7 +69,7 @@ export default {
   name: "NavBar",
 
   methods: {
-    lol() {
+    change_navbar_theme() {
       const navbar_toggler = document.querySelector(".navbar-toggler");
       const navbar_toggler_icon = document.querySelector(
         ".navbar-toggler-icon"
@@ -137,19 +150,22 @@ a:hover:after {
   width: 100%;
   left: 0;
 }
-.nav-link:hover {
+
+.nav_link:hover {
   color: white;
 }
 .navbar-collapse {
-  margin-right: 50px;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .toggle-switch {
-  scale: 0.8;
+  scale: 0.75;
+  margin-left: 25px;
   position: relative;
   padding-left: 20px;
-  margin-top: 5px;
   width: 100px;
+  transform: translateY(-5px);
   height: 25px;
   --light: #d8dbe0;
   --dark: #28292c;
@@ -158,9 +174,11 @@ a:hover:after {
 }
 
 @media screen and (max-width: 1000px) {
+  #navbarNav {
+    padding-right: 0 !important;
+  }
   .toggle-switch {
-    margin-top: 0;
-    padding-left: 90px;
+    transform: translateX(-3px);
   }
 }
 
@@ -168,9 +186,7 @@ a:hover:after {
   a {
     padding-left: 50px;
   }
-  .toggle-switch {
-    padding-left: 100px;
-  }
+
   .navbar a {
     margin-left: 10px !important;
   }

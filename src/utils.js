@@ -9,7 +9,7 @@ export function isInViewport(el, divisor) {
 }
 
 function applyStyles(el, light_mode, transition_speed) {
-  //prevents overwriting transition of the socials icons
+  //prevents overwriting transition of the socials
   if (!el.classList.contains("icon-content")) {
     el.style.transition = `all ${transition_speed}s ease`;
   }
@@ -48,7 +48,7 @@ function applyStyles(el, light_mode, transition_speed) {
     el.style.color = light_mode
       ? "rgb(0, 0, 0, 0.6)"
       : "rgba(255, 255, 255, 0.3)";
-  } else if (el.classList.contains("nav-link")) {
+  } else if (el.classList.contains("nav_link")) {
     el.style.color = light_mode ? "black" : "white";
 
     if (light_mode) {
@@ -72,7 +72,7 @@ export function changeBubblesTheme(light_mode, transition_speed) {
       "h5",
       "hr",
       "li",
-      ".nav-link",
+      ".nav_link",
       ".socials_list .icon-content a",
       ".tag-list li",
       ".shine",
@@ -117,7 +117,7 @@ export function changeAboutMeTheme(light_mode, transition_speed) {
       "h1",
       "p",
       "li",
-      ".nav-link",
+      ".nav_link",
       "hr",
       "h5",
       ".socials_list .icon-content a",
@@ -138,7 +138,7 @@ export function changeBlogsTheme(light_mode, transition_speed) {
       "h6",
       "hr",
       "li",
-      ".nav-link",
+      ".nav_link",
       ".socials_list .icon-content a",
       ".blog_card_bottom",
       ".blog_card",
