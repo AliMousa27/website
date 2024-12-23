@@ -89,7 +89,6 @@ export default {
           break;
         case "/about":
           changeAboutMeTheme(switchToLight, "0.5");
-          this.emitter.emit("change_theme", switchToLight);
           break;
         case "/blogs":
           changeBlogsTheme(switchToLight, "0.5");

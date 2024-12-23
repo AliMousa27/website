@@ -160,19 +160,14 @@ export default {
       separation: 50.0,
       alignment: 20.0,
     });
-    this.emitter.on("change_theme", (switchToLight) => {
-      console.log(switchToLight);
-      //var background = document.querySelector(".boids-background");
-      //background.style.backgroundColor = switchToLight ? "white" : "black";
-    });
 
     window.addEventListener("resize", this.updateBoids);
 
     const handleScroll = () => {
       const all_sections = document.querySelectorAll(".section_wrapper");
-
+      const in_view_port_divisor = window.screen.width <= 1000 ? 1000 : 30;
       all_sections.forEach((section) => {
-        if (isInViewport(section, 10)) {
+        if (isInViewport(section, in_view_port_divisor)) {
           section.style.opacity = 1;
           section.style.transform = "translateY(0)";
         }
