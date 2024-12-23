@@ -21,8 +21,8 @@
       style="
         justify-content: right;
         justify-items: right;
-        align-items: right;
         padding-right: 20px;
+        height: fit-content !important;
       "
     >
       <ul class="navbar-nav" id="nav_list" style="width: fit-content">
@@ -154,10 +154,6 @@ a:hover:after {
 .nav_link:hover {
   color: white;
 }
-.navbar-collapse {
-  margin-left: auto;
-  margin-right: 0;
-}
 
 .toggle-switch {
   scale: 0.75;
@@ -166,7 +162,7 @@ a:hover:after {
   padding-left: 20px;
   width: 100px;
   transform: translateY(-5px);
-  height: 25px;
+  height: 45px;
   --light: #d8dbe0;
   --dark: #28292c;
   --link: rgb(27, 129, 112);
@@ -185,6 +181,8 @@ a:hover:after {
 @media screen and (max-width: 576px) {
   a {
     padding-left: 50px;
+    font-weight: 500;
+    font-size: 23px;
   }
 
   .navbar a {
