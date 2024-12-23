@@ -9,7 +9,10 @@ export function isInViewport(el, divisor) {
 }
 
 function applyStyles(el, light_mode, transition_speed) {
-  el.style.transition = `all ${transition_speed}s ease`;
+  //prevents overwriting transition of the socials icons
+  if (!el.classList.contains("icon-content")) {
+    el.style.transition = `all ${transition_speed}s ease`;
+  }
 
   if (
     el.classList.contains("gradient-bg") ||
