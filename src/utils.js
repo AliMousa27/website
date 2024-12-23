@@ -10,6 +10,8 @@ export function isInViewport(el, divisor) {
 
 function applyStyles(el, light_mode, transition_speed) {
   //prevents overwriting transition of the socials
+  console.log(transition_speed);
+
   if (!el.classList.contains("icon-content")) {
     el.style.transition = `all ${transition_speed}s ease`;
   }
@@ -17,6 +19,7 @@ function applyStyles(el, light_mode, transition_speed) {
   if (
     el.classList.contains("gradient-bg") ||
     el.classList.contains("projects_container") ||
+    el.classList.contains("boids-background") ||
     el.tagName === "BODY"
   ) {
     el.style.backgroundColor = light_mode ? "white" : "black";
@@ -109,9 +112,6 @@ export function loadMode() {
 }
 
 export function changeAboutMeTheme(light_mode, transition_speed) {
-  const navbar = document.querySelector(".navbar");
-  navbar.style.backgroundColor = light_mode ? "white" : "black";
-
   const list = get_all_els_to_change(
     [
       "h1",
@@ -122,6 +122,7 @@ export function changeAboutMeTheme(light_mode, transition_speed) {
       "h5",
       ".socials_list .icon-content a",
       ".shine",
+      ".boids-background",
     ],
     [document.querySelector("body")]
   );

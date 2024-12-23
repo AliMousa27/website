@@ -88,7 +88,7 @@ export default {
           changeBubblesTheme(switchToLight, "0.5");
           break;
         case "/about":
-          changeAboutMeTheme(switchToLight, "0");
+          changeAboutMeTheme(switchToLight, "0.5");
           this.emitter.emit("change_theme", switchToLight);
           break;
         case "/blogs":
