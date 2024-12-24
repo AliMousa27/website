@@ -51,11 +51,9 @@ export default {
       if (target.id === "blog_card") {
         card = target;
         arrow = target.parentElement.nextSibling.querySelector(".arrow");
-        console.log(arrow);
       } else {
         card = target.previousElementSibling.children[0];
         arrow = target.querySelector(".arrow");
-        console.log(arrow);
       }
       if (card.is_expanded) {
         card.style.minHeight = "1%";
