@@ -20,32 +20,47 @@ export default {
     try {
       const shineText = this.$refs.shineText;
       if (this.is_contact_shine && shineText) {
-        shineText.classList.add("old-text");
-        shineText.style.opacity = "0";
-        shineText.style.fontFamily = "Roboto, sans-serif";
-        shineText.style.fontWeight = "900";
-        shineText.style.fontSize = "30px";
-
-        requestAnimationFrame(() => {
-          shineText.style.animation =
-            "shine_text 2s infinite linear, increase_opacity 1s 7s forwards";
-        });
-        setTimeout(() => {
-          const arrow = document.querySelector(".arrow");
-          if (arrow) {
-            arrow.style.opacity = 1;
-          }
-          const new_text = shineText.nextSibling;
-          if (new_text) {
-            new_text.classList.add("new-text");
-          }
-        }, 8000);
+        this.setup_styles(shineText);
+        this.setup_timeouts(shineText);
       } else if (shineText) {
         shineText.style.opacity = "1";
       }
     } catch (e) {
       console.log(e);
     }
+  },
+  methods: {
+    setup_styles(shineText) {
+      shineText.classList.add("old-text");
+      shineText.style.opacity = "0";
+      shineText.style.fontFamily = "Roboto, sans-serif";
+      shineText.style.fontWeight = "900";
+      shineText.style.fontSize = "30px";
+
+      requestAnimationFrame(() => {
+        shineText.style.animation =
+          "shine_text 2s infinite linear, increase_opacity 1s 7s forwards";
+      });
+    },
+
+    setup_timeouts(shineText) {
+      const arrow_delay_period = 7000;
+      const contact_me_delay_period = 7650;
+      setTimeout(() => {
+        const arrow = document.querySelector(".arrow");
+        if (arrow) {
+          arrow.style.opacity = 1;
+        }
+      }, arrow_delay_period);
+
+      setTimeout(() => {
+        const new_text = shineText.nextSibling;
+        if (new_text) {
+          new_text.classList.add("new-text");
+        }
+        shineText.style.opacity = 1;
+      }, contact_me_delay_period);
+    },
   },
 };
 </script>
@@ -74,8 +89,8 @@ export default {
   font-size: 45px;
   font-weight: 700;
   opacity: 0;
-  animation: shine_text 5s infinite linear;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: shine_text 5s infinite linear !important;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
 }
 
 .shine-top {
@@ -88,7 +103,7 @@ export default {
   width: 100%;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.5s ease, transform 0.25s ease;
   font-family: "Roboto, sans-serif" !important;
   font-weight: 900 !important;
   font-size: 30px !important;

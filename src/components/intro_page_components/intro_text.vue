@@ -142,7 +142,8 @@ export default {
 
 .arrow {
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  /*important so it doesnt get overwritten*/
+  transition: opacity 1s ease-in-out !important;
 
   width: 40px;
   height: 40px;
