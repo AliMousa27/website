@@ -94,7 +94,7 @@ export default {
         .catch((e) => console.log(e.message));
     },
     handleMouseLeave() {
-      const transition_delay = 300;
+      const transition_delay = 320;
       const shine = document.getElementById("contact_me");
       shine.addEventListener("mouseleave", () => {
         setTimeout(() => {
