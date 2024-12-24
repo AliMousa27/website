@@ -10,7 +10,6 @@ export function isInViewport(el, divisor) {
 
 function applyStyles(el, light_mode, transition_speed) {
   //prevents overwriting transition of the socials
-  console.log(transition_speed);
 
   if (!el.classList.contains("icon-content")) {
     el.style.transition = `all ${transition_speed}s ease`;

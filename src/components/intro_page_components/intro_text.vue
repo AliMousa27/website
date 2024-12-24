@@ -56,7 +56,14 @@ export default {
   },
   mounted() {
     this.fade_text_word_by_word();
+    this.handleMouseLeave();
   },
+
+  beforeUnmount() {
+    const shine = document.getElementById("contact_me");
+    shine.removeEventListener("mouseleave", this.handleMouseLeave());
+  },
+
   methods: {
     fade_text_word_by_word() {
       const paragraph = document.querySelector(".paragraph");
@@ -83,11 +90,17 @@ export default {
         .then(() => {
           const shine = document.getElementById("contact_me");
           shine.textContent = "Copied!";
-          setTimeout(() => {
-            shine.textContent = "Contact me";
-          }, 1000);
         })
-        .catch((e) => alert(e.message));
+        .catch((e) => console.log(e.message));
+    },
+    handleMouseLeave() {
+      const transition_delay = 300;
+      const shine = document.getElementById("contact_me");
+      shine.addEventListener("mouseleave", () => {
+        setTimeout(() => {
+          shine.textContent = "Copy email";
+        }, transition_delay);
+      });
     },
   },
 };
