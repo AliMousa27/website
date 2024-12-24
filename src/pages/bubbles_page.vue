@@ -56,6 +56,18 @@ export default {
     return {
       projects: [
         {
+          title: "Recommendation letter",
+          text: "A recommendation letter from a professor that works at the joint department of computer science and engineering at Chalmers and University of Gothenburg",
+          tags: [
+            "Recommendation letter",
+            "Embedded systems",
+            "C",
+            "Programming",
+          ],
+          images: [require("@/assets/letters/recommendation_letter.png")],
+          is_image: true,
+        },
+        {
           title: "Data Science From Scratch",
           text: "Data Science from Scratch, by Joel Grus is a book that I read in the summer of 2023 to fully grasp the fundamentals and underlying principles of AI, data and how the two concepts relate. Admittedly the most fun chapters of the book were the ones where I had to implement math concepts and functions in python and then use them in later chapters to create meaningful mini applications such as a spam filter using bayes theorem, fully implementing a linear neural network from scratch and writing a modular back propagation algorithm, NLP, implementing SQL from scratch and much much more.",
           tags: [
@@ -66,7 +78,7 @@ export default {
             "Neural Networks",
             "Machine learning",
           ],
-          images: [require("@/assets/data_science/data_science_book.jpg")],
+          images: [require("@/assets/data_science/data_science_book.png")],
           is_image: true,
         },
         {
