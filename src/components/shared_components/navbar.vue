@@ -18,7 +18,12 @@
     <div
       class="collapse navbar-collapse"
       id="navbarNav"
-      style="height: fit-content !important"
+      style="
+        justify-content: right;
+        justify-items: right;
+        padding-right: 20px;
+        height: fit-content !important;
+      "
     >
       <div style="display: flex; justify-content: flex-end">
         <ul class="navbar-nav" id="nav_list" style="width: fit-content">
