@@ -18,33 +18,30 @@
     <div
       class="collapse navbar-collapse"
       id="navbarNav"
-      style="
-        justify-content: right;
-        justify-items: right;
-        padding-right: 20px;
-        height: fit-content !important;
-      "
+      style="height: fit-content !important"
     >
-      <ul class="navbar-nav" id="nav_list" style="width: fit-content">
-        <li class="nav-item active">
-          <RouterLink class="nav_link" to="/about">About</RouterLink>
-        </li>
-        <li class="nav-item">
-          <RouterLink class="nav_link" to="/blogs">Blogs</RouterLink>
-        </li>
-        <li>
-          <div class="toggle-switch">
-            <label class="switch-label">
-              <input
-                type="checkbox"
-                class="checkbox"
-                @click="change_navbar_theme"
-              />
-              <span class="slider"></span>
-            </label>
-          </div>
-        </li>
-      </ul>
+      <div style="display: flex; justify-content: flex-end">
+        <ul class="navbar-nav" id="nav_list" style="width: fit-content">
+          <li class="nav-item active">
+            <RouterLink class="nav_link" to="/about">About</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink class="nav_link" to="/blogs">Blogs</RouterLink>
+          </li>
+          <li>
+            <div class="toggle-switch">
+              <label class="switch-label">
+                <input
+                  type="checkbox"
+                  class="checkbox"
+                  @click="change_navbar_theme"
+                />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </template>
