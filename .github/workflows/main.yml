@@ -35,13 +35,15 @@ jobs:
         git config --global user.name "AliMousa27"
         git config --global user.email "Jafar.myhero@gmail.com"
     - name: push to other repo
+      env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
           cd dist
           git init
           git add -A
           git commit -m "deploy"
           git branch -M main
-          git remote add origin git@github.com:AliMousa27/AliMousa27.github.io.git
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/AliMousa27/AliMousa27.github.io.git
           git push -u -f origin main
 
   
