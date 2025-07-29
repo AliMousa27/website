@@ -45,6 +45,7 @@ jobs:
           git branch -M main
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/AliMousa27/AliMousa27.github.io.git
           echo "ADDED REMOTE ORIGIN"
+          git config --unset-all http.https://github.com/.extraheader
           git push -u -f origin main
   
   
