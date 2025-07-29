@@ -17,6 +17,7 @@ jobs:
          set -e
          npm install
          npm run build
+      #upload as an artifact for the deploy job to download and push to the deploy repo
       - uses: actions/upload-artifact@v4
         with:
            name: dist-files
@@ -31,14 +32,10 @@ jobs:
         name: dist-files
         path: dist/
     - name: configure git
-      env: 
-        USERNAME: ${{secrets.USERNAME}}
       run: |
         git config --global user.name "${{secrets.USERNAME}}"
-        git config --global user.email "Jafar.myhero@gmail.com"
+        git config --global user.email "${{secrets.EMAIL}}"
     - name: push to other repo
-      env:
-           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
       run: |
           cd dist
           git init
