@@ -31,8 +31,10 @@ jobs:
         name: dist-files
         path: dist/
     - name: configure git
+      env: 
+        USERNAME: ${{secrets.USERNAME}}
       run: |
-        git config --global user.name "AliMousa27"
+        git config --global user.name "${{secrets.USERNAME}}"
         git config --global user.email "Jafar.myhero@gmail.com"
     - name: push to other repo
       env:
