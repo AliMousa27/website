@@ -36,16 +36,15 @@ jobs:
         git config --global user.email "Jafar.myhero@gmail.com"
     - name: push to other repo
       env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
       run: |
           cd dist
           git init
           git add -A
           git commit -m "deploy"
           git branch -M main
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/AliMousa27/AliMousa27.github.io.git
+          git remote add origin https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/AliMousa27/AliMousa27.github.io.git
           echo "ADDED REMOTE ORIGIN"
-          git config --unset-all http.https://github.com/.extraheader
           git push -u -f origin main
   
   
