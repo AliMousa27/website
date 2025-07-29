@@ -14,7 +14,36 @@ jobs:
         with:
           node-version: '20.15.0'
       - run: |
+         set -e
          npm install
          npm run build
-    
+      - uses: actions/upload-artifact@v4
+        with:
+           name: dist-files
+           path: dist/          
+  deployment:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: dist-files
+        path: dist/
+    - name: configure git
+      run: |
+        git config --global user.name "AliMousa27"
+        git config --global user.email "Jafar.myhero@gmail.com"
+    - name: push to other repo
+      run: |
+          cd dist
+          git init
+          git add -A
+          git commit -m "deploy"
+          git branch -M main
+          git remote add origin git@github.com:AliMousa27/AliMousa27.github.io.git
+          git push -u -f origin main
+
+  
+  
   
