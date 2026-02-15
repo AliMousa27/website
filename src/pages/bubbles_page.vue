@@ -52,7 +52,7 @@ export default {
     ProjectCard,
     PageFooter,
   },
-
+  methods: {},
   data() {
     return {
       projects: [
@@ -81,7 +81,8 @@ export default {
             require("@/assets/Aktivframtid/5.jpg"),
           ],
           is_image: true,
-          scale: 0.4,
+          // mobile scaling is different
+          scale: window.innerWidth <= 768 ? 0.8 : 0.5,
         },
         {
           title: "Let Bro Cook",

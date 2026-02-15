@@ -179,7 +179,6 @@ export default {
 <style scoped>
 .project_container {
   opacity: 0;
-  max-height: 900px;
 }
 
 .reverse {
