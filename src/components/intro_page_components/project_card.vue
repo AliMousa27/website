@@ -3,7 +3,11 @@
     <div
       class="row project_container d-flex flex-row-reverse align-items-center"
     >
-      <div v-if="is_image" class="col-7 carousel_container">
+      <div
+        v-if="is_image"
+        class="col-7 carousel_container"
+        :style="{ scale: `calc(${scale})` }"
+      >
         <CarouselSlides ref="carouselSlides" :images="images"></CarouselSlides>
       </div>
       <div v-else class="col">
@@ -63,7 +67,7 @@ export default {
             carouselContainer,
             textContainer,
             project,
-            isEvenIndex
+            isEvenIndex,
           );
         }
       });
@@ -72,7 +76,7 @@ export default {
     const setSmallScreenClasses = (
       carouselContainer,
       textContainer,
-      project
+      project,
     ) => {
       if (carouselContainer && this.is_image) {
         carouselContainer.classList.remove("col-7");
@@ -89,7 +93,7 @@ export default {
       carouselContainer,
       textContainer,
       project,
-      isEvenIndex
+      isEvenIndex,
     ) => {
       if (carouselContainer && this.is_image) {
         carouselContainer.classList.remove("col-12");
@@ -140,6 +144,11 @@ export default {
       type: Array,
       required: false,
     },
+    scale: {
+      type: Number,
+      required: false,
+      default: 1,
+    },
     is_image: {
       type: Boolean,
       default: true,
@@ -170,6 +179,7 @@ export default {
 <style scoped>
 .project_container {
   opacity: 0;
+  max-height: 900px;
 }
 
 .reverse {

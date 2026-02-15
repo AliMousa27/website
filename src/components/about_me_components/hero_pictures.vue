@@ -29,7 +29,6 @@ var use_cards = ref(window.innerWidth > 900);
 const updateUseCards = () => {
   use_cards.value = window.innerWidth > 900;
 };
-//add this functions only when the window is being resized when the component is mounted
 onMounted(() => {
   window.addEventListener("resize", updateUseCards);
 });

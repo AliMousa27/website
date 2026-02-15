@@ -54,19 +54,12 @@ export default {
   width: fit-content;
   height: fit-content;
   position: relative;
-  transform: scale(1);
   transition: transform 250ms ease-out;
   opacity: 1;
 }
 .carousel-inner {
   width: 100%;
   height: auto;
-}
-
-img {
-  height: auto;
-  width: 90%;
-  object-fit: cover;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -85,11 +78,5 @@ img {
     width: 100% !important;
     height: 100% !important;
   }
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 </style>
