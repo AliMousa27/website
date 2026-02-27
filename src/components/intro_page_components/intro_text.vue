@@ -18,13 +18,11 @@
     <div class="row" style="margin-top: 50px">
       <div class="col">
         <h2 class="paragraph">
-          I'm a 23-year-old software engineering student at Chalmers/Gothenburg
-          university hoping to continue on to acquire a masters in computer
-          science at Chalmers university residing in Sweden. I'm most passionate
-          about fullstack development with a heavy focus on front end
-          development. I'm also very proficient in python which I utilize to
-          create various solutions to problems, and learn numerous fields such
-          as AI and data science.
+          I'm a {{ getAge }} year old software engineer currently working as a
+          DevOps engineer consultant for Ericsson developing CI for radio
+          software. I graduated with a Bachelor's in Software Engineering from
+          the University of Gothenburg and I am also currently studing for my
+          Masters in Computer Science from Chalmers University of Technology.
         </h2>
         <br />
       </div>
@@ -64,6 +62,14 @@ export default {
     shine.removeEventListener("mouseleave", this.handleMouseLeave());
   },
 
+  computed: {
+    getAge() {
+      const birthday = new Date(2001, 8, 4);
+      const msInYear = 3.154 * Math.pow(10, 10);
+      return Math.floor((new Date() - birthday) / msInYear);
+    },
+  },
+
   methods: {
     fade_text_word_by_word() {
       const paragraph = document.querySelector(".paragraph");
@@ -76,7 +82,7 @@ export default {
         //initally hide the word
         wordSpan.style.opacity = 0;
         wordSpan.style.filter = "blur(4px)";
-        // Apply the animation with a delay based on the word's position given by the index
+        // apply the animation with a delay based on the words index
         wordSpan.style.animation = `fade-in 0.3s ${
           0.1 * (index + 1)
         }s forwards ease`;
@@ -113,7 +119,6 @@ export default {
   }
 }
 
-/* smaller than 800 */
 @media (max-width: 800px) {
   .static_header {
     display: inline-block !important;
@@ -186,7 +191,6 @@ export default {
 </style>
 
 <style>
-/*Global style such that the inserted spans can use this*/
 @keyframes fade-in {
   100% {
     opacity: 1;

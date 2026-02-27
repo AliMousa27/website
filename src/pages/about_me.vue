@@ -20,18 +20,17 @@
             <div class="col">
               <ShineText :is_contact_shine="false" project_title="About Me" />
               <p>
-                As you already know by now my name is Ali, I'm 23 years old and
-                I live in Gothenburg, Sweden Gothenburg. I grew up all over the
-                world, from Dubai, Iraq, Denmark to Sweden, and therefore
-                consequently, I speak nearly 4 languages fluently; English,
-                Danish, Arabic and I possess full working proficiency in
-                Swedish. I study software engineering at the university of
-                Gothenburg and I'm passionate about all things related to
-                programming and I'm particularly fascinated and fond of
-                mathematics and the area of applied mathematics. In my spare
-                time, I enjoy exploring the world, trying out new foods, play
-                the guitar (admittedly i'm not that good) and refine my craft in
-                programming.
+                As you already know by now my name is Ali, I live in Stockholm,
+                Sweden. I grew up all over the world, from Dubai, Iraq, Denmark
+                to Sweden, and therefore consequently, I speak nearly 4
+                languages fluently; English, Danish, Arabic and I possess full
+                working proficiency in Swedish. I studied Software Engineering
+                at the university of Gothenburg and I'm passionate about all
+                things related to programming and I'm particularly fascinated
+                and fond of mathematics and the area of applied mathematics. In
+                my spare time, I enjoy exploring the world, trying out new
+                foods, play the guitar (admittedly i'm not that good) and refine
+                my craft in programming.
               </p>
             </div>
           </div>
